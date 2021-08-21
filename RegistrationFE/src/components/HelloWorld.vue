@@ -1,32 +1,45 @@
 <template>
-  <div class="hello">
-
-  </div>
+  <v-container> 
+    <img class="logo" src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/DZJFMt.png" alt="">
+     <v-alert
+      border="top"
+      color="red lighten-2"
+      dark
+    >
+      I'm an alert with a top border and red color
+    </v-alert>
+    <v-alert
+      border="right"
+      color="blue-grey"
+      dark
+    >
+      I'm an alert with a right border and blue-grey color
+    </v-alert>
+    <v-alert
+      border="bottom"
+      color="pink darken-1"
+      dark
+    >
+      I'm an alert with a bottom border and pink color
+    </v-alert>
+    <v-alert
+      border="left"
+      color="indigo"
+      dark
+    >
+      I'm an alert with a border left type info
+    </v-alert>
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+  name: "HelloWorld",
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style scoped>
+  .logo {
+    width: 30%;
+  }
 </style>
