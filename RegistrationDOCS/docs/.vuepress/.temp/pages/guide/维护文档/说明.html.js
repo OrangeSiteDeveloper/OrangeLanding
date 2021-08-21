@@ -7,7 +7,16 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "filePathRelative": "guide/维护文档/说明.md",
-  "git": {}
+  "git": {
+    "updatedTime": 1629543295000,
+    "contributors": [
+      {
+        "name": "zhangzhibang0309",
+        "email": "295854713@qq.com",
+        "commits": 3
+      }
+    ]
+  }
 }
 
 if (import.meta.webpackHot) {
