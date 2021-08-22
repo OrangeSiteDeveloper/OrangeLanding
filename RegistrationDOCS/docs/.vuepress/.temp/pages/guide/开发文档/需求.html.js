@@ -27,12 +27,12 @@ export const data = {
   ],
   "filePathRelative": "guide/开发文档/需求.md",
   "git": {
-    "updatedTime": 1629627417000,
+    "updatedTime": 1629643616000,
     "contributors": [
       {
         "name": "zhangzhibang0309",
         "email": "295854713@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   }

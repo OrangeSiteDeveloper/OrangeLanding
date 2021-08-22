@@ -1,7 +1,7 @@
 module.exports = {
   lang: "zh-CN",
   title: "Orange Studio",
-  description: "这是我的第一个 VuePress 站点",
+  description: "橙果工作室网站组开发日志",
   base: "/",
 
   themeConfig: {
@@ -11,7 +11,8 @@ module.exports = {
       {
         text: "开发文档",
         children: [
-          "/guide/开发文档/技术相关.md",
+          "/guide/开发文档/前端相关.md",
+          "/guide/开发文档/git相关.md",
           "/guide/开发文档/需求.md",
         ],
         // 嵌套示例

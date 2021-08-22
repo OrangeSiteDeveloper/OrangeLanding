@@ -2,7 +2,7 @@ export const siteData = {
   "base": "/",
   "lang": "zh-CN",
   "title": "Orange Studio",
-  "description": "这是我的第一个 VuePress 站点",
+  "description": "橙果工作室网站组开发日志",
   "head": [],
   "locales": {}
 }
