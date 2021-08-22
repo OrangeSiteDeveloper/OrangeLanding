@@ -1,25 +1,25 @@
 {
-  "hash": "fc764aa6",
-  "browserHash": "ceae26ae",
+  "hash": "10a10321",
+  "browserHash": "b29ec0d4",
   "optimized": {
     "vue": {
-      "file": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/docs/.vuepress/.cache/vue.js",
-      "src": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "file": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/docs/.vuepress/.cache/vue.js",
+      "src": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
       "needsInterop": false
     },
     "vue-router": {
-      "file": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/docs/.vuepress/.cache/vue-router.js",
-      "src": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "file": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/docs/.vuepress/.cache/vue-router.js",
+      "src": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/node_modules/vue-router/dist/vue-router.esm-bundler.js",
       "needsInterop": false
     },
     "@vuepress/shared": {
-      "file": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/docs/.vuepress/.cache/@vuepress_shared.js",
-      "src": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/node_modules/@vuepress/shared/lib/esm/index.js",
+      "file": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/docs/.vuepress/.cache/@vuepress_shared.js",
+      "src": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/node_modules/@vuepress/shared/lib/esm/index.js",
       "needsInterop": false
     },
     "nprogress": {
-      "file": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/docs/.vuepress/.cache/nprogress.js",
-      "src": "C:/Users/Lenovo/Desktop/RegistrationSystem/RegistrationDOCS/node_modules/nprogress/nprogress.js",
+      "file": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/docs/.vuepress/.cache/nprogress.js",
+      "src": "C:/Users/Lenovo/Desktop/registration-system/RegistrationDOCS/node_modules/nprogress/nprogress.js",
       "needsInterop": true
     }
   }

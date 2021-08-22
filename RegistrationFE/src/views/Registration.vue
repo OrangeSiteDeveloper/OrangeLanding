@@ -1,20 +1,13 @@
 <template>
-  <div>
-    Home
-    <br />
-  </div>
+  <div>Registration</div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "Registration",
   data: () => ({}),
 };
 </script>
 
 <style scoped>
-.logo {
-  width: 60%;
-  margin: auto 0
-}
 </style>

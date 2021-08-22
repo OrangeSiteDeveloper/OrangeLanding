@@ -1,20 +1,15 @@
 <template>
   <div>
-    Home
-    <br />
+    Status
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "Status",
   data: () => ({}),
 };
 </script>
 
 <style scoped>
-.logo {
-  width: 60%;
-  margin: auto 0
-}
 </style>

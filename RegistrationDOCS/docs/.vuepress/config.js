@@ -10,7 +10,10 @@ module.exports = {
       // 嵌套 Group - 最大深度为 2
       {
         text: "开发文档",
-        children: ["/guide/开发文档/说明.md"],
+        children: [
+          "/guide/开发文档/技术相关.md",
+          "/guide/开发文档/需求.md",
+        ],
         // 嵌套示例
         // children: [
         //   {
