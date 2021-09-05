@@ -10,7 +10,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Orange Studio</v-toolbar-title>
+      <v-toolbar-title>Orange Studio </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-btn icon>
@@ -20,9 +20,9 @@
 
     <!-- 侧边抽屉 -->
     <v-navigation-drawer
+      app
       bottom
       v-model="drawer"
-      absolute
       temporary
       src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ING_1901.png"
     >
@@ -44,7 +44,6 @@
           v-for="item in items"
           :key="item.title"
           :to="item.link"
-          
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
