@@ -2,61 +2,86 @@
   <div>
     <!-- 进度 -->
     <v-container>
-      <v-stepper
-        class="stepper"
-        v-model="e6"
-        vertical
-      >
+      <v-stepper class="stepper" v-model="e6" vertical>
+        <!-- dialog -->
+        <div class="text-center">
+          <v-dialog v-model="dialog" width="500">
+            <v-card>
+              <v-card-title class="text-h5 grey lighten-2">
+                请输入学号查询您的信息
+              </v-card-title>
+              <div style="text-field-box">
+                <v-container>
+                  <v-row>
+                    <v-col>
+                      <v-text-field
+                        v-model="student_id"
+                        :counter="12"
+                        label="Student_id"
+                        required
+                      ></v-text-field>
+                      <p>
+                        输入您报名时填写的学号查询自己的报名录取状态，输入正确后上方会显示您的名字，如果输错，点击右上角的
+                        <v-icon> mdi-pencil </v-icon>
+                        即可修改查询id。
+                      </p>
+                      <p>请在确认填写正确之后点击确认</p>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </div>
+
+              <v-divider></v-divider>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" text @click="selectStatus"> 确认 </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
+
         <!-- 1 -->
-        <v-stepper-step :complete="e6 > 1" step="1">
-          报名成功
+        <v-btn class="mx-2 rewrite" fab dark color="cyan" @click="dialog = true">
+          <v-icon dark> mdi-pencil </v-icon>
+        </v-btn>
+        <v-stepper-step :complete="e6 > 1" :step="step.step1" :color="step.color1">
+          hello,{{ this.name }} {{ step.contentStep1 }}
           <small>请关注录取进程</small>
         </v-stepper-step>
         <v-stepper-content step="1">
           <v-card color="grey lighten-1" class="mb-12" height="200px">
-            <v-img
-              height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-            ></v-img>
+            <v-img height="200px" :src="step.img1"></v-img>
           </v-card>
-          <v-btn color="primary" @click="e6 = 2"> Continue </v-btn>
-          <v-btn text> Cancel </v-btn>
         </v-stepper-content>
         <!-- 2 -->
-        <v-stepper-step :complete="e6 > 2" step="2"> 初试通过 </v-stepper-step>
+        <v-stepper-step :complete="e6 > 2" :step="step.step2" :color="step.color2">
+          {{ step.contentStep2 }}
+        </v-stepper-step>
         <v-stepper-content step="2">
           <v-card color="grey lighten-1" class="mb-12" height="200px">
-            <v-img
-              height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/road.jpg"
-            ></v-img>
+            <v-img height="200px" :src="step.img2"></v-img>
           </v-card>
-          <v-btn color="primary" @click="e6 = 3"> Continue </v-btn>
-          <v-btn text> Cancel </v-btn>
         </v-stepper-content>
         <!-- 3 -->
-        <v-stepper-step :complete="e6 > 3" step="3">复试通过</v-stepper-step>
+        <v-stepper-step :complete="e6 > 3" :step="step.step3" :color="step.color3">
+          {{ step.contentStep3 }}
+        </v-stepper-step>
         <v-stepper-content step="3">
           <v-card color="grey lighten-1" class="mb-12" height="200px">
-            <v-img
-              height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/plane.jpg"
-            ></v-img>
+            <v-img height="200px" :src="step.img3"></v-img>
           </v-card>
-          <v-btn color="primary" @click="e6 = 4"> Continue </v-btn>
-          <v-btn text> Cancel </v-btn>
         </v-stepper-content>
         <!-- 4 -->
-        <v-stepper-step step="4">确认加入</v-stepper-step>
+        <v-stepper-step :step="step.step4" :color="step.color4">{{
+          step.contentStep4
+        }}</v-stepper-step>
         <v-stepper-content step="4">
           <v-card color="grey lighten-1" class="mb-12" height="200px">
-            <v-img
-              height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-            ></v-img>
+            <v-img height="200px" :src="step.img4"></v-img>
           </v-card>
-          <v-btn color="primary" @click="e6 = 1"> Continue </v-btn>
-          <v-btn text> Cancel </v-btn>
+          <v-btn color="primary" @click="agreement"> 加入！</v-btn>&nbsp;
+          <v-btn color="error" @click="reject"> 放弃！ </v-btn>
         </v-stepper-content>
       </v-stepper>
     </v-container>
@@ -70,16 +95,13 @@
               <v-card>
                 <v-card-title class="purple lighten-2">
                   <v-icon dark size="42" class="mr-4"> mdi-magnify </v-icon>
-                  <h2 class="text-h4 white--text font-weight-light">
-                    报名成功/未报名
-                  </h2>
+                  <h2 class="text-h4 white--text font-weight-light">报名成功/未报名</h2>
                 </v-card-title>
                 <v-container>
                   <v-row>
                     <v-col cols="12" md="10">
-                      Lorem ipsum dolor sit amet, no nam oblique veritus.
-                      Commune scaevola imperdiet nec ut, sed euismod convenire
-                      principes at. Est et nobis iisque percipit.
+                      一只满怀好奇的小橙子在“橙果工作室”的门口看了看。报名呢？还是不报名呢？
+                      <br />emmm。。。报名的话会找到一群志同道合的人，一起完成心中的梦想，会收获温馨、热爱、友谊好多好多~冲鸭！鸭！鸭！
                     </v-col>
                     <v-col class="hidden-sm-and-down text-right" md="2">
                       <v-icon size="64"> mdi-calendar-text </v-icon>
@@ -99,13 +121,9 @@
                 </v-card-title>
                 <v-container>
                   <v-row>
-                    <v-col cols="12" md="8">
-                      Lorem ipsum dolor sit amet, no nam oblique veritus.
-                      Commune scaevola imperdiet nec ut, sed euismod convenire
-                      principes at. Est et nobis iisque percipit.
-                    </v-col>
-                    <v-col cols="12" md="4">
-                      Lorem ipsum dolor sit amet, no nam oblique veritus.
+                    <v-col cols="12"
+                      >来了来了了，“无情的“的第一次面试~
+                      <br />初试考察的是“第一印象”，大家通过自我介绍来向面试官展示自己个性和优势。可以说专业知识，也可以说人格修养、兴趣爱好等等。内容不限。面试时长为3min/人。
                     </v-col>
                   </v-row>
                 </v-container>
@@ -115,18 +133,14 @@
             <v-timeline-item color="cyan lighten-1" fill-dot right>
               <v-card>
                 <v-card-title class="cyan lighten-1">
-                  <v-icon class="mr-4" dark size="42">
-                    mdi-email-outline
-                  </v-icon>
-                  <h2 class="text-h4 white--text font-weight-light">
-                    复试通过/未通过
-                  </h2>
+                  <v-icon class="mr-4" dark size="42"> mdi-email-outline </v-icon>
+                  <h2 class="text-h4 white--text font-weight-light">复试通过/未通过</h2>
                 </v-card-title>
                 <v-container>
                   <v-row>
-                    <v-col v-for="n in 3" :key="n" cols="12" md="4">
-                      Lorem ipsum dolor sit amet, no nam oblique veritus no nam
-                      oblique.
+                    <v-col cols="12">
+                      经过”无情的“第一次面试同学将迎来一次长跑——第二次面试。
+                      <br />面试为期一周左右，大家会收到由小组发出的学习任务，经行为期一周的自学之后会对大家学习内容进行一次考核以检验大家的学习能力。
                     </v-col>
                   </v-row>
                 </v-container>
@@ -137,9 +151,7 @@
             <v-timeline-item color="red lighten-1" fill-dot left small>
               <v-card>
                 <v-card-title class="red lighten-1 justify-end">
-                  <h2 class="text-h4 mr-4 white--text font-weight-light">
-                    确认加入
-                  </h2>
+                  <h2 class="text-h4 mr-4 white--text font-weight-light">确认加入</h2>
                   <v-icon dark size="42"> mdi-account-multiple-outline </v-icon>
                 </v-card-title>
                 <v-container>
@@ -148,10 +160,9 @@
                       <v-icon size="64"> mdi-server-network </v-icon>
                     </v-col>
                     <v-col cols="12" md="10">
-                      Lorem ipsum dolor sit amet, no nam oblique veritus.
-                      Commune scaevola imperdiet nec ut, sed euismod convenire
-                      principes at. Est et nobis iisque percipit, an vim zril
-                      disputando voluptatibus.
+                      到此，大家已经通过了全部面试，你的学识和能力已经得到了我们的认可，满足加入橙果工作室的全部要求。
+                      <br />在剩余时间内随时可以选择加入，当然也可以选择拒绝。It's to
+                      you.敬候佳音~
                     </v-col>
                   </v-row>
                 </v-container>
@@ -169,7 +180,214 @@ export default {
   name: "Status",
   data: () => ({
     e6: 1,
+    name: "小橙子",
+    dialog: false,
+    student_id: "",
+    step: {
+      contentStep1: ",恭喜你报名成功.",
+      contentStep2: "初试进行",
+      contentStep3: "复试进行",
+      contentStep4: "确认是否加入",
+      color1: "rgb(104,166,255)",
+      color2: "rgb(245,111,135)",
+      color3: "rgb(88,245,162)",
+      color4: "rgb(189,194,232)",
+      step1: 1,
+      step2: 2,
+      step3: 3,
+      step4: 4,
+      img1:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F.png",
+      img2:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F.png",
+      img3:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9F.png",
+      img4:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5.png",
+    },
+    student_id: "",
+    screenWidth: document.body.clientWidth,
   }),
+  mounted() {
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth;
+        that.screenWidth = window.screenWidth;
+      })();
+    };
+
+    var de = document.documentElement;
+    const result = de.offsetWidth;
+
+    if (result <= 1200) {
+      this.step.img1 =
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png";
+      this.step.img2 =
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png";
+      this.step.img3 =
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png";
+      this.step.img4 =
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png";
+    }
+  },
+  watch: {
+    screenWidth(val) {
+      // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
+      if (!this.timer) {
+        // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
+        this.screenWidth = val;
+        this.timer = true;
+        let that = this;
+
+        setInterval(function () {
+          // 打印screenWidth变化的值
+          if (that.screenWidth <= 1200) {
+            console.log(that.screenWidth);
+
+            that.step.img1 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png";
+            that.step.img2 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png";
+            that.step.img3 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png";
+            that.step.img4 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png";
+          } else {
+            console.log(that.screenWidth);
+
+            that.step.img1 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F.png";
+            that.step.img2 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F.png";
+            that.step.img3 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png";
+            that.step.img4 =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5.png";
+          }
+          that.timer = false;
+        }, 1000);
+      }
+    },
+  },
+  methods: {
+    selectStatus() {
+      const student = {
+        student_id: this.student_id,
+      };
+
+      this.$axios
+        .post("http://139.9.118.85:8001/student/select", student)
+        .then((res) => {
+          console.log("ddd");
+          localStorage.setItem("student", res.data[0].student_id);
+          this.name = res.data[0].user_name;
+          this.student_id = res.data[0].student_id;
+          if (res.data[0].status == 20) {
+            this.e6 = 2;
+            this.step.contentStep2 = "初试未通过";
+            this.step.color2 = "red";
+            this.step.step2 = "×";
+          } else if (res.data[0].status == 30) {
+            this.e6 = 3;
+            this.step.contentStep3 = "复试未通过";
+            this.step.color3 = "red";
+            this.step.step3 = "×";
+          } else if (res.data[0].status == 1) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 2) {
+            this.e6 = res.data[0].status;
+            this.contentStep2 = "初试通过";
+          } else if (res.data[0].status == 3) {
+            this.e6 = res.data[0].status;
+            this.contentStep3 = "复试通过";
+          } else if (res.data[0].status == 4) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 41) {
+            this.e6 = 4;
+            this.step.contentStep4 = "您已经确认加入我们";
+          } else if (res.data[0].status == 42) {
+            this.e6 = 4;
+            this.step.contentStep4 = "您已经拒绝加入我们";
+          }
+          this.dialog = false;
+          location.reload();
+        })
+        .catch((err) => {});
+    },
+    agreement() {
+      const student = {
+        student_id: this.student_id,
+        status: 41,
+      };
+
+      this.$axios
+        .post("http://localhost:8001/student/confirm", student)
+        .then((res) => {
+          console.log("稍后您会收到我们的offer");
+        })
+        .catch((err) => {});
+    },
+    reject() {
+      const student = {
+        student_id: this.student_id,
+        status: 42,
+      };
+
+      this.$axios
+        .post("http://localhost:8001/student/confirm", student)
+        .then((res) => {
+          console.log("感谢您参与我们的面试");
+        })
+        .catch((err) => {});
+    },
+  },
+  created() {
+    this.dialog = true;
+
+    if (localStorage.getItem("student")) {
+      const studentObj = {
+        student_id: localStorage.getItem("student"),
+      };
+      this.$axios
+        .post("http://139.9.118.85:8001/student/select", studentObj)
+        .then((res) => {
+          this.dialog = false;
+          this.name = res.data[0].user_name;
+          this.student_id = res.data[0].student_id;
+          if (res.data[0].status == 20) {
+            this.e6 = 2;
+            this.step.contentStep2 = "初试未通过";
+            this.step.color2 = "red";
+            this.step.step2 = "×";
+          } else if (res.data[0].status == 30) {
+            this.e6 = 3;
+            this.step.contentStep3 = "复试未通过";
+            this.step.color3 = "red";
+            this.step.step3 = "×";
+          } else if (res.data[0].status == 1) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 2) {
+            this.e6 = res.data[0].status;
+            this.contentStep2 = "初试通过";
+          } else if (res.data[0].status == 3) {
+            this.e6 = res.data[0].status;
+            this.contentStep3 = "复试通过";
+          } else if (res.data[0].status == 4) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 41) {
+            this.e6 = 4;
+            this.step.contentStep4 = "您已经确认加入我们";
+          } else if (res.data[0].status == 42) {
+            this.e6 = 4;
+            this.step.contentStep4 = "您已经拒绝加入我们";
+          }
+        })
+        .catch((err) => {
+          console.log("出现错误");
+        });
+    }
+  },
 };
 </script>
 
@@ -180,6 +398,16 @@ export default {
 }
 
 .stepper {
-  box-shadow: 0px 3px 4px -2px rgb(0 0 0 / 20%), 0px 12px 31px 0px rgb(0 0 0 / 14%), 0px 1px 22px 0px rgb(0 0 0 / 12%)!important;
+  box-shadow: 0px 3px 4px -2px rgb(0 0 0 / 20%), 0px 12px 31px 0px rgb(0 0 0 / 14%),
+    0px 1px 22px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.rewrite {
+  float: right;
+  margin-top: 2%;
+}
+
+.text-field-box {
+  padding: 10px 10px;
 }
 </style>

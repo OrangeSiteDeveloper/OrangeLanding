@@ -9,7 +9,6 @@
       style="background-position: center 0%"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
       <v-toolbar-title>Orange Studio </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -71,8 +70,8 @@ export default {
     ],
   }),
   methods: {},
+  created() {},
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

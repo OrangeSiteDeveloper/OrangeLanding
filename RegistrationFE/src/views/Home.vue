@@ -6,12 +6,86 @@
         <v-col>
           <v-card :height="sidePic.height" class="mx-auto">
             <v-card-text>
-              <v-img :src="sidePic.src"></v-img>
+              <v-img :src="sidePic.src">
+                <!-- PC -->
+                <v-col v-show="summerShowPc" cols="5" offset="1" class="summer-off-box">
+                  <p class="text-h4 text--primary">欢迎你们——未来的“小橙子~”</p>
+                  <p>orange studio</p>
+                  <div class="text--primary summer-box">
+                    <p>初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详，</p>
+                    <p>实验北和机电A也还是未知之地、神秘之所。</p>
+
+                    <p>此刻，你或许坐在椅上，激战峡谷；</p>
+                    <p>或许躺在床上，追随月光……</p>
+                    <p>
+                      有时就着漫天朝霞，憧憬未来的大学时光，却不由想起五月的阳光，黯然神伤。
+                    </p>
+                    <p>
+                      我们，总是贪恋舒适区的安详，当思绪飞到陌生的土地上方，对自己无数疑问便爬到心上。
+                    </p>
+                    <p>来工大做什么？毕业之后将成为什么样的人？</p>
+                    <p>其实更想知道，M78星云的光是否曾照耀远方~</p>
+                    <p>其实更想知道的是，进入大学后的我，此刻，到底最需要的是什么？</p>
+                  </div>
+                  <v-card-actions>
+                    <v-btn text color="teal accent-4" @click="reveal = true">
+                      <a href="http://139.9.118.85:99/#/" target="_blank"
+                        >现在，我将告诉你答案——橙果工作室。</a
+                      >
+                    </v-btn>
+                  </v-card-actions>
+
+                  <v-expand-transition>
+                    <v-card
+                      v-if="reveal"
+                      class="transition-fast-in-fast-out v-card--reveal"
+                      style="height: 100%"
+                    >
+                      <v-card-actions class="pt-0">
+                        <v-btn text color="teal accent-4" @click="reveal = false"
+                          >Close</v-btn
+                        >
+                      </v-card-actions>
+                    </v-card>
+                  </v-expand-transition>
+                </v-col>
+                <!-- mobile -->
+                <v-col
+                  v-show="!summerShowPc"
+                  cols="5"
+                  offset="1"
+                  class="summer-off-box"
+                  style="padding-top: 0"
+                >
+                  <p>orange studio</p>
+                  <div class="text--primary summer-box">
+                    <p style="font-size: 10px">
+                      初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼
+                    </p>
+                  </div>
+                </v-col>
+              </v-img>
+              <!-- mobile -->
+              <v-col
+                v-show="!summerShowPc"
+                cols="10"
+                offset="1"
+                class="summer-off-box"
+                style="padding-top: 0"
+              >
+                <div class="text--primary summer-box">
+                  <p style="font-size: 10px">
+                    初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼的温暖安详楼的温暖安详，
+                    初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼的温暖安详楼的温暖安详，
+                  </p>
+                </div>
+              </v-col>
             </v-card-text>
           </v-card>
         </v-col>
       </v-row>
     </v-container>
+
     <!-- center -->
     <v-container>
       <v-row>
@@ -20,21 +94,21 @@
           <v-card>
             <v-card-text>
               <v-card-text>
-                <div>Word of the Day</div>
-                <p class="text-h4 text--primary">be•nev•o•lent</p>
-                <p>adjective</p>
+                <p class="text-h4 text--primary">小组介绍</p>
+                <p>Group Introduction</p>
                 <div class="text--primary">
-                  well meaning and kindly.<br />
-                  "a benevolent smile"
+                  <p class="group-text-box text-box-lineh">
+                    硬件组，学习硬件知识，打通底层逻辑；<br />
+                    嵌入式组，赋能传统装备，万物皆可智能；<br />
+                    网站组，寥寥数行代码，页面千变万化；<br />
+                    大数据组，分析数据变化，决胜数据时代；<br />
+                    程序设计组，大道至简，行稳致远。
+                  </p>
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="deep-purple accent-4"> Learn More </v-btn>
+                <v-btn text color="deep-purple accent-4">欢迎加入学习小组~</v-btn>
               </v-card-actions>
-
-              <div>
-                <v-card-title> Top western road trips </v-card-title>
-              </div>
             </v-card-text>
 
             <v-card-text>
@@ -44,18 +118,18 @@
               ></v-img>
 
               <v-card-text>
-                <div>Word of the Day</div>
-                <p class="text-h4 text--primary">el·ee·mos·y·nar·y</p>
-                <p>adjective</p>
+                <p class="text-h4 text--primary">部门简介</p>
+                <p>Department introduction</p>
                 <div class="text--primary">
-                  relating to or dependent on charity; charitable.<br />
-                  "an eleemosynary educational institution."
+                  <p class="text-box-lineh group-text-box">
+                    学习部、秘书部、宣传部、外联部，作为社团运行中枢，统筹负责工作室的日常运营，包括各种活动的筹备和举办、成员学习进度的督导、资源的协调调配，大小会议室的使用（**工作室设有专门的会议室当作自习室向同学们开放，干净整洁、安静、配备空调和热水！**）
+                  </p>
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="teal accent-4" @click="reveal = true">
-                  Learn More
-                </v-btn>
+                <v-btn text color="teal accent-4" @click="reveal = true"
+                  >欢迎加入管理部门~</v-btn
+                >
               </v-card-actions>
 
               <v-expand-transition>
@@ -67,16 +141,15 @@
                   <v-card-text class="pb-0">
                     <p class="text-h4 text--primary">Origin</p>
                     <p>
-                      late 16th century (as a noun denoting a place where alms
-                      were distributed): from medieval Latin eleemosynarius,
-                      from late Latin eleemosyna ‘alms’, from Greek eleēmosunē
-                      ‘compassion’
+                      late 16th century (as a noun denoting a place where alms were
+                      distributed): from medieval Latin eleemosynarius, from late Latin
+                      eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
                     </p>
                   </v-card-text>
                   <v-card-actions class="pt-0">
-                    <v-btn text color="teal accent-4" @click="reveal = false">
-                      Close
-                    </v-btn>
+                    <v-btn text color="teal accent-4" @click="reveal = false"
+                      >Close</v-btn
+                    >
                   </v-card-actions>
                 </v-card>
               </v-expand-transition>
@@ -100,59 +173,81 @@
               ></v-sparkline>
             </v-card-text>
           </v-card>
+
           <br />
           <v-card>
             <v-card-text>
               <v-card-text>
-                <div>Word of the Day</div>
-                <p class="text-h4 text--primary">be•nev•o•lent</p>
-                <p>adjective</p>
+                <div></div>
+                <p class="text-h4 text--primary">成果er展示</p>
+                <p>result</p>
                 <div class="text--primary">
-                  well meaning and kindly.<br />
-                  "a benevolent smile"
+                  <p class="group-text-box text-box-lineh">
+                    制作和维护学校以及学院官网以及工作室官网。
+                    搭建和维护大学城融创云平台。 作为电脑义诊的主力服务师生。
+                    参加电子设计大赛、机器人竞赛等大型竞赛。
+                    对社团成员以及广大师生开展信息化科普，提高我校信息化素质。
+                    设计制作新生返校数据之大屏展示。
+                  </p>
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="deep-purple accent-4"> Learn More </v-btn>
+                <v-btn text color="deep-purple accent-4">Learn More</v-btn>
               </v-card-actions>
 
               <div>
-                <v-card-title> Top western road trips </v-card-title>
+                <v-card-title>Top western road trips</v-card-title>
               </div>
             </v-card-text>
           </v-card>
         </v-col>
         <!-- right -->
+
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <v-card>
             <v-card-text>
               <v-container>
                 <v-row dense>
                   <v-col cols="12">
-                    <v-card height="200" dark>
+                    <v-card height="200">
                       <div class="d-flex flex-no-wrap justify-space-between">
                         <v-img
                           height="200"
-                          src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+                          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1)"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2.jpg"
                         ></v-img>
+                        <v-card-title
+                          style="position: absolute; color: white;font-weight: 500;top: 138px;}"
+                          >电脑义诊</v-card-title
+                        >
                       </div>
                     </v-card>
                     <br />
-                    <v-card height="200" dark>
+                    <v-card height="200">
                       <div class="d-flex flex-no-wrap justify-space-between">
                         <v-img
                           height="200"
-                          src="https://cdn.vuetifyjs.com/images/cards/road.jpg"
+                          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1.jpg"
                         ></v-img>
+                        <v-card-title
+                          style="position: absolute; color: white;font-weight: 500;top: 138px;}"
+                          >Eat(); Sleep(); Code(); Repeat();</v-card-title
+                        >
                       </div>
                     </v-card>
                     <br />
-                    <v-card height="200" dark>
+                    <v-card height="200">
                       <div class="d-flex flex-no-wrap justify-space-between">
                         <v-img
                           height="200"
-                          src="https://cdn.vuetifyjs.com/images/cards/plane.jpg"
+                          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3.jpg"
                         ></v-img>
+                        <v-card-title
+                          style="position: absolute; color: white;font-weight: 500;top: 138px;}"
+                          >清灰换硅脂</v-card-title
+                        >
                       </div>
                     </v-card>
                   </v-col>
@@ -164,38 +259,16 @@
           <v-card>
             <v-card-text>
               <div class="content-box-right">
-                <v-card-subtitle class="pb-0"> Number 10 </v-card-subtitle>
-
                 <v-card-text>
-                  <div>Word of the Day</div>
-                  <p class="text-h4 text--primary">el·ee·mos·y·nar·y</p>
+                  <div>学习氛围浓厚</div>
+                  <p class="text-h4 text--primary">势力范围介绍</p>
                   <p>adjective</p>
                   <div class="text--primary">
-                    relating to or dependent on charity; charitable.<br />
-                    "an eleemosynary educational institution."
-                  </div>
-                  <div class="text--primary">
-                    relating to or dependent on charity; charitable.<br />
-                    "an eleemosynary educational institution."
-                  </div>
-                  <div class="text--primary">
-                    relating to or dependent on charity; charitable.<br />
-                    "an eleemosynary educational institution."
-                  </div>
-                  <div class="text--primary">
-                    relating to or dependent on charity; charitable.<br />
-                  </div>
-                  <div class="text--primary">
-                    relating to or dependent on charity; charitable.<br />
-                    "an eleemosynary educational institution."
+                    <p class="text-box-lineh group-text-box">
+                      社团主要活动场所位于图书馆一楼东南部的网络信息中心，共包括：大会议室，小会议室，研发小屋，维修仓库，社团办公室等部分组成。其中大会议室除承担小组活动之外作为24小时自习室开放，为同学们提供干净整洁、安静的学习环境，小会议室在必要时刻亦可用于自习。此外，我们将提供二十余个工位给有需求的同学使用，以支持他的学习、实践活动。
+                    </p>
                   </div>
                 </v-card-text>
-                <v-card-actions>
-                  <v-btn text color="teal accent-4" @click="reveal = true">
-                    Learn More
-                  </v-btn>
-                </v-card-actions>
-
                 <v-expand-transition>
                   <v-card
                     v-if="reveal"
@@ -205,27 +278,39 @@
                     <v-card-text class="pb-0">
                       <p class="text-h4 text--primary">Origin</p>
                       <p>
-                        late 16th century (as a noun denoting a place where alms
-                        were distributed): from medieval Latin eleemosynarius,
-                        from late Latin eleemosyna ‘alms’, from Greek eleēmosunē
-                        ‘compassion’
+                        late 16th century (as a noun denoting a place where alms were
+                        distributed): from medieval Latin eleemosynarius, from late Latin
+                        eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
                       </p>
                     </v-card-text>
                     <v-card-actions class="pt-0">
-                      <v-btn text color="teal accent-4" @click="reveal = false">
-                        Close
-                      </v-btn>
+                      <v-btn text color="teal accent-4" @click="reveal = false"
+                        >Close</v-btn
+                      >
                     </v-card-actions>
                   </v-card>
                 </v-expand-transition>
               </div>
-              <v-img
+              <!-- <v-img
                 class="white--text align-end img-box"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.jpg"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               >
-                <v-card-title>Top 10 Australian beaches</v-card-title>
-              </v-img>
+                <v-card-title>工作室环境</v-card-title>
+              </v-img>-->
+              <v-carousel cycle show-arrows-on-hover :height="carouselHeight">
+                <v-carousel-item
+                  v-for="(slide, i) in slides"
+                  :src="slide"
+                  :key="i"
+                ></v-carousel-item>
+              </v-carousel>
             </v-card-text>
+          </v-card>
+          <br />
+
+          <v-card style="height: 12.5rem">
+            <div></div>
           </v-card>
         </v-col>
       </v-row>
@@ -233,28 +318,29 @@
     <!-- down -->
     <v-container>
       <v-row>
+        <!-- left -->
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <v-card class="mx-auto">
             <v-card-text>
               <v-container>
                 <v-row dense>
                   <v-col cols="12">
-                    <v-card-title style="color: black" class="text-h5">
-                      Unlimited music now
-                    </v-card-title>
-
-                    <v-card-subtitle style="color: black"
-                      >Listen to your favorite artists and albums whenever and
-                      wherever, online and offline.</v-card-subtitle
+                    <v-card-title style="color: black" class="text-h5"
+                      >培养计划</v-card-title
                     >
 
-                    <v-card-actions>
-                      <v-btn text> Listen Now </v-btn>
-                    </v-card-actions>
+                    <p class="group-text-box text-box-lineh">
+                      全方位了解计算机领域知识同时，按照各组研究方向展开进一步学习和实践活动。
+                      “导师制”助力大学生涯不迷茫。 “项目制”让你学有所练，练有所得。
+                    </p>
+
+                    <!-- <v-card-actions>
+                      <v-btn text>Listen Now</v-btn>
+                    </v-card-actions> -->
                   </v-col>
 
                   <v-col v-for="(item, i) in items" :key="i" cols="12">
-                    <v-img height="150" class="img-box" :src="item.imgSrc">
+                    <v-img height="150" class="img-box" :imgColor="item.imgColor">
                       <div class="d-flex flex-no-wrap justify-space-between">
                         <div>
                           <v-card-title
@@ -262,9 +348,7 @@
                             v-text="item.title"
                           ></v-card-title>
 
-                          <v-card-subtitle
-                            v-text="item.artist"
-                          ></v-card-subtitle>
+                          <v-card-subtitle v-text="item.artist"></v-card-subtitle>
 
                           <v-card-actions>
                             <v-btn
@@ -279,21 +363,13 @@
                               <v-icon>mdi-play</v-icon>
                             </v-btn>
 
-                            <v-btn
-                              v-else
-                              class="ml-2 mt-5"
-                              outlined
-                              rounded
-                              small
+                            <v-btn v-else class="ml-2 mt-5" outlined rounded small
+                              >START RADIO</v-btn
                             >
-                              START RADIO
-                            </v-btn>
                           </v-card-actions>
                         </div>
 
-                        <v-avatar class="ma-3" size="125" tile>
-                          <!-- <v-img :src="item.src"></v-img> -->
-                        </v-avatar>
+                        <v-avatar class="ma-3" size="125" tile></v-avatar>
                       </div>
                     </v-img>
                   </v-col>
@@ -302,21 +378,18 @@
             </v-card-text>
           </v-card>
         </v-col>
+        <!-- right -->
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <v-card class="mx-auto">
             <v-card-text>
               <v-container fluid>
                 <v-row dense>
-                  <v-col
-                    v-for="card in cards"
-                    :key="card.title"
-                    :cols="card.flex"
-                  >
+                  <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
                     <v-card>
                       <v-img
                         :src="card.src"
                         class="white--text align-end"
-                        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
                         height="229px"
                       >
                         <v-card-title v-text="card.title"></v-card-title>
@@ -383,37 +456,39 @@ export default {
       {
         color: "#1F7087",
         src: "https://cdn.vuetifyjs.com/images/cards/foster.jpg",
-        title: "Supermodel",
-        artist: "Foster the People",
+        title: "导师计划",
+        artist: "teaching sessions",
         imgSrc:
           "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/699pic_e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg",
+        imgColor: "img1",
       },
       {
         color: "#952175",
         src: "https://cdn.vuetifyjs.com/images/cards/halcyon.png",
-        title: "Halcyon Days",
-        artist: "Ellie Goulding",
-        imgSrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.jpg",
+        title: "项目驱动",
+        artist: " project-based",
+        imgSrc: "linear-gradient(to right,#d84c4c,#e8a45d,#e5f1a5)",
+        imgColor: "img2",
       },
     ],
     cards: [
       {
-        title: "Pre-fab homes",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        title: "Bluuuuuuuu",
+        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/5a91239983a3.png",
         flex: 12,
       },
       {
-        title: "Favorite road trips",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        title: "Orange Studio",
+        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png",
         flex: 6,
       },
       {
-        title: "Best airlines",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        title: "Eat code sleep loop",
+        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9.png",
         flex: 6,
       },
     ],
-    rightHeight: 599,
+    rightHeight: 0,
     messages: [
       {
         from: "You",
@@ -434,6 +509,23 @@ export default {
         color: "deep-purple lighten-1",
       },
     ],
+    colors: [
+      "indigo",
+      "warning",
+      "pink darken-2",
+      "red lighten-1",
+      "deep-purple accent-4",
+    ],
+    slides: [
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+    ],
+    carouselHeight: 555.9,
+    screenWidth: document.body.clientWidth,
+    summerShowPc: true,
   }),
   created() {
     var de = document.documentElement;
@@ -442,10 +534,65 @@ export default {
     if (result <= 600) {
       this.carousel.height = 200;
       this.sidePic.height = 300;
-      this.sidePic.src =
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
+      this.sidePic.src = "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
       this.rightHeight = 300;
+      this.summerShowPc = false;
+    } else {
+      this.summerShowPc = true;
     }
+  },
+  mounted() {
+    let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
+    this.carouselHeight = carouselWidth * 1.5047;
+
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth;
+        that.screenWidth = window.screenWidth;
+      })();
+    };
+  },
+  watch: {
+    screenWidth(val) {
+      // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
+      if (!this.timer) {
+        // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
+        this.screenWidth = val;
+        this.timer = true;
+        let that = this;
+
+        let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
+        setTimeout(function () {
+          // 打印screenWidth变化的值
+          console.log(that.screenWidth);
+          if (that.screenWidth <= 600) {
+            console.log(that.screenWidth);
+            that.carouselHeight = 238.18;
+            that.carousel.height = 200;
+            that.sidePic.height = 300;
+            that.sidePic.src =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
+            that.rightHeight = 300;
+            that.carouselHeight = carouselWidth * 1.5047;
+          } else {
+            that.carouselHeight = 555.9;
+            that.carousel.height = 700;
+            that.sidePic.height = "";
+            that.sidePic.src =
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png";
+            that.rightHeight = 599;
+            that.carouselHeight = carouselWidth * 1.5047;
+          }
+          that.timer = false;
+        }, 400);
+      }
+    },
+  },
+  created() {
+    var lastname = localStorage.getItem("bbb");
+
+    console.log(lastname);
   },
 };
 </script>
@@ -465,5 +612,35 @@ export default {
 .img-box {
   border-radius: 6px;
 }
-</style>
 
+[imgColor="img1"] {
+  background-image: linear-gradient(to right, #d8eddd, #c3e4e5, #a5d7f1);
+}
+[imgColor="img2"] {
+  background-image: linear-gradient(
+    to right,
+    rgb(242, 57, 101),
+    rgb(248, 99, 66),
+    rgb(253, 132, 41)
+  );
+}
+
+.summer-box {
+  font-size: 20px;
+}
+
+.summer-off-box {
+  padding-top: 7%;
+}
+.group-text-box {
+  font-size: 1rem !important;
+}
+
+.text-box-lineh {
+  line-height: 31px;
+}
+
+.content-box-right[data-v-fae5bece] {
+  white-space: normal !important;
+}
+</style>

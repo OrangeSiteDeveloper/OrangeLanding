@@ -2,22 +2,30 @@
   <div class="box">
     <v-container>
       <v-row>
-        <!-- right -->
+        <!-- left -->
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <v-card class="mx-auto">
             <v-card-text>
               <v-form ref="form" v-model="valid" lazy-validation>
+                <!-- 学号 -->
+                <v-text-field
+                  v-model="form.student_id"
+                  :counter="12"
+                  :rules="studentIdRules"
+                  label="学号"
+                  required
+                ></v-text-field>
                 <!-- 姓名 -->
                 <v-text-field
-                  v-model="name"
-                  :counter="10"
+                  v-model="form.user_name"
+                  :counter="6"
                   :rules="nameRules"
                   label="姓名"
                   required
                 ></v-text-field>
                 <!-- 性别 -->
                 <v-select
-                  v-model="gender"
+                  v-model="form.gender"
                   :items="genders"
                   :rules="[(v) => !!v || '性别不能为空！']"
                   label="性别"
@@ -25,14 +33,15 @@
                 ></v-select>
                 <!-- 专业 -->
                 <v-text-field
-                  v-model="faculty"
+                  v-model="form.major"
                   :rules="facultyRules"
                   label="专业"
                   required
                 ></v-text-field>
                 <!-- 手机 -->
                 <v-text-field
-                  v-model="mobile"
+                  v-model="form.phone"
+                  :counter="11"
                   :rules="mobileRules"
                   label="手机号码"
                   required
@@ -40,14 +49,14 @@
                 ></v-text-field>
                 <!-- QQ -->
                 <v-text-field
-                  v-model="qq"
+                  v-model="form.qq"
                   :rules="qqRules"
                   label="QQ"
                   required
                 ></v-text-field>
                 <!-- 邮箱 -->
                 <v-text-field
-                  v-model="email"
+                  v-model="form.email"
                   :rules="emailRules"
                   label="电子邮箱"
                   required
@@ -55,25 +64,25 @@
                 ></v-text-field>
                 <!-- 小组 -->
                 <v-select
-                  v-model="select1"
+                  v-model="form.group"
                   :items="groups"
                   :rules="[(v) => !!v || '小组不能为空！']"
-                  label="想加入的学习小组"
+                  label="意向小组"
                   required
                 ></v-select>
                 <!-- 部门 -->
                 <v-select
-                  v-model="select2"
+                  v-model="form.department"
                   :items="departments"
                   :rules="[(v) => !!v || '部门不能为空！']"
-                  label="想加入的部门"
+                  label="意向部门（可选）"
                   required
                 ></v-select>
                 <!-- 自我介绍 -->
                 <v-textarea
-                  v-model="intro"
+                  v-model="form.intro"
                   :rules="introRules"
-                  label="自我介绍"
+                  label="用一段简短的文字介绍你自己！"
                   required
                   :loading="loading"
                   placeholder="说点儿什么 这将有助于我们更好的了解你"
@@ -87,12 +96,8 @@
                 ></v-checkbox>
                 <!-- 提交 -->
                 <span>
-                  <v-btn
-                    :disabled="!valid"
-                    color="success"
-                    class="mr-4"
-                    @click="validate"
-                    >From the top</v-btn
+                  <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate"
+                    >确认提交</v-btn
                   >
                   <v-dialog max-width="500" v-model="dialog">
                     <v-card>
@@ -107,11 +112,7 @@
                           </div>
                         </v-card-text>
                         <v-card-actions>
-                          <v-btn
-                            text
-                            color="teal accent-4"
-                            @click="reveal = true"
-                          >
+                          <v-btn text color="teal accent-4" @click="reveal = true">
                             Learn More
                           </v-btn>
                         </v-card-actions>
@@ -125,18 +126,14 @@
                             <v-card-text class="pb-0">
                               <p class="text-h4 text--primary">Origin</p>
                               <p>
-                                late 16th century (as a noun denoting a place
-                                where alms were distributed): from medieval
-                                Latin eleemosynarius, from late Latin eleemosyna
-                                ‘alms’, from Greek eleēmosunē ‘compassion’
+                                late 16th century (as a noun denoting a place where alms
+                                were distributed): from medieval Latin eleemosynarius,
+                                from late Latin eleemosyna ‘alms’, from Greek eleēmosunē
+                                ‘compassion’
                               </p>
                             </v-card-text>
                             <v-card-actions class="pt-0">
-                              <v-btn
-                                text
-                                color="teal accent-4"
-                                @click="reveal = false"
-                              >
+                              <v-btn text color="teal accent-4" @click="reveal = false">
                                 Close
                               </v-btn>
                             </v-card-actions>
@@ -147,16 +144,14 @@
                   </v-dialog>
                 </span>
                 <!-- 重写 -->
-                <v-btn color="error" class="mr-4" @click="reset">
-                  重新填写
-                </v-btn>
+                <v-btn color="error" class="mr-4" @click="reset"> 重新填写 </v-btn>
               </v-form>
             </v-card-text>
           </v-card>
         </v-col>
-        <!-- left -->
+        <!-- right -->
         <v-col v-show="showOr" cols="12" sm="6" md="6" lg="6" xl="6">
-          <v-card height="872" class="mx-auto">
+          <v-card height="942" class="mx-auto">
             <v-card-text>
               <v-img
                 height="840"
@@ -174,33 +169,45 @@
 export default {
   name: "Registration",
   data: () => ({
+    form: {
+      student_id: "",
+      user_name: "",
+      gender: null,
+      major: "",
+      phone: "",
+      qq: "",
+      email: "",
+      // 小组
+      group: null,
+      // 部门
+      department: null,
+      intro: "",
+    },
     valid: true,
-    name: "",
+    studentIdRules: [
+      (v) => !!v || "学号不能为空！",
+      (v) => (v && v.length <= 12) || "学号不能超过12个数字",
+    ],
     nameRules: [
       (v) => !!v || "姓名不能为空！",
       (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
     ],
-    gender: null,
     genders: ["男", "女"],
     // checkbox: false,
-    faculty: "",
-    facultyRules: [(v) => !!v || "院系不能为空！"],
-    mobile: "",
-    mobileRules: [(v) => !!v || "手机号码不能为空！"],
-    qq: "",
+    facultyRules: [(v) => !!v || "专业不能为空！"],
+    mobileRules: [
+      (v) => !!v || "手机号码不能为空！",
+      (v) => (v && v.length <= 11) || "手机号码不能超过11个数字",
+    ],
     qqRules: [(v) => !!v || "qq不能为空！"],
-    email: "",
     emailRules: [
       (v) => !!v || "邮箱不能为空！",
       (v) => /.+@.+\..+/.test(v) || "邮箱格式不正确",
     ],
-    select1: null,
     groups: ["网站组", "程序设计组", "嵌入式组", "大数据组", "硬件组"],
     checkbox: false,
-    select2: null,
     departments: ["无", "秘书部", "宣传部", "外联部", "学习部"],
     // checkbox: false,
-    intro: "",
     introRules: [(v) => !!v || "自我介绍不能为空！"],
     showOr: true,
     loading: "false",
@@ -208,15 +215,23 @@ export default {
   }),
 
   methods: {
+    // 提交表单
     validate() {
       let flag = this.$refs.form.validate();
       if (flag === true) {
         this.loading = true;
 
-        setTimeout(() => {
-          this.loading = false;
-          this.dialog = true;
-        }, 2000);
+        this.form.status = 1;
+        console.log(this.form);
+        this.$axios
+          .post("http://139.9.118.85:8001/student/add", this.form)
+          .then((res) => {
+            this.loading = false;
+            this.dialog = true;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     },
     reset() {

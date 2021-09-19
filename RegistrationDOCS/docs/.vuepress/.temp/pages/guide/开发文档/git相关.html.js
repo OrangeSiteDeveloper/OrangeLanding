@@ -46,8 +46,14 @@ export const data = {
   ],
   "filePathRelative": "guide/开发文档/git相关.md",
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1629657708000,
+    "contributors": [
+      {
+        "name": "zhangzhibang0309",
+        "email": "295854713@qq.com",
+        "commits": 1
+      }
+    ]
   }
 }
 

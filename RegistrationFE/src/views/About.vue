@@ -12,27 +12,28 @@
             >
               <template v-for="s in card.src">
                 <v-card :flag="card.flag" :height="card.height" :key="s" light>
-                  <v-img
-                    :height="card.height"
-                    :src="s"
-                    class="white--text align-end"
-                  >
-                    <div v-show="card.flagCover === 'a'" class="box">
+                  <v-img :height="card.height" :src="s" class="white--text align-end">
+                    <!-- 二 -->
+                    <div
+                      v-show="card.flagCover === 'a'"
+                      class="box"
+                      style="overflow: auto"
+                    >
                       <v-card-text>
                         <div>Word of the Day</div>
-                        <p class="text-h4 text--primary">el·ee·mos·y·nar·y</p>
+                        <p class="text-h4 text--primary">小组活动</p>
                         <p>adjective</p>
                         <div class="text--primary">
-                          relating to or dependent on charity; charitable.<br />
-                          "an eleemosynary educational institution."
+                          学习知识、经验分享、头脑风暴为主要组成的小组活动是橙果er日常活动的主要形式。
+                          <br />
+                          <br />在这里，学长和学姐会带领大家推开信息世界遮掩许久的门户，走入广阔无垠的互联网世界，开启“程序人生”。同时这里也是沟通交流的平台，无数奇思妙想在这里生发，头脑风暴在这里酝酿。
+                          <br />
+                          <br />用知识去创造，用热爱去碰撞下个“风口”，或许就将由你来创造！
                         </div>
                       </v-card-text>
+
                       <v-card-actions>
-                        <v-btn
-                          text
-                          color="teal accent-4"
-                          @click="reveal = true"
-                        >
+                        <v-btn text color="teal accent-4" @click="reveal = true">
                           Learn More
                         </v-btn>
                       </v-card-actions>
@@ -46,67 +47,70 @@
                           <v-card-text class="pb-0">
                             <p class="text-h4 text--primary">Origin</p>
                             <p>
-                              late 16th century (as a noun denoting a place
-                              where alms were distributed): from medieval Latin
-                              eleemosynarius, from late Latin eleemosyna ‘alms’,
-                              from Greek eleēmosunē ‘compassion’
+                              late 16th century (as a noun denoting a place where alms
+                              were distributed): from medieval Latin eleemosynarius, from
+                              late Latin eleemosyna ‘alms’, from Greek eleēmosunē
+                              ‘compassion’
                             </p>
                           </v-card-text>
                           <v-card-actions class="pt-0">
-                            <v-btn
-                              text
-                              color="teal accent-4"
-                              @click="reveal = false"
-                            >
+                            <v-btn text color="teal accent-4" @click="reveal = false">
                               Close
                             </v-btn>
                           </v-card-actions>
                         </v-card>
                       </v-expand-transition>
                     </div>
-
+                    <!-- 四 -->
                     <div v-show="card.flagCover === 'b'" class="box">
                       <v-img
                         class="white--text align-end"
                         height="300px"
-                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F.jpg"
                       >
-                        <v-card-title>Top 10 Australian beaches</v-card-title>
+                        <v-card-title>橙果电脑服务日</v-card-title>
                       </v-img>
 
-                      <v-card-subtitle class="pb-0">
-                        Number 10
-                      </v-card-subtitle>
+                      <v-card-subtitle class="pb-0"> Number 10 </v-card-subtitle>
 
-                      <v-card-text class="text--primary">
-                        <div>Whitehaven Beach</div>
-
-                        <div>Whitsunday Island, Whitsunday Islands</div>
+                      <v-card-text
+                        class="text--primary"
+                        style="height: 35%; overflow: auto"
+                      >
+                        电脑服务日是橙果er的传统活动，由两大部分组成。最初呢，主要活动为电脑义诊，旨在帮助师生解决一些不太复杂的的软硬件问题，为广大师生做一些力所能及的事情。
+                        <br />在2020年伊始，我们加入了“信息化科普”活动，作为信息化科普的全新阵地。两大活动同组成了现在的“电脑服务日”活动，从而更好地普及知识，服务师生。
                       </v-card-text>
-
-                      <v-card-actions>
-                        <v-btn color="orange" text> Share </v-btn>
-
-                        <v-btn color="orange" text> Explore </v-btn>
-                      </v-card-actions>
                     </div>
-                    <!--  -->
+                    <!-- 六 -->
                     <div v-show="card.flagCover === 'c'" class="box">
                       <v-card class="mx-auto" color="#26c6da" dark height="500">
                         <v-card-title>
-                          <v-icon large left> mdi-twitter </v-icon>
-                          <span class="text-h6 font-weight-light">Twitter</span>
+                          <v-icon large left> Orange Studio </v-icon>
                         </v-card-title>
 
                         <v-card-text class="text-h5 font-weight-bold">
-                          "Turns out semicolon-less style is easier and safer in
-                          TS because most gotcha edge cases are type invalid as
-                          well." "Turns out semicolon-less style is easier and
-                          safer in TS because most gotcha edge cases are type
-                          invalid as well." "Turns out semicolon-less style is
-                          easier and safer in TS because most gotcha edge cases
-                          are type invalid as well."
+                          学长寄语
                         </v-card-text>
+
+                        <v-card-actions>
+                          <v-list-item class="grow">
+                            <v-list-item-avatar color="grey darken-3">
+                              <v-img
+                                class="elevation-6"
+                                alt=""
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/295854713_1a2ff5e8d905d62b98ef04be580b91f9.jpg"
+                              ></v-img>
+                            </v-list-item-avatar>
+
+                            <v-list-item-content>
+                              <v-list-item-title>
+                                semicolon-less style is easier and safer in TS because
+                                most gotcha edge cases are type invalid as
+                                well."</v-list-item-title
+                              >
+                            </v-list-item-content>
+                          </v-list-item>
+                        </v-card-actions>
 
                         <v-card-actions>
                           <v-list-item class="grow">
@@ -119,16 +123,52 @@
                             </v-list-item-avatar>
 
                             <v-list-item-content>
-                              <v-list-item-title>Evan You</v-list-item-title>
+                              <v-list-item-title>
+                                semicolon-less style is easier and safer in TS because
+                                most gotcha edge cases are type invalid as
+                                well."</v-list-item-title
+                              >
                             </v-list-item-content>
+                          </v-list-item>
+                        </v-card-actions>
 
-                            <v-row align="center" justify="end">
-                              <v-icon class="mr-1"> mdi-heart </v-icon>
-                              <span class="subheading mr-2">256</span>
-                              <span class="mr-1">·</span>
-                              <v-icon class="mr-1"> mdi-share-variant </v-icon>
-                              <span class="subheading">45</span>
-                            </v-row>
+                        <v-card-actions>
+                          <v-list-item class="grow">
+                            <v-list-item-avatar color="grey darken-3">
+                              <v-img
+                                class="elevation-6"
+                                alt=""
+                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                              ></v-img>
+                            </v-list-item-avatar>
+
+                            <v-list-item-content>
+                              <v-list-item-title>
+                                semicolon-less style is easier and safer in TS because
+                                most gotcha edge cases are type invalid as
+                                well."</v-list-item-title
+                              >
+                            </v-list-item-content>
+                          </v-list-item>
+                        </v-card-actions>
+
+                        <v-card-actions>
+                          <v-list-item class="grow">
+                            <v-list-item-avatar color="grey darken-3">
+                              <v-img
+                                class="elevation-6"
+                                alt=""
+                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                              ></v-img>
+                            </v-list-item-avatar>
+
+                            <v-list-item-content>
+                              <v-list-item-title>
+                                semicolon-less style is easier and safer in TS because
+                                most gotcha edge cases are type invalid as
+                                well."</v-list-item-title
+                              >
+                            </v-list-item-content>
                           </v-list-item>
                         </v-card-actions>
                       </v-card>
@@ -157,27 +197,26 @@ export default {
     cards: [
       {
         title: "Pre-fab homes",
-        src: ["https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/3.2.png"],
+        src: [""],
         flex: 6,
         flexx: 12,
-        height: 500,
+        height: "",
         flagCover: false,
       },
       {
         title: "Pre-fab homes",
-        src: [
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/09C7332C3952414D00488E84B56007EE.jpg",
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/09C7332C3952414D00488E84B56007EE.jpg",
-        ],
+        src: [""],
         flex: 3,
         flexx: 6,
-        height: 240,
+        height: 500,
         flag: "",
         flagCover: "a",
       },
       {
         title: "Favorite road trips",
-        src: ["https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2(1).png"],
+        src: [
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",
+        ],
         flex: 3,
         flexx: 6,
         height: 500,
@@ -195,10 +234,7 @@ export default {
       },
       {
         title: "Best airlines",
-        src: [
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/4(1).png",
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/5(1).png",
-        ],
+        src: [""],
         flex: 3,
         flexx: 6,
         height: 240,
@@ -216,25 +252,93 @@ export default {
         flagCover: "c",
       },
     ],
+    screenWidth: document.body.clientWidth,
   }),
-  methods: {},
-  created() {
-    var de = document.documentElement;
-    const result = de.offsetWidth;
+  mounted() {
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth;
+        that.screenWidth = window.screenWidth;
+      })();
+    };
 
-    if (result <= 600) {
-      this.cards[2].src = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/m.4.jpg",
+    if (that.screenWidth <= 600) {
+      that.cards[0].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/3.2.2.png",
+      ];
+      that.cards[0].height = "";
+
+      that.cards[2].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88.jpg",
       ];
 
-      this.cards[4].src = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/m.3.jpg",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/m.2.jpg",
+      that.cards[4].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E7%94%B5%E8%84%91%E4%B9%89%E8%AF%8A.jpg",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E5%A4%A7%E4%BC%9A%E8%AE%AE%E5%AE%A4.jpg",
       ];
-
-      this.cards[0].height = "";
+    } else {
+      that.cards[0].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png",
+      ];
+      that.cards[2].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",
+      ];
+      that.cards[4].src = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.7.png",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.5.png",
+      ];
+      that.cards[0].height = 500;
     }
   },
+  watch: {
+    screenWidth(val) {
+      // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
+      if (!this.timer) {
+        // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
+        this.screenWidth = val;
+        this.timer = true;
+        let that = this;
+
+        setTimeout(function () {
+          // 打印screenWidth变化的值
+          console.log(that.screenWidth);
+          if (that.screenWidth <= 600) {
+            that.cards[0].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/3.2.2.png",
+              (height = ""),
+            ];
+
+            that.cards[2].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88.jpg",
+            ];
+
+            that.cards[4].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E7%94%B5%E8%84%91%E4%B9%89%E8%AF%8A.jpg",
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E5%A4%A7%E4%BC%9A%E8%AE%AE%E5%AE%A4.jpg",
+            ];
+
+            that.cards[0].height = "";
+          } else {
+            that.cards[0].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png",
+              (height = 500),
+            ];
+            that.cards[2].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",
+            ];
+            that.cards[4].src = [
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.7.png",
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.5.png",
+            ];
+            that.cards[0].height = 500;
+          }
+          that.timer = false;
+        }, 400);
+      }
+    },
+  },
+  created() {},
 };
 </script>
 
