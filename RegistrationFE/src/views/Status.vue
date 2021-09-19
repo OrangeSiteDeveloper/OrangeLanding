@@ -283,24 +283,27 @@ export default {
           localStorage.setItem("student", res.data[0].student_id);
           this.name = res.data[0].user_name;
           this.student_id = res.data[0].student_id;
-          if (res.data[0].status == 20) {
+          if (res.data[0].status == 1) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 21) {
+            this.e6 = 2;
+            this.contentStep2 = "初试通过";
+          } else if (res.data[0].status == 20) {
             this.e6 = 2;
             this.step.contentStep2 = "初试未通过";
             this.step.color2 = "red";
             this.step.step2 = "×";
-          } else if (res.data[0].status == 30) {
+          } else if (res.data[0].status == 31) {
+            this.e6 = 3;
+            this.contentStep3 = "复试通过";
+          } else if (res.data[0].status == 32) {
+            this.e6 = 3;
+            this.step.contentStep3 = "复试没有完全通过";
+          } else if (res.data[0].status == 33) {
             this.e6 = 3;
             this.step.contentStep3 = "复试未通过";
             this.step.color3 = "red";
             this.step.step3 = "×";
-          } else if (res.data[0].status == 1) {
-            this.e6 = res.data[0].status;
-          } else if (res.data[0].status == 2) {
-            this.e6 = res.data[0].status;
-            this.contentStep2 = "初试通过";
-          } else if (res.data[0].status == 3) {
-            this.e6 = res.data[0].status;
-            this.contentStep3 = "复试通过";
           } else if (res.data[0].status == 4) {
             this.e6 = res.data[0].status;
           } else if (res.data[0].status == 41) {
