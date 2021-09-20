@@ -6,9 +6,8 @@
         <v-col>
           <v-card :height="sidePic.height" class="mx-auto">
             <v-card-text>
-              <v-img :src="sidePic.src">
-                <!-- PC -->
-                <v-col v-show="summerShowPc" cols="5" offset="1" class="summer-off-box">
+              <v-img :src="sidePic.src" v-show="summerShowPc">
+                <v-col cols="5" offset="1" class="summer-off-box">
                   <p class="text-h4 text--primary">欢迎你们——未来的“小橙子~”</p>
                   <p>orange studio</p>
                   <div class="text--primary summer-box">
@@ -34,52 +33,10 @@
                       >
                     </v-btn>
                   </v-card-actions>
-
-                  <v-expand-transition>
-                    <v-card
-                      v-if="reveal"
-                      class="transition-fast-in-fast-out v-card--reveal"
-                      style="height: 100%"
-                    >
-                      <v-card-actions class="pt-0">
-                        <v-btn text color="teal accent-4" @click="reveal = false"
-                          >Close</v-btn
-                        >
-                      </v-card-actions>
-                    </v-card>
-                  </v-expand-transition>
-                </v-col>
-                <!-- mobile -->
-                <v-col
-                  v-show="!summerShowPc"
-                  cols="5"
-                  offset="1"
-                  class="summer-off-box"
-                  style="padding-top: 0"
-                >
-                  <p>orange studio</p>
-                  <div class="text--primary summer-box">
-                    <p style="font-size: 10px">
-                      初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼
-                    </p>
-                  </div>
                 </v-col>
               </v-img>
-              <!-- mobile -->
-              <v-col
-                v-show="!summerShowPc"
-                cols="10"
-                offset="1"
-                class="summer-off-box"
-                style="padding-top: 0"
-              >
-                <div class="text--primary summer-box">
-                  <p style="font-size: 10px">
-                    初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼的温暖安详楼的温暖安详，
-                    初入工大，还未领略图书馆的庄严肃穆，宿舍楼的温暖安详楼的温暖安详楼的温暖安详，
-                  </p>
-                </div>
-              </v-col>
+
+              <v-img :src="sidePic.srcMobile" v-show="summerShowMo"></v-img>
             </v-card-text>
           </v-card>
         </v-col>
@@ -107,7 +64,12 @@
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="deep-purple accent-4">欢迎加入学习小组~</v-btn>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                  href="http://139.9.118.85:99/#/website"
+                  >欢迎加入学习小组~</v-btn
+                >
               </v-card-actions>
             </v-card-text>
 
@@ -127,7 +89,11 @@
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn text color="teal accent-4" @click="reveal = true"
+                <v-btn
+                  text
+                  color="teal accent-4"
+                  @click="reveal = true"
+                  href="http://139.9.118.85:99/#/study"
                   >欢迎加入管理部门~</v-btn
                 >
               </v-card-actions>
@@ -170,13 +136,14 @@
                 :auto-line-width="autoLineWidth"
                 auto-draw
                 show-labels
+                :labels="labels"
               ></v-sparkline>
             </v-card-text>
           </v-card>
 
           <br />
           <v-card>
-            <v-card-text>
+            <v-card-text style="height: 423px; overflow: auto">
               <v-card-text>
                 <div></div>
                 <p class="text-h4 text--primary">成果er展示</p>
@@ -191,12 +158,12 @@
                   </p>
                 </div>
               </v-card-text>
-              <v-card-actions>
-                <v-btn text color="deep-purple accent-4">Learn More</v-btn>
-              </v-card-actions>
 
               <div>
-                <v-card-title>Top western road trips</v-card-title>
+                <v-card-title>我的橙果，分你一半</v-card-title>
+                <v-card-title
+                  >一群志同道合的人聚集在一起，共同完成心中的梦想。</v-card-title
+                >
               </div>
             </v-card-text>
           </v-card>
@@ -309,8 +276,15 @@
           </v-card>
           <br />
 
-          <v-card style="height: 12.5rem">
-            <div></div>
+          <v-card>
+            <v-card-text>
+              <div>
+                <v-img
+                  style="background-size: 90%"
+                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534.png"
+                ></v-img>
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -424,7 +398,8 @@ export default {
     padding: 8,
     lineCap: "round",
     gradient: gradients[5],
-    value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
+    value: [30, 40, 45, 65, 87, 88, 94],
+    labels: [2015, 2016, 2017, 2018, 2019, 2020, 2021],
     gradientDirection: "top",
     gradients,
     fill: false,
@@ -451,6 +426,8 @@ export default {
     sidePic: {
       height: "",
       src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png",
+      srcMobile:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872.png",
     },
     items: [
       {
@@ -473,7 +450,7 @@ export default {
     ],
     cards: [
       {
-        title: "Bluuuuuuuu",
+        title: "我的橙果，分你一半",
         src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/5a91239983a3.png",
         flex: 12,
       },
@@ -517,15 +494,15 @@ export default {
       "deep-purple accent-4",
     ],
     slides: [
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1).jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011.jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg",
     ],
     carouselHeight: 555.9,
     screenWidth: document.body.clientWidth,
     summerShowPc: true,
+    summerShowMo: false,
   }),
   created() {
     var de = document.documentElement;
@@ -537,8 +514,10 @@ export default {
       this.sidePic.src = "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
       this.rightHeight = 300;
       this.summerShowPc = false;
+      this.summerShowMo = true;
     } else {
       this.summerShowPc = true;
+      this.summerShowMo = false;
     }
   },
   mounted() {
@@ -563,7 +542,7 @@ export default {
         let that = this;
 
         let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
-        setTimeout(function () {
+        setInterval(function () {
           // 打印screenWidth变化的值
           console.log(that.screenWidth);
           if (that.screenWidth <= 600) {
@@ -588,11 +567,6 @@ export default {
         }, 400);
       }
     },
-  },
-  created() {
-    var lastname = localStorage.getItem("bbb");
-
-    console.log(lastname);
   },
 };
 </script>

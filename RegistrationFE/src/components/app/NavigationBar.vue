@@ -11,10 +11,6 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Orange Studio </v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-export</v-icon>
-      </v-btn>
     </v-toolbar>
 
     <!-- 侧边抽屉 -->

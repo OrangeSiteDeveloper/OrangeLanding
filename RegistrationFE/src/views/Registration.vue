@@ -104,16 +104,23 @@
                       <v-card-text>
                         <v-card-text>
                           <div>Word of the Day</div>
-                          <p class="text-h4 text--primary">el·ee·mos·y·nar·y</p>
-                          <p>adjective</p>
+                          <p class="text-h4 text--primary">报名成功</p>
+                          <p>success</p>
                           <div class="text--primary">
-                            relating to or dependent on charity; charitable.<br />
-                            "an eleemosynary educational institution."
+                            恭喜您现在已经报名成功，请添加一下我们的纳新群<br />
+                            <div>
+                              <v-img
+                                style="width: 150px; margin: 0 auto"
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/X%5BFE(M3_WVG(2BYM53PHDTO.png"
+                              >
+                              </v-img>
+                            </div>
                           </div>
                         </v-card-text>
+
                         <v-card-actions>
-                          <v-btn text color="teal accent-4" @click="reveal = true">
-                            Learn More
+                          <v-btn text color="teal accent-4" @click="dialog = false">
+                            我知道了
                           </v-btn>
                         </v-card-actions>
 
@@ -154,8 +161,8 @@
           <v-card height="942" class="mx-auto">
             <v-card-text>
               <v-img
-                height="840"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/699pic_e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg"
+                height="911"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95.png"
               ></v-img>
             </v-card-text>
           </v-card>

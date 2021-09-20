@@ -171,6 +171,41 @@
           </v-timeline>
         </v-card-text>
       </v-card>
+      <!-- confirm -->
+      <!-- agreement -->
+      <div class="text-center">
+        <v-dialog v-model="dialogAgreement" width="500">
+          <v-card>
+            <v-card-title class="text-h5 grey lighten-2"> 请再次确认 </v-card-title>
+
+            <v-card-text> 您确定要加入我们吗？ </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" text @click="agreementConfirm"> 我确定加入 </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
+      <!-- reject -->
+      <div class="text-center">
+        <v-dialog v-model="dialogReject" width="500">
+          <v-card>
+            <v-card-title class="text-h5 grey lighten-2"> 请再次确认 </v-card-title>
+
+            <v-card-text> 您确定要拒绝加入我们吗？ </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" text @click="rejectConfirm"> 我仍然拒绝 </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
     </v-container>
   </div>
 </template>
@@ -182,6 +217,8 @@ export default {
     e6: 1,
     name: "小橙子",
     dialog: false,
+    dialogAgreement: false,
+    dialogReject: false,
     student_id: "",
     step: {
       contentStep1: ",恭喜你报名成功.",
@@ -319,6 +356,9 @@ export default {
         .catch((err) => {});
     },
     agreement() {
+      this.dialogAgreement = true;
+    },
+    agreementConfirm() {
       const student = {
         student_id: this.student_id,
         status: 41,
@@ -328,10 +368,14 @@ export default {
         .post("http://localhost:8001/student/confirm", student)
         .then((res) => {
           console.log("稍后您会收到我们的offer");
+          this.dialogAgreement = false;
         })
         .catch((err) => {});
     },
     reject() {
+      this.dialogReject = true;
+    },
+    rejectConfirm() {
       const student = {
         student_id: this.student_id,
         status: 42,
@@ -341,6 +385,7 @@ export default {
         .post("http://localhost:8001/student/confirm", student)
         .then((res) => {
           console.log("感谢您参与我们的面试");
+          this.dialogReject = false;
         })
         .catch((err) => {});
     },

@@ -104,10 +104,8 @@
 
                             <v-list-item-content>
                               <v-list-item-title>
-                                semicolon-less style is easier and safer in TS because
-                                most gotcha edge cases are type invalid as
-                                well."</v-list-item-title
-                              >
+                                Eat(); Sleep(); Code();Loop();
+                              </v-list-item-title>
                             </v-list-item-content>
                           </v-list-item>
                         </v-card-actions>
@@ -118,16 +116,14 @@
                               <v-img
                                 class="elevation-6"
                                 alt=""
-                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/Z91P@X5F%7B%60V36O4S3J@U%60OV.bmp"
                               ></v-img>
                             </v-list-item-avatar>
 
                             <v-list-item-content>
                               <v-list-item-title>
-                                semicolon-less style is easier and safer in TS because
-                                most gotcha edge cases are type invalid as
-                                well."</v-list-item-title
-                              >
+                                老当益壮，宁移白首之心？穷且益坚，不坠青云之志。
+                              </v-list-item-title>
                             </v-list-item-content>
                           </v-list-item>
                         </v-card-actions>
@@ -138,16 +134,14 @@
                               <v-img
                                 class="elevation-6"
                                 alt=""
-                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%7D9VBYE_GCVT2DBIJD6U8YFB.bmp"
                               ></v-img>
                             </v-list-item-avatar>
 
                             <v-list-item-content>
                               <v-list-item-title>
-                                semicolon-less style is easier and safer in TS because
-                                most gotcha edge cases are type invalid as
-                                well."</v-list-item-title
-                              >
+                                人之所以能，是相信能。
+                              </v-list-item-title>
                             </v-list-item-content>
                           </v-list-item>
                         </v-card-actions>
@@ -158,16 +152,14 @@
                               <v-img
                                 class="elevation-6"
                                 alt=""
-                                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20CA94BA4732530C9703E23109536944.jpg"
                               ></v-img>
                             </v-list-item-avatar>
 
                             <v-list-item-content>
                               <v-list-item-title>
-                                semicolon-less style is easier and safer in TS because
-                                most gotcha edge cases are type invalid as
-                                well."</v-list-item-title
-                              >
+                                人生伟业的建立，不在能知，乃在能行。
+                              </v-list-item-title>
                             </v-list-item-content>
                           </v-list-item>
                         </v-card-actions>
@@ -368,5 +360,10 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.v-card__actions {
+  width: 200px;
+  overflow: auto !important;
 }
 </style>
