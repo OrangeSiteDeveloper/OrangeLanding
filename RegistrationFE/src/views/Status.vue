@@ -365,7 +365,7 @@ export default {
       };
 
       this.$axios
-        .post("http://localhost:8001/student/confirm", student)
+        .post("http://139.9.118.85:8001/student/confirm", student)
         .then((res) => {
           console.log("稍后您会收到我们的offer");
           this.dialogAgreement = false;
@@ -382,7 +382,7 @@ export default {
       };
 
       this.$axios
-        .post("http://localhost:8001/student/confirm", student)
+        .post("http://139.9.118.85:8001/student/confirm", student)
         .then((res) => {
           console.log("感谢您参与我们的面试");
           this.dialogReject = false;
