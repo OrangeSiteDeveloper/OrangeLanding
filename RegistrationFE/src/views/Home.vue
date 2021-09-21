@@ -496,7 +496,8 @@ export default {
     cards: [
       {
         title: "我的橙果，分你一半",
-        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/5a91239983a3.png",
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AF.png",
         flex: 12,
       },
       {
