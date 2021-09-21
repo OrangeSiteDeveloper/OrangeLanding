@@ -61,7 +61,7 @@ export default {
     items: [
       { title: "主页", icon: "mdi-view-dashboard", link: "/" },
       { title: "关于橙果", icon: "mdi-forum", link: "/about" },
-      { title: "我要报名", icon: "mdi-hand", link: "/registration" },
+      { title: "我要报名", icon: "mdi-hand-back-right-outline", link: "/registration" },
       { title: "查看录取进度", icon: "mdi-loading", link: "/status" },
     ],
   }),

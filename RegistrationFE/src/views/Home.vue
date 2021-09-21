@@ -1,5 +1,45 @@
 <template>
   <div>
+    <!-- overlays -->
+    <div class="text-center">
+      <v-dialog v-model="dialog" width="500">
+        <v-card>
+          <v-card-title class="text-h5 grey lighten-2" style="color: red">
+            报名流程！！！
+          </v-card-title>
+          <div>
+            <video style="margin: 10px auto;display: block;}" width="80%" controls>
+              <source
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/B5B920FF83F73855F96C3A15BED806DE.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <v-card-text>
+            欢迎来到橙果工作室纳新系统~<br />
+            进行报名之前请先扫描二维码加入我们的官方纳新qq群。顶部视屏将对报名流程进行简介，请务必观看。
+            <v-img
+              style="width: 50%；margin: 0 auto;"
+              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%B7%A5%E4%BD%9C%E5%AE%A421%E7%BA%A7%E6%96%B0%E7%94%9F%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E8%81%8A%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+            >
+            </v-img>
+            下面介绍该系统使用方法，本页是首页，在这里你能简单了解工作室的大体情况。
+            <br />若想报名，请点击页面左上角“≡”按钮；点击"我要报名"，进行报名；点击"查询报名进度",可以查看自己的报名状态。
+          </v-card-text>
+          <!-- radio -->
+          <v-container class="px-0" fluid>
+            <v-switch v-model="switch1" label="下次不再提示"></v-switch>
+          </v-container>
+          <!--  -->
+          <v-divider></v-divider>
+          <!--  -->
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="primary" text @click="closeDialog"> 我知道了 </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </div>
     <!-- top -->
     <v-container>
       <v-row>
@@ -84,7 +124,7 @@
                 <p>Department introduction</p>
                 <div class="text--primary">
                   <p class="text-box-lineh group-text-box">
-                    学习部、秘书部、宣传部、外联部，作为社团运行中枢，统筹负责工作室的日常运营，包括各种活动的筹备和举办、成员学习进度的督导、资源的协调调配，大小会议室的使用（**工作室设有专门的会议室当作自习室向同学们开放，干净整洁、安静、配备空调和热水！**）
+                    学习部、秘书部、宣传部、外联部，作为社团运行中枢，统筹负责工作室的日常运营。包括各种活动的筹备和举办、成员学习进度的督导、资源的协调和调配，大小会议室的使用（工作室设有专门的会议室当作自习室向同学们开放，干净整洁、安静、配备空调和热水!）
                   </p>
                 </div>
               </v-card-text>
@@ -150,11 +190,11 @@
                 <p>result</p>
                 <div class="text--primary">
                   <p class="group-text-box text-box-lineh">
-                    制作和维护学校以及学院官网以及工作室官网。
-                    搭建和维护大学城融创云平台。 作为电脑义诊的主力服务师生。
-                    参加电子设计大赛、机器人竞赛等大型竞赛。
-                    对社团成员以及广大师生开展信息化科普，提高我校信息化素质。
-                    设计制作新生返校数据之大屏展示。
+                    制作和维护学校以及学院官网以及工作室官网。<br />
+                    搭建和维护大学城融创云平台。 <br />作为电脑义诊的主力服务师生。<br />
+                    参加电子设计大赛、机器人竞赛等大型竞赛。<br />
+                    对社团成员以及广大师生开展信息化科普，提高我校信息化素质。<br />
+                    设计制作新生返校数据之大屏展示。<br />
                   </p>
                 </div>
               </v-card-text>
@@ -232,7 +272,7 @@
                   <p>adjective</p>
                   <div class="text--primary">
                     <p class="text-box-lineh group-text-box">
-                      社团主要活动场所位于图书馆一楼东南部的网络信息中心，共包括：大会议室，小会议室，研发小屋，维修仓库，社团办公室等部分组成。其中大会议室除承担小组活动之外作为24小时自习室开放，为同学们提供干净整洁、安静的学习环境，小会议室在必要时刻亦可用于自习。此外，我们将提供二十余个工位给有需求的同学使用，以支持他的学习、实践活动。
+                      社团主要活动场所位于图书馆一楼东南部的网络信息中心，共包括：大会议室，小会议室，研发小屋，维修仓库，社团办公室等部分。其中大会议室除用于举办社团活动之外作为24小时自习室开放，为同学们提供干净整洁、安静的学习环境。小会议室在必要时刻亦可用于自习。此外，我们将提供二十余个工位给有需求的同学使用，以支持他的学习和实践活动。
                     </p>
                   </div>
                 </v-card-text>
@@ -338,7 +378,11 @@
                             </v-btn>
 
                             <v-btn v-else class="ml-2 mt-5" outlined rounded small
-                              >START RADIO</v-btn
+                              ><a
+                                style="text-decoration: none; color: black"
+                                :href="item.src"
+                                >LEARN MORE</a
+                              ></v-btn
                             >
                           </v-card-actions>
                         </div>
@@ -393,6 +437,8 @@ const gradients = [
 export default {
   name: "Home",
   data: () => ({
+    dialog: true,
+    switch1: false,
     width: 2,
     radius: 10,
     padding: 8,
@@ -432,16 +478,15 @@ export default {
     items: [
       {
         color: "#1F7087",
-        src: "https://cdn.vuetifyjs.com/images/cards/foster.jpg",
+        src: "https://mp.weixin.qq.com/s/nqc-5W1RpKziuEo5AbTy0A",
         title: "导师计划",
-        artist: "teaching sessions",
-        imgSrc:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/699pic_e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg",
+        artist: "sessions",
+        imgSrc: "https://mp.weixin.qq.com/s/nqc-5W1RpKziuEo5AbTy0A",
         imgColor: "img1",
       },
       {
         color: "#952175",
-        src: "https://cdn.vuetifyjs.com/images/cards/halcyon.png",
+        src: "https://mp.weixin.qq.com/s/q8KBJgThg7GOUgU-lgXOOg",
         title: "项目驱动",
         artist: " project-based",
         imgSrc: "linear-gradient(to right,#d84c4c,#e8a45d,#e5f1a5)",
@@ -497,7 +542,7 @@ export default {
       "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1).jpg",
       "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011.jpg",
       "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg",
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_013.jpg",
     ],
     carouselHeight: 555.9,
     screenWidth: document.body.clientWidth,
@@ -518,6 +563,10 @@ export default {
     } else {
       this.summerShowPc = true;
       this.summerShowMo = false;
+    }
+    if (localStorage.getItem("flag") == "true") {
+      console.log(localStorage.getItem("flag"));
+      this.dialog = false;
     }
   },
   mounted() {
@@ -566,6 +615,13 @@ export default {
           that.timer = false;
         }, 400);
       }
+    },
+  },
+  methods: {
+    closeDialog() {
+      this.dialog = false;
+      localStorage.setItem("flag", this.switch1);
+      console.log(localStorage.getItem("flag"));
     },
   },
 };

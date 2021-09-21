@@ -31,13 +31,7 @@
                           <br />用知识去创造，用热爱去碰撞下个“风口”，或许就将由你来创造！
                         </div>
                       </v-card-text>
-
-                      <v-card-actions>
-                        <v-btn text color="teal accent-4" @click="reveal = true">
-                          Learn More
-                        </v-btn>
-                      </v-card-actions>
-
+                      <!-- 
                       <v-expand-transition>
                         <v-card
                           v-if="reveal"
@@ -59,7 +53,7 @@
                             </v-btn>
                           </v-card-actions>
                         </v-card>
-                      </v-expand-transition>
+                      </v-expand-transition> -->
                     </div>
                     <!-- 四 -->
                     <div v-show="card.flagCover === 'b'" class="box">
@@ -361,9 +355,10 @@ export default {
   top: 0;
   left: 0;
 }
-
-.v-card__actions {
-  width: 200px;
-  overflow: auto !important;
+@media screen and (max-width: 600px) {
+  .v-card__actions {
+    width: 200px;
+    overflow: auto !important;
+  }
 }
 </style>

@@ -54,7 +54,7 @@ export default {
       },
       {
         icon: "mdi-wechat",
-        src: "www.baidu.com",
+        src: "https://mp.weixin.qq.com/s/lb5OO7W2zVnEJSOPydFnYw",
       },
       {
         icon: "mdi-account-multiple-plus",

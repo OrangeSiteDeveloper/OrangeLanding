@@ -2,7 +2,7 @@
   <div>
     <!-- 进度 -->
     <v-container>
-      <v-stepper class="stepper" v-model="e6" vertical>
+      <v-stepper :key="count" class="stepper" v-model="e6" vertical>
         <!-- dialog -->
         <div class="text-center">
           <v-dialog v-model="dialog" width="500">
@@ -21,11 +21,12 @@
                         required
                       ></v-text-field>
                       <p>
-                        输入您报名时填写的学号查询自己的报名录取状态，输入正确后上方会显示您的名字，如果输错，点击右上角的
+                        输入您的学号可查询录取状态。
+                        输入正确时左上方会显示您的名字，如果输入有误点击右上角的
                         <v-icon> mdi-pencil </v-icon>
-                        即可修改查询id。
+                        即可修正。
                       </p>
-                      <p>请在确认填写正确之后点击确认</p>
+                      <p>请在点击确认前确认信息填写无误。</p>
                     </v-col>
                   </v-row>
                 </v-container>
@@ -101,7 +102,7 @@
                   <v-row>
                     <v-col cols="12" md="10">
                       一只满怀好奇的小橙子在“橙果工作室”的门口看了看。报名呢？还是不报名呢？
-                      <br />emmm。。。报名的话会找到一群志同道合的人，一起完成心中的梦想，会收获温馨、热爱、友谊好多好多~冲鸭！鸭！鸭！
+                      <br />emmm。。。报名的话会找到一群志同道合的人，一起完成心中的梦想，会收获温馨、热爱、友谊……好多好多~冲鸭!
                     </v-col>
                     <v-col class="hidden-sm-and-down text-right" md="2">
                       <v-icon size="64"> mdi-calendar-text </v-icon>
@@ -161,7 +162,7 @@
                     </v-col>
                     <v-col cols="12" md="10">
                       到此，大家已经通过了全部面试，你的学识和能力已经得到了我们的认可，满足加入橙果工作室的全部要求。
-                      <br />在剩余时间内随时可以选择加入，当然也可以选择拒绝。It's to
+                      <br />在剩余时间内随时可以选择加入，当然也可以选择拒绝。It's up to
                       you.敬候佳音~
                     </v-col>
                   </v-row>
@@ -214,6 +215,7 @@
 export default {
   name: "Status",
   data: () => ({
+    count: 1,
     e6: 1,
     name: "小橙子",
     dialog: false,
@@ -322,36 +324,73 @@ export default {
           this.student_id = res.data[0].student_id;
           if (res.data[0].status == 1) {
             this.e6 = res.data[0].status;
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep3 = "复试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step2 = 2;
+            this.step.step3 = 3;
+            this.step.step4 = 4;
           } else if (res.data[0].status == 21) {
             this.e6 = 2;
-            this.contentStep2 = "初试通过";
-          } else if (res.data[0].status == 20) {
+            this.step.contentStep2 = "初试通过";
+            this.step.contentStep3 = "复试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step3 = 3;
+            this.step.step4 = 4;
+          } else if (res.data[0].status == 22) {
             this.e6 = 2;
             this.step.contentStep2 = "初试未通过";
             this.step.color2 = "red";
             this.step.step2 = "×";
+            this.step.contentStep3 = "复试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step3 = 3;
+            this.step.step4 = 4;
           } else if (res.data[0].status == 31) {
             this.e6 = 3;
             this.contentStep3 = "复试通过";
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step2 = 2;
+            this.step.step4 = 4;
           } else if (res.data[0].status == 32) {
             this.e6 = 3;
             this.step.contentStep3 = "复试没有完全通过";
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step2 = 2;
+            this.step.step4 = 4;
           } else if (res.data[0].status == 33) {
             this.e6 = 3;
             this.step.contentStep3 = "复试未通过";
             this.step.color3 = "red";
             this.step.step3 = "×";
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep4 = "确认是否加入";
+            this.step.step2 = 2;
+            this.step.step4 = 4;
           } else if (res.data[0].status == 4) {
             this.e6 = res.data[0].status;
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep3 = "复试进行";
+            this.step.step2 = 2;
+            this.step.step3 = 3;
           } else if (res.data[0].status == 41) {
             this.e6 = 4;
             this.step.contentStep4 = "您已经确认加入我们";
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep3 = "复试进行";
+            this.step.step2 = 2;
+            this.step.step3 = 3;
           } else if (res.data[0].status == 42) {
             this.e6 = 4;
             this.step.contentStep4 = "您已经拒绝加入我们";
+            this.step.contentStep2 = "初试进行";
+            this.step.contentStep3 = "复试进行";
+            this.step.step2 = 2;
+            this.step.step3 = 3;
           }
           this.dialog = false;
-          location.reload();
         })
         .catch((err) => {});
     },
@@ -403,24 +442,27 @@ export default {
           this.dialog = false;
           this.name = res.data[0].user_name;
           this.student_id = res.data[0].student_id;
-          if (res.data[0].status == 20) {
+          if (res.data[0].status == 1) {
+            this.e6 = res.data[0].status;
+          } else if (res.data[0].status == 21) {
+            this.e6 = 2;
+            this.contentStep2 = "初试通过";
+          } else if (res.data[0].status == 22) {
             this.e6 = 2;
             this.step.contentStep2 = "初试未通过";
             this.step.color2 = "red";
             this.step.step2 = "×";
-          } else if (res.data[0].status == 30) {
+          } else if (res.data[0].status == 31) {
+            this.e6 = 3;
+            this.contentStep3 = "复试全部通过";
+          } else if (res.data[0].status == 32) {
+            this.e6 = 3;
+            this.step.contentStep3 = "复试通过但没有完全通过";
+          } else if (res.data[0].status == 33) {
             this.e6 = 3;
             this.step.contentStep3 = "复试未通过";
             this.step.color3 = "red";
             this.step.step3 = "×";
-          } else if (res.data[0].status == 1) {
-            this.e6 = res.data[0].status;
-          } else if (res.data[0].status == 2) {
-            this.e6 = res.data[0].status;
-            this.contentStep2 = "初试通过";
-          } else if (res.data[0].status == 3) {
-            this.e6 = res.data[0].status;
-            this.contentStep3 = "复试通过";
           } else if (res.data[0].status == 4) {
             this.e6 = res.data[0].status;
           } else if (res.data[0].status == 41) {
