@@ -20,8 +20,13 @@
                       style="overflow: auto"
                     >
                       <v-card-text>
-                        <div>Word of the Day</div>
-                        <p class="text-h4 text--primary">小组活动</p>
+                        <div>Group Activity</div>
+                        <p
+                          class="text-h4 text--primary"
+                          style="font-size: 1.5rem !important"
+                        >
+                          小组活动
+                        </p>
                         <p>adjective</p>
                         <div class="text--primary">
                           学习知识、经验分享、头脑风暴为主要组成的小组活动是橙果er日常活动的主要形式。
@@ -31,29 +36,6 @@
                           <br />用知识去创造，用热爱去碰撞下个“风口”，或许就将由你来创造！
                         </div>
                       </v-card-text>
-                      <!-- 
-                      <v-expand-transition>
-                        <v-card
-                          v-if="reveal"
-                          class="transition-fast-in-fast-out v-card--reveal"
-                          style="height: 100%"
-                        >
-                          <v-card-text class="pb-0">
-                            <p class="text-h4 text--primary">Origin</p>
-                            <p>
-                              late 16th century (as a noun denoting a place where alms
-                              were distributed): from medieval Latin eleemosynarius, from
-                              late Latin eleemosyna ‘alms’, from Greek eleēmosunē
-                              ‘compassion’
-                            </p>
-                          </v-card-text>
-                          <v-card-actions class="pt-0">
-                            <v-btn text color="teal accent-4" @click="reveal = false">
-                              Close
-                            </v-btn>
-                          </v-card-actions>
-                        </v-card>
-                      </v-expand-transition> -->
                     </div>
                     <!-- 四 -->
                     <div v-show="card.flagCover === 'b'" class="box">
@@ -357,7 +339,7 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .v-card__actions {
-    width: 200px;
+    width: 100%;
     overflow: auto !important;
   }
 }

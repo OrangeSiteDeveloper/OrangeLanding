@@ -17,7 +17,7 @@
                       <v-text-field
                         v-model="student_id"
                         :counter="12"
-                        label="Student_id"
+                        label="学号"
                         required
                       ></v-text-field>
                       <p>
@@ -316,7 +316,7 @@ export default {
       };
 
       this.$axios
-        .post("http://139.9.118.85:8001/student/select", student)
+        .post("http://139.9.118.85:8002/student/select", student)
         .then((res) => {
           console.log("ddd");
           localStorage.setItem("student", res.data[0].student_id);
@@ -404,7 +404,7 @@ export default {
       };
 
       this.$axios
-        .post("http://139.9.118.85:8001/student/confirm", student)
+        .post("http://139.9.118.85:8002/student/confirm", student)
         .then((res) => {
           console.log("稍后您会收到我们的offer");
           this.dialogAgreement = false;
@@ -421,7 +421,7 @@ export default {
       };
 
       this.$axios
-        .post("http://139.9.118.85:8001/student/confirm", student)
+        .post("http://139.9.118.85:8002/student/confirm", student)
         .then((res) => {
           console.log("感谢您参与我们的面试");
           this.dialogReject = false;
@@ -437,7 +437,7 @@ export default {
         student_id: localStorage.getItem("student"),
       };
       this.$axios
-        .post("http://139.9.118.85:8001/student/select", studentObj)
+        .post("http://139.9.118.85:8002/student/select", studentObj)
         .then((res) => {
           this.dialog = false;
           this.name = res.data[0].user_name;

@@ -23,11 +23,13 @@
     >
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <v-img
+            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png"
+          ></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Orange Part</v-list-item-title>
+          <v-list-item-title style="color: white">Orange Studio</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -41,11 +43,11 @@
           :to="item.link"
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon style="color: white">{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title style="color: white">{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

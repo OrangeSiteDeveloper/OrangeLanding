@@ -16,7 +16,7 @@ class Email {
     const mailOptions = {
       from: "295854713@qq.com",
       to: toEmail,
-      subject: "橙果工作室通知",
+      subject: "橙果工作室2021年纳新报名成功通知",
       text: textInfo,
     };
 

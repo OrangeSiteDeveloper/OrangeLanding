@@ -14,6 +14,7 @@
                   :rules="studentIdRules"
                   label="学号"
                   required
+                  placeholder="学号将会是您的唯一标识，请不要填错"
                 ></v-text-field>
                 <!-- 姓名 -->
                 <v-text-field
@@ -37,6 +38,7 @@
                   :rules="facultyRules"
                   label="专业"
                   required
+                  placeholder="例：计科19-3"
                 ></v-text-field>
                 <!-- 手机 -->
                 <v-text-field
@@ -45,7 +47,7 @@
                   :rules="mobileRules"
                   label="手机号码"
                   required
-                  placeholder="手机号码将被用来发送短信通知 请谨慎填写"
+                  placeholder="手机号码将被用来让我们找到你 请谨慎填写"
                 ></v-text-field>
                 <!-- QQ -->
                 <v-text-field
@@ -60,7 +62,7 @@
                   :rules="emailRules"
                   label="电子邮箱"
                   required
-                  placeholder="电子邮箱将被用来用来通知面试结果 请谨慎填写"
+                  placeholder="电子邮箱将被用来用来通知面试结果"
                 ></v-text-field>
                 <!-- 小组 -->
                 <v-select
@@ -99,6 +101,7 @@
                   <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate"
                     >确认提交</v-btn
                   >
+                  <!-- 提交成功 -->
                   <v-dialog max-width="500" v-model="dialog">
                     <v-card>
                       <v-card-text>
@@ -115,7 +118,9 @@
                               >
                               </v-img>
                             </div>
-                            现在可以点击左上角“≡”按钮 ->“查看录取进度”了解自己的报名状态。
+                            现在可以点击左上角“≡”按钮
+                            ->“查看录取进度”了解自己的报名状态。<br />
+                            请注意查看邮箱，我们已经给您发送了一封确认报名成功的邮件。
                           </div>
                         </v-card-text>
 
@@ -125,6 +130,25 @@
                           </v-btn>
                         </v-card-actions>
                       </v-card-text>
+                    </v-card>
+                  </v-dialog>
+                  <!-- 提交失败 -->
+                  <v-dialog v-model="dialogFail" width="500">
+                    <v-card>
+                      <v-card-title class="text-h5 grey lighten-2">
+                        提交失败！
+                      </v-card-title>
+
+                      <v-card-text>
+                        对不起，您本次报名失败，请刷新页面或者过段时间再试。
+                      </v-card-text>
+
+                      <v-divider></v-divider>
+
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary" text @click="codaFail"> 我知道了 </v-btn>
+                      </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </span>
@@ -197,6 +221,7 @@ export default {
     showOr: true,
     loading: "false",
     dialog: false,
+    dialogFail: false,
   }),
 
   methods: {
@@ -209,13 +234,14 @@ export default {
         this.form.status = 1;
         console.log(this.form);
         this.$axios
-          .post("http://139.9.118.85:8001/student/add", this.form)
+          .post("http://139.9.118.85:8002/student/add", this.form)
           .then((res) => {
             this.loading = false;
             this.dialog = true;
           })
           .catch((err) => {
-            console.log(err);
+            this.dialogFail = true;
+            this.loading = false;
           });
       }
     },
@@ -224,6 +250,10 @@ export default {
     },
     coda() {
       this.dialog = false;
+      this.$refs.form.reset();
+    },
+    codaFail() {
+      this.dialogFail = false;
       this.$refs.form.reset();
     },
   },

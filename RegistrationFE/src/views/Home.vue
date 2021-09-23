@@ -4,32 +4,43 @@
     <div class="text-center">
       <v-dialog v-model="dialog" width="500">
         <v-card>
-          <v-card-title class="text-h5 grey lighten-2" style="color: red">
-            报名流程！！！
+          <v-card-title
+            class="text-h5 grey lighten-2"
+            style="color: red; font-size: 1.3rem !important"
+          >
+            报名流程！！！（此对话框可以可以向下滑动）
           </v-card-title>
           <div>
-            <video style="margin: 10px auto;display: block;}" width="80%" controls>
+            <video
+              id="videoOne"
+              style="margin: 10px auto;display: block;}"
+              width="65%"
+              controls
+            >
               <source
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/B5B920FF83F73855F96C3A15BED806DE.mp4"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/BD124B61ACDE922264FB0C2E4BD9EE28_1.mp4"
                 type="video/mp4"
               />
             </video>
           </div>
           <v-card-text>
             欢迎来到橙果工作室纳新系统~<br />
-            进行报名之前请先扫描二维码加入我们的官方纳新qq群。顶部视屏将对报名流程进行简介，请务必观看。
-            <v-img
-              style="width: 50%；margin: 0 auto;"
-              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%B7%A5%E4%BD%9C%E5%AE%A421%E7%BA%A7%E6%96%B0%E7%94%9F%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E8%81%8A%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
-            >
-            </v-img>
+            进行报名之前请先扫描二维码加入我们的官方纳新qq群。顶部视频将对报名流程进行简介，请务必观看。
+            <div style="width: 100%">
+              <img
+                style="display: block; margin: 0 auto"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%B7%A5%E4%BD%9C%E5%AE%A421%E7%BA%A7%E6%96%B0%E7%94%9F%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E8%81%8A%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+              />
+            </div>
+
             下面介绍该系统使用方法，本页是首页，在这里你能简单了解工作室的大体情况。
-            <br />若想报名，请点击页面左上角“≡”按钮；点击"我要报名"，进行报名；点击"查询报名进度",可以查看自己的报名状态。
+            <br />若想报名，请点击页面左上角“≡”按钮；点击"我要报名"，进行报名；点击"查询报名进度"，可以查看自己的报名状态。
+            <v-container class="px-0" fluid>
+              <v-switch v-model="switch1" label="下次不再提示"></v-switch>
+            </v-container>
           </v-card-text>
           <!-- radio -->
-          <v-container class="px-0" fluid>
-            <v-switch v-model="switch1" label="下次不再提示"></v-switch>
-          </v-container>
+
           <!--  -->
           <v-divider></v-divider>
           <!--  -->
@@ -187,7 +198,7 @@
               <v-card-text>
                 <div></div>
                 <p class="text-h4 text--primary">成果er展示</p>
-                <p>result</p>
+                <p>此卡片内部可以向下滑动</p>
                 <div class="text--primary">
                   <p class="group-text-box text-box-lineh">
                     制作和维护学校以及学院官网以及工作室官网。<br />
@@ -238,7 +249,7 @@
                           src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1.jpg"
                         ></v-img>
                         <v-card-title
-                          style="position: absolute; color: white;font-weight: 500;top: 138px;}"
+                          style="position: absolute; color: white;font-weight: 500;top: 138px; font-size: 1rem;}"
                           >Eat(); Sleep(); Code(); Repeat();</v-card-title
                         >
                       </div>
@@ -360,9 +371,13 @@
                           <v-card-title
                             class="text-h5"
                             v-text="item.title"
+                            :style="item.fontStyle"
                           ></v-card-title>
 
-                          <v-card-subtitle v-text="item.artist"></v-card-subtitle>
+                          <v-card-subtitle
+                            v-text="item.artist"
+                            :style="item.fontStyle"
+                          ></v-card-subtitle>
 
                           <v-card-actions>
                             <v-btn
@@ -378,9 +393,7 @@
                             </v-btn>
 
                             <v-btn v-else class="ml-2 mt-5" outlined rounded small
-                              ><a
-                                style="text-decoration: none; color: black"
-                                :href="item.src"
+                              ><a class="button" :style="item.fontStyle" :href="item.src"
                                 >LEARN MORE</a
                               ></v-btn
                             >
@@ -410,7 +423,10 @@
                         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
                         height="229px"
                       >
-                        <v-card-title v-text="card.title"></v-card-title>
+                        <v-card-title
+                          v-text="card.title"
+                          style="font-size: 1rem"
+                        ></v-card-title>
                       </v-img>
                     </v-card>
                   </v-col>
@@ -483,6 +499,7 @@ export default {
         artist: "sessions",
         imgSrc: "https://mp.weixin.qq.com/s/nqc-5W1RpKziuEo5AbTy0A",
         imgColor: "img1",
+        fontStyle: "color:black",
       },
       {
         color: "#952175",
@@ -491,6 +508,7 @@ export default {
         artist: " project-based",
         imgSrc: "linear-gradient(to right,#d84c4c,#e8a45d,#e5f1a5)",
         imgColor: "img2",
+        fontStyle: "color:white",
       },
     ],
     cards: [
@@ -621,6 +639,8 @@ export default {
   methods: {
     closeDialog() {
       this.dialog = false;
+      var videoElement = document.getElementById("videoOne");
+      videoElement.pause();
       localStorage.setItem("flag", this.switch1);
       console.log(localStorage.getItem("flag"));
     },
@@ -673,5 +693,9 @@ export default {
 
 .content-box-right[data-v-fae5bece] {
   white-space: normal !important;
+}
+
+.button {
+  text-decoration: none;
 }
 </style>
