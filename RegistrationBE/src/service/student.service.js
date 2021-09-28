@@ -59,6 +59,14 @@ class StudentService {
     return result[0];
   }
   
+  async showCount() {
+    const statement = `select count(*) from ums_new_member`;
+
+    const result = await connection.execute(statement);
+
+    return result[0];
+  }
+  
 }
 
 module.exports = new StudentService();

@@ -54,6 +54,13 @@ class StudentController {
     //返回数据
     ctx.body = result;
   }
+
+  async showCount(ctx, next) {
+    //查询数据库
+    const result = await service.showCount();
+    //返回数据
+    ctx.body = result;
+  }
 }
 
 module.exports = new StudentController();

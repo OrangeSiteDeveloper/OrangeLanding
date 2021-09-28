@@ -96,6 +96,10 @@
                   label="确认信息无误"
                   required
                 ></v-checkbox>
+                <div>
+                  <Vcode :show="isShowShow" @success="success" @close="close" />
+                  <el-button @click="submit">登录</el-button>
+                </div>
                 <!-- 提交 -->
                 <span>
                   <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate"
@@ -175,6 +179,8 @@
 </template>
 
 <script>
+import Vcode from "vue-puzzle-vcode";
+
 export default {
   name: "Registration",
   data: () => ({
@@ -222,11 +228,31 @@ export default {
     loading: "false",
     dialog: false,
     dialogFail: false,
+    isShowShow: false,
   }),
-
+  components: {
+    Vcode,
+  },
   methods: {
     // 提交表单
     validate() {
+      this.isShowShow = true;
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+    coda() {
+      this.dialog = false;
+      this.$refs.form.reset();
+    },
+    codaFail() {
+      this.dialogFail = false;
+      this.$refs.form.reset();
+    },
+
+    submit() {},
+    // 用户通过了验证
+    success(msg) {
       let flag = this.$refs.form.validate();
       if (flag === true) {
         this.loading = true;
@@ -244,17 +270,11 @@ export default {
             this.loading = false;
           });
       }
+      this.isShowShow = false; // 通过验证后，需要手动隐藏模态框
     },
-    reset() {
-      this.$refs.form.reset();
-    },
-    coda() {
-      this.dialog = false;
-      this.$refs.form.reset();
-    },
-    codaFail() {
-      this.dialogFail = false;
-      this.$refs.form.reset();
+    // 用户点击遮罩层，应该关闭模态框
+    close() {
+      this.isShow = false;
     },
   },
   created() {
