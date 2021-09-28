@@ -98,7 +98,6 @@
                 ></v-checkbox>
                 <div>
                   <Vcode :show="isShowShow" @success="success" @close="close" />
-                  <el-button @click="submit">登录</el-button>
                 </div>
                 <!-- 提交 -->
                 <span>
