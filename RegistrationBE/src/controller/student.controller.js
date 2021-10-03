@@ -18,7 +18,9 @@ class StudentController {
     //查询数据库
     const result = await service.addStu(student);
     //返回数据
-    emailUtil.SendEmail(email,`亲爱的同学，您好！
+    emailUtil.SendEmail(
+      email,
+      `亲爱的同学，您好！
 
     感谢您对我们的信任和支持，未来两周您将会经过两次面试，为了让您胸有成竹地参加面试。下面将为您做简单介绍。
     
@@ -32,7 +34,8 @@ class StudentController {
     
     祝顺利~
     
-    橙果工作室`);
+    橙果工作室`
+    );
     // console.log(result);
     ctx.body = result;
   }
@@ -47,10 +50,10 @@ class StudentController {
   }
   async confirmStu(ctx, next) {
     // 获取用户请求传递的参数
-    const { student_id,status } = ctx.request.body;
-    console.log(ctx.request.body)
+    const { student_id, status } = ctx.request.body;
+    console.log(ctx.request.body);
     //查询数据库
-    const result = await service.confirmStu(student_id,status);
+    const result = await service.confirmStu(student_id, status);
     //返回数据
     ctx.body = result;
   }
@@ -59,6 +62,12 @@ class StudentController {
     //查询数据库
     const result = await service.showCount();
     //返回数据
+    ctx.body = result;
+  }
+
+  async addId(ctx, next) {
+    const result = await service.addId();
+    
     ctx.body = result;
   }
 }

@@ -66,6 +66,10 @@ class StudentService {
 
     return result[0];
   }
+
+  async addId() {
+    
+  }
   
 }
 
