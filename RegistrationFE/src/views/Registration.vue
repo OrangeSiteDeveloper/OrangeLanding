@@ -101,8 +101,8 @@
                 </div>
                 <!-- 提交 -->
                 <span>
-                  <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate"
-                    >确认提交</v-btn
+                  <v-btn :disabled="true" color="success" class="mr-4"
+                    >敬请期待2022纳新季再次开启</v-btn
                   >
                   <!-- 提交成功 -->
                   <v-dialog max-width="500" v-model="dialog">
@@ -234,6 +234,7 @@ export default {
   },
   methods: {
     // 提交表单
+    // 报名确认事件
     validate() {
       this.isShowShow = true;
     },
