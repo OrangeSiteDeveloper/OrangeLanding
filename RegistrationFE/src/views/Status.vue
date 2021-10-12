@@ -81,8 +81,12 @@
           <v-card color="grey lighten-1" class="mb-12" height="200px">
             <v-img height="200px" :src="step.img4"></v-img>
           </v-card>
-          <v-btn color="primary" @click="agreement"> 加入！</v-btn>&nbsp;
-          <v-btn color="error" @click="reject"> 放弃！ </v-btn>
+          <v-btn color="primary" @click="agreement" :disabled="joinDisabled">
+            加入！</v-btn
+          >&nbsp;
+          <v-btn color="error" @click="reject" :disabled="surrenderDisabled">
+            放弃！
+          </v-btn>
         </v-stepper-content>
       </v-stepper>
     </v-container>
@@ -246,6 +250,8 @@ export default {
     },
     student_id: "",
     screenWidth: document.body.clientWidth,
+    joinDisabled: false,
+    surrenderDisabled: false,
   }),
   mounted() {
     const that = this;
@@ -382,6 +388,8 @@ export default {
             this.step.contentStep3 = "复试进行";
             this.step.step2 = 2;
             this.step.step3 = 3;
+            this.joinDisabled = true;
+            this.surrenderDisabled = true;
           } else if (res.data[0].status == 42) {
             this.e6 = 4;
             this.step.contentStep4 = "您已经拒绝加入我们";
@@ -389,6 +397,8 @@ export default {
             this.step.contentStep3 = "复试进行";
             this.step.step2 = 2;
             this.step.step3 = 3;
+            this.joinDisabled = true;
+            this.surrenderDisabled = true;
           }
           this.dialog = false;
         })
@@ -407,6 +417,8 @@ export default {
         .post("http://139.9.118.85:8002/student/confirm", student)
         .then((res) => {
           console.log("稍后您会收到我们的offer");
+          this.joinDisabled = true;
+          this.surrenderDisabled = true;
           this.dialogAgreement = false;
         })
         .catch((err) => {});
@@ -424,6 +436,8 @@ export default {
         .post("http://139.9.118.85:8002/student/confirm", student)
         .then((res) => {
           console.log("感谢您参与我们的面试");
+          this.joinDisabled = true;
+          this.surrenderDisabled = true;
           this.dialogReject = false;
         })
         .catch((err) => {});
@@ -468,9 +482,13 @@ export default {
           } else if (res.data[0].status == 41) {
             this.e6 = 4;
             this.step.contentStep4 = "您已经确认加入我们";
+            this.joinDisabled = true;
+            this.surrenderDisabled = true;
           } else if (res.data[0].status == 42) {
             this.e6 = 4;
             this.step.contentStep4 = "您已经拒绝加入我们";
+            this.joinDisabled = true;
+            this.surrenderDisabled = true;
           }
         })
         .catch((err) => {

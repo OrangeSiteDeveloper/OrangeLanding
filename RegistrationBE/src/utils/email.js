@@ -9,7 +9,7 @@ class Email {
       secure: true,
       auth: {
         user: "295854713@qq.com",
-        pass: "cvnxhglshhmtbifi",
+        pass: "njkbmhsapbzybiah",
       },
     });
 

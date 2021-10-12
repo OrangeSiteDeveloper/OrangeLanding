@@ -12,6 +12,7 @@ class StudentService {
   async addStu(student) {
     console.log(student);
     const {
+      id,
       student_id,
       user_name,
       gender,
@@ -23,10 +24,12 @@ class StudentService {
       department,
       intro,
       status,
+      classroom
     } = student;
-    const statement = `insert into ums_new_member values(?,?,?,?,?,?,?,?,?,?,?,now())`;
+    const statement = `insert into ums_new_member values(?,?,?,?,?,?,?,?,?,?,?,?,?,now())`;
 
     const result = await connection.execute(statement, [
+      id,
       student_id,
       user_name,
       gender,
@@ -38,6 +41,7 @@ class StudentService {
       department,
       intro,
       status,
+      classroom
     ]);
     // 将student存储大奥数据库中
     return result[0];
@@ -52,11 +56,13 @@ class StudentService {
   }
 
   async confirmStu(student_id,status) {
-    const statement = `update ums_new_member set status=? where student_id=?;`;
+    const statement1 = `update ums_new_member set status=? where student_id=?;`;
+    const statement2 = `SELECT * FROM ums_new_member WHERE student_id=?;`;
 
-    const result = await connection.execute(statement, [status,student_id]);
+    const result1 = await connection.execute(statement1, [status,student_id]);
+    const result2 = await connection.execute(statement2,[student_id]);
 
-    return result[0];
+    return result2[0];
   }
   
   async showCount() {

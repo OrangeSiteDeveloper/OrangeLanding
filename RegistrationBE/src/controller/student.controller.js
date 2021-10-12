@@ -54,6 +54,31 @@ class StudentController {
     console.log(ctx.request.body);
     //查询数据库
     const result = await service.confirmStu(student_id, status);
+    console.log(result[0])
+    if (status == 41) {
+      emailUtil.SendEmail(
+        result[0].email,
+        `亲爱的${result[0].user_name}同学，您好！
+  
+        感谢您对我们坚定的选择，橙果工作室也将选择您。希望未来四年，能和您一起走过许多阳光明媚的日子~
+        
+        顺祝学安！
+        
+        橙果工作室`
+      );
+    } else if (status == 42) {
+      emailUtil.SendEmail(
+        result[0].email,
+        `亲爱的${result[0].user_name}同学，您好！
+
+        感谢您关注橙果工作室并参与我们2021年度第一次纳新！您的学识和涵养给我们留下了深刻的印象，但这是一次双向的选择。对于您的放弃我们深表遗憾，但仍要再次感谢您曾经的选择，期待我们的下一次相遇。
+        
+        顺祝学安！
+        
+        橙果工作室`
+      );
+    }
+
     //返回数据
     ctx.body = result;
   }
@@ -67,7 +92,7 @@ class StudentController {
 
   async addId(ctx, next) {
     const result = await service.addId();
-    
+
     ctx.body = result;
   }
 }
