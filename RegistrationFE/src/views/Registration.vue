@@ -117,7 +117,7 @@
                             <div>
                               <v-img
                                 style="width: 150px; margin: 0 auto"
-                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/X%5BFE(M3_WVG(2BYM53PHDTO.png"
+                                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/X%5BFE(M3_WVG(2BYM53PHDTO.png?x-oss-process=image/format,jpg/interlace,1"
                               >
                               </v-img>
                             </div>
@@ -167,7 +167,8 @@
             <v-card-text>
               <v-img
                 height="911"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95.png"
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95lazy.png?x-oss-process=image/format,jpg/interlace,1"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95.png?x-oss-process=image/format,jpg/interlace,1"
               ></v-img>
             </v-card-text>
           </v-card>
@@ -258,7 +259,6 @@ export default {
         this.loading = true;
 
         this.form.status = 1;
-        console.log(this.form);
         this.$axios
           .post("http://139.9.118.85:8002/student/add", this.form)
           .then((res) => {

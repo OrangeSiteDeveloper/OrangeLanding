@@ -5,7 +5,7 @@
       dark
       prominent
       class="back"
-      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210822202535.png"
+      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210822202535.png?x-oss-process=image/format,jpg/interlace,1"
       style="background-position: center 0%"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -19,12 +19,12 @@
       bottom
       v-model="drawer"
       temporary
-      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ING_1901.png"
+      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ING_1901.png?x-oss-process=image/format,jpg/interlace,1"
     >
       <v-list-item>
         <v-list-item-avatar>
           <v-img
-            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png"
+            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png?x-oss-process=image/format,jpg/interlace,1"
           ></v-img>
         </v-list-item-avatar>
 

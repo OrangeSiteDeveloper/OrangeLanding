@@ -76,6 +76,6 @@ footer {
 }
 
 .background {
-  background-image: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ING_1901.png");
+  background-image: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ING_1901.png?x-oss-process=image/format,jpg/interlace,1");
 }
 </style>

@@ -11,8 +11,13 @@
               :cols="card.flexx"
             >
               <template v-for="s in card.src">
-                <v-card :flag="card.flag" :height="card.height" :key="s" light>
-                  <v-img :height="card.height" :src="s" class="white--text align-end">
+                <v-card :flag="card.flag" :height="card.height" light>
+                  <v-img
+                    :height="card.height"
+                    :lazy-src="cards[0].lazysrc"
+                    :src="s"
+                    class="white--text align-end"
+                  >
                     <!-- 二 -->
                     <div
                       v-show="card.flagCover === 'a'"
@@ -165,6 +170,7 @@ export default {
     cards: [
       {
         title: "Pre-fab homes",
+        lazysrc: "",
         src: [""],
         flex: 6,
         flexx: 12,
@@ -247,7 +253,10 @@ export default {
       ];
     } else {
       that.cards[0].src = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1",
+      ];
+      that.cards[0].lazysrc = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7lazy.png?x-oss-process=image/format,jpg/interlace,1  ",
       ];
       that.cards[2].src = [
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",

@@ -29,7 +29,7 @@
             <div style="width: 100%">
               <img
                 style="display: block; margin: 0 auto"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%B7%A5%E4%BD%9C%E5%AE%A421%E7%BA%A7%E6%96%B0%E7%94%9F%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E8%81%8A%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%B7%A5%E4%BD%9C%E5%AE%A421%E7%BA%A7%E6%96%B0%E7%94%9F%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E8%81%8A%E4%BA%8C%E7%BB%B4%E7%A0%81.png?x-oss-process=image/format,jpg/interlace,1"
               />
             </div>
 
@@ -57,7 +57,11 @@
         <v-col>
           <v-card :height="sidePic.height" class="mx-auto">
             <v-card-text>
-              <v-img :src="sidePic.src" v-show="summerShowPc">
+              <v-img
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11lazy.jpg"
+                :src="sidePic.src"
+                v-show="summerShowPc"
+              >
                 <v-col cols="5" offset="1" class="summer-off-box">
                   <p class="text-h4 text--primary">欢迎你们——未来的“小橙子~”</p>
                   <p>orange studio</p>
@@ -78,7 +82,7 @@
                     <p>其实更想知道的是，进入大学后的我，此刻，到底最需要的是什么？</p>
                   </div>
                   <v-card-actions>
-                    <v-btn text color="teal accent-4" @click="reveal = true">
+                    <v-btn text color="teal accent-4">
                       <a href="http://139.9.118.85:99/#/" target="_blank"
                         >现在，我将告诉你答案——橙果工作室。</a
                       >
@@ -127,7 +131,8 @@
             <v-card-text>
               <v-img
                 class="img-box"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg"
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy.jpg?x-oss-process=image/format,jpg/interlace,1"
               ></v-img>
 
               <v-card-text>
@@ -140,36 +145,10 @@
                 </div>
               </v-card-text>
               <v-card-actions>
-                <v-btn
-                  text
-                  color="teal accent-4"
-                  @click="reveal = true"
-                  href="http://139.9.118.85:99/#/study"
+                <v-btn text color="teal accent-4" href="http://139.9.118.85:99/#/study"
                   >欢迎加入管理部门~</v-btn
                 >
               </v-card-actions>
-
-              <v-expand-transition>
-                <v-card
-                  v-if="reveal"
-                  class="transition-fast-in-fast-out v-card--reveal"
-                  style="height: 100%"
-                >
-                  <v-card-text class="pb-0">
-                    <p class="text-h4 text--primary">Origin</p>
-                    <p>
-                      late 16th century (as a noun denoting a place where alms were
-                      distributed): from medieval Latin eleemosynarius, from late Latin
-                      eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
-                    </p>
-                  </v-card-text>
-                  <v-card-actions class="pt-0">
-                    <v-btn text color="teal accent-4" @click="reveal = false"
-                      >Close</v-btn
-                    >
-                  </v-card-actions>
-                </v-card>
-              </v-expand-transition>
             </v-card-text>
             <br />
 
@@ -232,7 +211,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1)"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2.jpg"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2lazy.jpg"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2.jpg?x-oss-process=image/format,jpg/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px;}"
@@ -246,7 +226,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1.jpg"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1lazy.jpg"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1.jpg?x-oss-process=image/format,jpg/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px; font-size: 1rem;}"
@@ -260,7 +241,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3.jpg"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3lazy.jpg"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3.jpg?x-oss-process=image/format,jpg/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px;}"
@@ -287,41 +269,18 @@
                     </p>
                   </div>
                 </v-card-text>
-                <v-expand-transition>
-                  <v-card
-                    v-if="reveal"
-                    class="transition-fast-in-fast-out v-card--reveal"
-                    style="height: 100%"
-                  >
-                    <v-card-text class="pb-0">
-                      <p class="text-h4 text--primary">Origin</p>
-                      <p>
-                        late 16th century (as a noun denoting a place where alms were
-                        distributed): from medieval Latin eleemosynarius, from late Latin
-                        eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
-                      </p>
-                    </v-card-text>
-                    <v-card-actions class="pt-0">
-                      <v-btn text color="teal accent-4" @click="reveal = false"
-                        >Close</v-btn
-                      >
-                    </v-card-actions>
-                  </v-card>
-                </v-expand-transition>
               </div>
-              <!-- <v-img
-                class="white--text align-end img-box"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.6.jpg"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              >
-                <v-card-title>工作室环境</v-card-title>
-              </v-img>-->
+
               <v-carousel cycle show-arrows-on-hover :height="carouselHeight">
                 <v-carousel-item
                   v-for="(slide, i) in slides"
-                  :src="slide"
+                  :src="slide.src"
+                  :lazy-src="slide.lazysrc"
                   :key="i"
-                ></v-carousel-item>
+                >
+                  <!-- <v-img :src="slide"></v-img -->
+                  ></v-carousel-item
+                >
               </v-carousel>
             </v-card-text>
           </v-card>
@@ -332,7 +291,8 @@
               <div>
                 <v-img
                   style="background-size: 90%"
-                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534.png"
+                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534.png?x-oss-process=image/format,jpg/interlace,1"
+                  lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534lazy.png"
                 ></v-img>
               </div>
             </v-card-text>
@@ -418,6 +378,7 @@
                   <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
                     <v-card>
                       <v-img
+                        :lazy-src="card.lazysrc"
                         :src="card.src"
                         class="white--text align-end"
                         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
@@ -467,29 +428,16 @@ export default {
     fill: false,
     type: "trend",
     autoLineWidth: false,
-    itemss: [
-      {
-        src: "https://i.loli.net/2021/09/01/TtksBmOr4Ff3ybW.jpg",
-      },
-      {
-        src: "https://i.loli.net/2021/09/01/iJhNXTE2ytvb9U1.jpg",
-      },
-      {
-        src: "https://i.loli.net/2021/08/31/1RG28JezpYkPl7c.jpg",
-      },
-      {
-        src: "https://i.loli.net/2021/09/01/eoAOGTvfnquQZ3U.jpg",
-      },
-    ],
 
     carousel: {
       height: 700,
     },
     sidePic: {
       height: "",
-      src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png",
+      src:
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png?x-oss-process=image/format,jpg/interlace,1",
       srcMobile:
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872.png",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872.png?x-oss-process=image/format,jpg/interlace,1",
     },
     items: [
       {
@@ -515,17 +463,23 @@ export default {
       {
         title: "我的橙果，分你一半",
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AF.png",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AF.png?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AFlazy.png",
         flex: 12,
       },
       {
         title: "Orange Studio",
-        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png",
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6lazy.png",
         flex: 6,
       },
       {
         title: "Eat code sleep loop",
-        src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9.png",
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9.png?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9lazy.png",
         flex: 6,
       },
     ],
@@ -558,10 +512,28 @@ export default {
       "deep-purple accent-4",
     ],
     slides: [
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1).jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011.jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg",
-      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_013.jpg",
+      {
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1).jpg?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1)lazy.jpg",
+      },
+      {
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011.jpg?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011lazy.jpg",
+      },
+      {
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1)lazy.jpg",
+      },
+      {
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_013.jpg?x-oss-process=image/format,jpg/interlace,1",
+        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_01lazy.jpg",
+      },
     ],
     carouselHeight: 555.9,
     screenWidth: document.body.clientWidth,
@@ -575,7 +547,8 @@ export default {
     if (result <= 600) {
       this.carousel.height = 200;
       this.sidePic.height = 300;
-      this.sidePic.src = "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
+      this.sidePic.src =
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png?x-oss-process=image/format,jpg/interlace,1";
       this.rightHeight = 300;
       this.summerShowPc = false;
       this.summerShowMo = true;
@@ -584,7 +557,6 @@ export default {
       this.summerShowMo = false;
     }
     if (localStorage.getItem("flag") == "true") {
-      console.log(localStorage.getItem("flag"));
       this.dialog = false;
     }
   },
@@ -612,14 +584,12 @@ export default {
         let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
         setInterval(function () {
           // 打印screenWidth变化的值
-          console.log(that.screenWidth);
           if (that.screenWidth <= 600) {
-            console.log(that.screenWidth);
             that.carouselHeight = 238.18;
             that.carousel.height = 200;
             that.sidePic.height = 300;
             that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png?x-oss-process=image/format,jpg/interlace,1";
             that.rightHeight = 300;
             that.carouselHeight = carouselWidth * 1.5047;
           } else {
@@ -627,7 +597,7 @@ export default {
             that.carousel.height = 700;
             that.sidePic.height = "";
             that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png?x-oss-process=image/format,jpg/interlace,1";
             that.rightHeight = 599;
             that.carouselHeight = carouselWidth * 1.5047;
           }
@@ -642,7 +612,6 @@ export default {
       var videoElement = document.getElementById("videoOne");
       videoElement.pause();
       localStorage.setItem("flag", this.switch1);
-      console.log(localStorage.getItem("flag"));
     },
   },
 };
