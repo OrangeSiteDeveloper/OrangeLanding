@@ -91,7 +91,11 @@
                 </v-col>
               </v-img>
 
-              <v-img :src="sidePic.srcMobile" v-show="summerShowMo"></v-img>
+              <v-img
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872lazy.png"
+                :src="sidePic.srcMobile"
+                v-show="summerShowMo"
+              ></v-img>
             </v-card-text>
           </v-card>
         </v-col>

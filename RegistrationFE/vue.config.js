@@ -1,6 +1,6 @@
+const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
+
 module.exports = {
-  transpileDependencies: [
-    'vuetify'
-  ],
-  productionSourceMap: false
-}
+  transpileDependencies: ["vuetify"],
+  productionSourceMap: false,
+};
