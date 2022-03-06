@@ -6,17 +6,17 @@ export const data = {
   "frontmatter": {},
   "excerpt": "",
   "headers": [],
-  "filePathRelative": "guide/维护文档/说明.md",
   "git": {
-    "updatedTime": 1629627417000,
+    "updatedTime": 1629543295000,
     "contributors": [
       {
         "name": "zhangzhibang0309",
         "email": "295854713@qq.com",
-        "commits": 1
+        "commits": 3
       }
     ]
-  }
+  },
+  "filePathRelative": "guide/维护文档/说明.md"
 }
 
 if (import.meta.webpackHot) {

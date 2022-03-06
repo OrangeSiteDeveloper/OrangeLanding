@@ -8,8 +8,8 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "filePathRelative": null,
-  "git": {}
+  "git": {},
+  "filePathRelative": null
 }
 
 if (import.meta.webpackHot) {

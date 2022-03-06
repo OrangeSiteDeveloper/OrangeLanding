@@ -4,17 +4,17 @@
 <h2 id="项目前后端目录解析" tabindex="-1"><a class="header-anchor" href="#项目前后端目录解析" aria-hidden="true">#</a> 项目前后端目录解析</h2>
 <p>等我写完了，这里会有很多内容</p>
 <h2 id="资源以及合作平台链接" tabindex="-1"><a class="header-anchor" href="#资源以及合作平台链接" aria-hidden="true">#</a> 资源以及合作平台链接</h2>
-<p><a href="https://github.com/OrangeSiteDeveloper/RegistrationSystem" target="_blank" rel="noopener noreferrer">github<OutboundLink/></a><br>
-<a href="https://gitee.com/cata_lina/registration-system" target="_blank" rel="noopener noreferrer">gitee<OutboundLink/></a><br>
-<a href="https://catalina.pingcode.com/workspace/dashboards/60f67990f4bdb118751f72a9" target="_blank" rel="noopener noreferrer">pingcode<OutboundLink/></a><br>
-<a href="https://vuetifyjs.com/zh-Hans/" target="_blank" rel="noopener noreferrer">vuetify<OutboundLink/></a><br>
-<a href="https://materialdesignicons.com/" target="_blank" rel="noopener noreferrer">icons<OutboundLink/></a><br>
-<a href="https://space.bilibili.com/4276791/channel/detail?cid=190943&amp;ctype=0" target="_blank" rel="noopener noreferrer">vuetify实战课程<OutboundLink/></a></p>
+<p><a href="https://github.com/OrangeSiteDeveloper/RegistrationSystem" target="_blank" rel="noopener noreferrer">github<ExternalLinkIcon/></a><br>
+<a href="https://gitee.com/cata_lina/registration-system" target="_blank" rel="noopener noreferrer">gitee<ExternalLinkIcon/></a><br>
+<a href="https://catalina.pingcode.com/workspace/dashboards/60f67990f4bdb118751f72a9" target="_blank" rel="noopener noreferrer">pingcode<ExternalLinkIcon/></a><br>
+<a href="https://vuetifyjs.com/zh-Hans/" target="_blank" rel="noopener noreferrer">vuetify<ExternalLinkIcon/></a><br>
+<a href="https://materialdesignicons.com/" target="_blank" rel="noopener noreferrer">icons<ExternalLinkIcon/></a><br>
+<a href="https://space.bilibili.com/4276791/channel/detail?cid=190943&amp;ctype=0" target="_blank" rel="noopener noreferrer">vuetify实战课程<ExternalLinkIcon/></a></p>
 <h2 id="vuetify" tabindex="-1"><a class="header-anchor" href="#vuetify" aria-hidden="true">#</a> vuetify</h2>
 <h3 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h3>
 <p>用npm进行管理，输入命令后自动配置</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code>vue <span class="token function">add</span> vuetify
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><h3 id="grid布局-网格" tabindex="-1"><a class="header-anchor" href="#grid布局-网格" aria-hidden="true">#</a> Grid布局（网格）</h3>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><h3 id="grid布局-网格" tabindex="-1"><a class="header-anchor" href="#grid布局-网格" aria-hidden="true">#</a> Grid布局（网格）</h3>
 <p>用好栅格布局，可以更好的适配多端
 <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210822222509.png" alt=""><br>
 基本使用，通过v-row标签设置行，v-col设置列，给与v-col属性col，设置值1-12，可以占据屏幕横向的相应比例</p>

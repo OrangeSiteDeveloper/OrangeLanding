@@ -439,7 +439,7 @@ export default {
     sidePic: {
       height: "",
       src:
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1",
       srcMobile:
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872.png?x-oss-process=image/format,jpg/interlace,1",
     },
@@ -601,7 +601,7 @@ export default {
             that.carousel.height = 700;
             that.sidePic.height = "";
             that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
             that.rightHeight = 599;
             that.carouselHeight = carouselWidth * 1.5047;
           }

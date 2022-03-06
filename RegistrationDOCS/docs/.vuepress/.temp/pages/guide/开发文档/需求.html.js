@@ -25,9 +25,8 @@ export const data = {
       "children": []
     }
   ],
-  "filePathRelative": "guide/开发文档/需求.md",
   "git": {
-    "updatedTime": 1629643616000,
+    "updatedTime": 1629644073000,
     "contributors": [
       {
         "name": "zhangzhibang0309",
@@ -35,7 +34,8 @@ export const data = {
         "commits": 2
       }
     ]
-  }
+  },
+  "filePathRelative": "guide/开发文档/需求.md"
 }
 
 if (import.meta.webpackHot) {

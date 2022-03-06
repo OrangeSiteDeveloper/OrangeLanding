@@ -69,9 +69,8 @@ export const data = {
       ]
     }
   ],
-  "filePathRelative": "guide/开发文档/前端相关.md",
   "git": {
-    "updatedTime": 1629657708000,
+    "updatedTime": 1629657841000,
     "contributors": [
       {
         "name": "zhangzhibang0309",
@@ -79,7 +78,8 @@ export const data = {
         "commits": 1
       }
     ]
-  }
+  },
+  "filePathRelative": "guide/开发文档/前端相关.md"
 }
 
 if (import.meta.webpackHot) {

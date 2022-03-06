@@ -3,21 +3,21 @@
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># #后面是注释</span>
 <span class="token comment"># 克隆项目</span>
 <span class="token function">git</span> clone http地址或者ssh地址
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 创建并且切换到新分支</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 创建并且切换到新分支</span>
 <span class="token function">git</span> checkout -b 新分支名<span class="token punctuation">(</span>用英文<span class="token punctuation">)</span>
 <span class="token comment"># 切换到以有分支 比如切换到master分支</span>
 <span class="token function">git</span> checkout master
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 提交代码的时候，连续执行下面三个命令</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token comment"># 提交代码的时候，连续执行下面三个命令</span>
 <span class="token function">git</span> add. 
 <span class="token comment"># 提交内容随便写 注意中文不用加""英文需要加""</span>
 <span class="token function">git</span> commit -m 提交内容
 <span class="token comment"># 最后推送到gitee上</span>
 <span class="token function">git</span> push
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="gitee配置密钥" tabindex="-1"><a class="header-anchor" href="#gitee配置密钥" aria-hidden="true">#</a> gitee配置密钥</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="gitee配置密钥" tabindex="-1"><a class="header-anchor" href="#gitee配置密钥" aria-hidden="true">#</a> gitee配置密钥</h2>
 <h3 id="生成并且查找密钥" tabindex="-1"><a class="header-anchor" href="#生成并且查找密钥" aria-hidden="true">#</a> 生成并且查找密钥</h3>
 <p>右键，打开git bash，输入命令</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">cat</span> ~/.ssh/id_rsa.pub  
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>然后敲回车，不出意外的话，会出现</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>然后敲回车，不出意外的话，会出现</p>
 <p><img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210823021848.png" alt=""></p>
 <p>红色圈出的这块，就是你电脑的密钥，然后复制，注意不要把你刚才的 cat。。。命令也给复制进去，从ssh-xxx开始到最后。</p>
 <p>注意，如果出意外的话，会找不到这个密钥文件，那就是你的电脑没有生成过密钥，如果出现了这个问题，可以查一下怎么生成ssh密钥，或者在群里说一下。</p>
@@ -28,7 +28,7 @@
 <p>到此位置就设置好了，然后需要验证一下是否成功</p>
 <p>输入命令</p>
 <div class="language-bash ext-sh line-numbers-mode"><pre v-pre class="language-bash"><code><span class="token function">ssh</span> -T git@gitee.com 
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210823022331419.png" alt="image-20210823022331419"></p>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210823022331419.png" alt="image-20210823022331419"></p>
 <p>如果出现successfully，说明你的密钥就配好了。</p>
 <h3 id="解释配置公钥的作用-http与ssh的区别" tabindex="-1"><a class="header-anchor" href="#解释配置公钥的作用-http与ssh的区别" aria-hidden="true">#</a> 解释配置公钥的作用&amp;http与ssh的区别</h3>
 <p>配置密钥有什么用呢，没配置密钥的时候，本地与gitee远程链接只能通过http建立，</p>

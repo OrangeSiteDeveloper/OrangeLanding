@@ -1,4 +1,7 @@
 import {
+  setupDevtoolsPlugin
+} from "./chunk-35TZUOOU.js";
+import {
   computed,
   defineComponent,
   getCurrentInstance,
@@ -15,71 +18,20 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-TZBCKWF7.js";
-import "./chunk-QCE5TPYU.js";
+} from "./chunk-XTS5S2AB.js";
+import "./chunk-IPZ6NMDU.js";
 import {
+  init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-INZN3KXG.js";
+} from "./chunk-WCBWMRKB.js";
 
 // dep:vue-router
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
 // node_modules/vue-router/dist/vue-router.esm-bundler.js
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/index.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/env.js
-init_define_MZ_ZOOM_OPTIONS();
-function getDevtoolsGlobalHook() {
-  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
-}
-function getTarget() {
-  return typeof navigator !== "undefined" ? window : typeof global !== "undefined" ? global : {};
-}
-
-// node_modules/@vue/devtools-api/lib/esm/const.js
-init_define_MZ_ZOOM_OPTIONS();
-var HOOK_SETUP = "devtools-plugin:setup";
-
-// node_modules/@vue/devtools-api/lib/esm/api/index.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/api.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/app.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/component.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/context.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/hooks.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/api/util.js
-init_define_MZ_ZOOM_OPTIONS();
-
-// node_modules/@vue/devtools-api/lib/esm/index.js
-function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
-  const hook = getDevtoolsGlobalHook();
-  if (hook) {
-    hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
-  } else {
-    const target = getTarget();
-    const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
-    list.push({
-      pluginDescriptor,
-      setupFn
-    });
-  }
-}
-
-// node_modules/vue-router/dist/vue-router.esm-bundler.js
 var hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
 var PolySymbol = (name) => hasSymbol ? Symbol(true ? "[vue-router]: " + name : name) : (true ? "[vue-router]: " : "_vr_") + name;
 var matchedRouteKey = PolySymbol(true ? "router view location matched" : "rvlm");
@@ -130,7 +82,7 @@ function parseURL(parseQuery2, location2, currentLocation = "/") {
   };
 }
 function stringifyURL(stringifyQuery2, location2) {
-  let query = location2.query ? stringifyQuery2(location2.query) : "";
+  const query = location2.query ? stringifyQuery2(location2.query) : "";
   return location2.path + (query && "?") + query + (location2.hash || "");
 }
 function stripBase(pathname, base) {
@@ -139,8 +91,8 @@ function stripBase(pathname, base) {
   return pathname.slice(base.length) || "/";
 }
 function isSameRouteLocation(stringifyQuery2, a, b) {
-  let aLastIndex = a.matched.length - 1;
-  let bLastIndex = b.matched.length - 1;
+  const aLastIndex = a.matched.length - 1;
+  const bLastIndex = b.matched.length - 1;
   return aLastIndex > -1 && aLastIndex === bLastIndex && isSameRouteRecord(a.matched[aLastIndex], b.matched[bLastIndex]) && isSameRouteLocationParams(a.params, b.params) && stringifyQuery2(a.query) === stringifyQuery2(b.query) && a.hash === b.hash;
 }
 function isSameRouteRecord(a, b) {
@@ -149,7 +101,7 @@ function isSameRouteRecord(a, b) {
 function isSameRouteLocationParams(a, b) {
   if (Object.keys(a).length !== Object.keys(b).length)
     return false;
-  for (let key in a) {
+  for (const key in a) {
     if (!isSameRouteLocationParamsValue(a[key], b[key]))
       return false;
   }
@@ -232,12 +184,12 @@ var computeScrollPosition = () => ({
 function scrollToPosition(position) {
   let scrollToOptions;
   if ("el" in position) {
-    let positionEl = position.el;
+    const positionEl = position.el;
     const isIdSelector = typeof positionEl === "string" && positionEl.startsWith("#");
     if (typeof position.el === "string") {
       if (!isIdSelector || !document.getElementById(position.el.slice(1))) {
         try {
-          let foundEl = document.querySelector(position.el);
+          const foundEl = document.querySelector(position.el);
           if (isIdSelector && foundEl) {
             warn(`The selector "${position.el}" should be passed as "el: document.querySelector('${position.el}')" because it starts with "#".`);
             return;
@@ -267,7 +219,7 @@ function getScrollKey(path, delta) {
   const position = history.state ? history.state.position - delta : -1;
   return position + path;
 }
-var scrollPositions = new Map();
+var scrollPositions = /* @__PURE__ */ new Map();
 function saveScrollPosition(key, scrollPosition) {
   scrollPositions.set(key, scrollPosition);
 }
@@ -364,10 +316,10 @@ function buildState(back, current, forward, replaced = false, computeScroll = fa
 }
 function useHistoryStateNavigation(base) {
   const { history: history2, location: location2 } = window;
-  let currentLocation = {
+  const currentLocation = {
     value: createCurrentLocation(base, location2)
   };
-  let historyState = { value: history2.state };
+  const historyState = { value: history2.state };
   if (!historyState.value) {
     changeLocation(currentLocation.value, {
       back: null,
@@ -451,6 +403,7 @@ function createMemoryHistory(base = "") {
   let listeners = [];
   let queue = [START];
   let position = 0;
+  base = normalizeBase(base);
   function setLocation(location2) {
     position++;
     if (position === queue.length) {
@@ -466,7 +419,7 @@ function createMemoryHistory(base = "") {
       delta,
       type: NavigationType.pop
     };
-    for (let callback of listeners) {
+    for (const callback of listeners) {
       callback(to, from, info);
     }
   }
@@ -604,7 +557,7 @@ var BASE_PATH_PARSER_OPTIONS = {
 var REGEX_CHARS_RE = /[.+*?^${}()[\]/\\]/g;
 function tokensToParser(segments, extraOptions) {
   const options = assign({}, BASE_PATH_PARSER_OPTIONS, extraOptions);
-  let score = [];
+  const score = [];
   let pattern = options.start ? "^" : "";
   const keys = [];
   for (const segment of segments) {
@@ -867,7 +820,7 @@ function tokenizePath(path) {
 function createRouteRecordMatcher(record, parent, options) {
   const parser = tokensToParser(tokenizePath(record.path), options);
   if (true) {
-    const existingKeys = new Set();
+    const existingKeys = /* @__PURE__ */ new Set();
     for (const key of parser.keys) {
       if (existingKeys.has(key.name))
         warn(`Found duplicated params with name "${key.name}" for path "${record.path}". Only the last one will be available on "$route.params".`);
@@ -888,14 +841,14 @@ function createRouteRecordMatcher(record, parent, options) {
 }
 function createRouterMatcher(routes, globalOptions) {
   const matchers = [];
-  const matcherMap = new Map();
+  const matcherMap = /* @__PURE__ */ new Map();
   globalOptions = mergeOptions({ strict: false, end: true, sensitive: false }, globalOptions);
   function getRecordMatcher(name) {
     return matcherMap.get(name);
   }
   function addRoute(record, parent, originalRecord) {
-    let isRootAdd = !originalRecord;
-    let mainNormalizedRecord = normalizeRouteRecord(record);
+    const isRootAdd = !originalRecord;
+    const mainNormalizedRecord = normalizeRouteRecord(record);
     mainNormalizedRecord.aliasOf = originalRecord && originalRecord.record;
     const options = mergeOptions(globalOptions, record);
     const normalizedRecords = [
@@ -914,10 +867,10 @@ function createRouterMatcher(routes, globalOptions) {
     let matcher;
     let originalMatcher;
     for (const normalizedRecord of normalizedRecords) {
-      let { path } = normalizedRecord;
+      const { path } = normalizedRecord;
       if (parent && path[0] !== "/") {
-        let parentPath = parent.record.path;
-        let connectingSlash = parentPath[parentPath.length - 1] === "/" ? "" : "/";
+        const parentPath = parent.record.path;
+        const connectingSlash = parentPath[parentPath.length - 1] === "/" ? "" : "/";
         normalizedRecord.path = parent.record.path + (path && connectingSlash + path);
       }
       if (normalizedRecord.path === "*") {
@@ -939,7 +892,7 @@ function createRouterMatcher(routes, globalOptions) {
           removeRoute(record.name);
       }
       if ("children" in mainNormalizedRecord) {
-        let children = mainNormalizedRecord.children;
+        const children = mainNormalizedRecord.children;
         for (let i = 0; i < children.length; i++) {
           addRoute(children[i], matcher, originalRecord && originalRecord.children[i]);
         }
@@ -961,7 +914,7 @@ function createRouterMatcher(routes, globalOptions) {
         matcher.alias.forEach(removeRoute);
       }
     } else {
-      let index = matchers.indexOf(matcherRef);
+      const index = matchers.indexOf(matcherRef);
       if (index > -1) {
         matchers.splice(index, 1);
         if (matcherRef.record.name)
@@ -976,7 +929,7 @@ function createRouterMatcher(routes, globalOptions) {
   }
   function insertMatcher(matcher) {
     let i = 0;
-    while (i < matchers.length && comparePathParserScore(matcher, matchers[i]) >= 0)
+    while (i < matchers.length && comparePathParserScore(matcher, matchers[i]) >= 0 && (matcher.record.path !== matchers[i].record.path || !isRecordChildOf(matcher, matchers[i])))
       i++;
     matchers.splice(i, 0, matcher);
     if (matcher.record.name && !isAliasRecord(matcher))
@@ -999,7 +952,7 @@ function createRouterMatcher(routes, globalOptions) {
     } else if ("path" in location2) {
       path = location2.path;
       if (!path.startsWith("/")) {
-        warn(`The Matcher cannot resolve relative paths but received "${path}". Unless you directly called \`matcher.resolve("${path}")\`, this is probably a bug in vue-router. Please open an issue at https://new-issue.vuejs.org/?repo=vuejs/vue-router-next.`);
+        warn(`The Matcher cannot resolve relative paths but received "${path}". Unless you directly called \`matcher.resolve("${path}")\`, this is probably a bug in vue-router. Please open an issue at https://new-issue.vuejs.org/?repo=vuejs/router.`);
       }
       matcher = matchers.find((m) => m.re.test(path));
       if (matcher) {
@@ -1035,8 +988,8 @@ function createRouterMatcher(routes, globalOptions) {
   return { addRoute, resolve, removeRoute, getRoutes, getRecordMatcher };
 }
 function paramsFromLocation(params, keys) {
-  let newParams = {};
-  for (let key of keys) {
+  const newParams = {};
+  for (const key of keys) {
     if (key in params)
       newParams[key] = params[key];
   }
@@ -1053,8 +1006,8 @@ function normalizeRouteRecord(record) {
     props: normalizeRecordProps(record),
     children: record.children || [],
     instances: {},
-    leaveGuards: new Set(),
-    updateGuards: new Set(),
+    leaveGuards: /* @__PURE__ */ new Set(),
+    updateGuards: /* @__PURE__ */ new Set(),
     enterCallbacks: {},
     components: "components" in record ? record.components || {} : { default: record.component }
   };
@@ -1065,7 +1018,7 @@ function normalizeRecordProps(record) {
   if ("component" in record) {
     propsObject.default = props;
   } else {
-    for (let name in record.components)
+    for (const name in record.components)
       propsObject[name] = typeof props === "boolean" ? props : props[name];
   }
   return propsObject;
@@ -1082,8 +1035,8 @@ function mergeMetaFields(matched) {
   return matched.reduce((meta, record) => assign(meta, record.meta), {});
 }
 function mergeOptions(defaults, partialOptions) {
-  let options = {};
-  for (let key in defaults) {
+  const options = {};
+  for (const key in defaults) {
     options[key] = key in partialOptions ? partialOptions[key] : defaults[key];
   }
   return options;
@@ -1092,20 +1045,23 @@ function isSameParam(a, b) {
   return a.name === b.name && a.optional === b.optional && a.repeatable === b.repeatable;
 }
 function checkSameParams(a, b) {
-  for (let key of a.keys) {
+  for (const key of a.keys) {
     if (!key.optional && !b.keys.find(isSameParam.bind(null, key)))
       return warn(`Alias "${b.record.path}" and the original record: "${a.record.path}" should have the exact same param named "${key.name}"`);
   }
-  for (let key of b.keys) {
+  for (const key of b.keys) {
     if (!key.optional && !a.keys.find(isSameParam.bind(null, key)))
       return warn(`Alias "${b.record.path}" and the original record: "${a.record.path}" should have the exact same param named "${key.name}"`);
   }
 }
 function checkMissingParamsInAbsolutePath(record, parent) {
-  for (let key of parent.keys) {
+  for (const key of parent.keys) {
     if (!record.keys.find(isSameParam.bind(null, key)))
       return warn(`Absolute path "${record.record.path}" should have the exact same param named "${key.name}" as its parent "${parent.record.path}".`);
   }
+}
+function isRecordChildOf(record, parent) {
+  return parent.children.some((child) => child === record || isRecordChildOf(record, child));
 }
 var HASH_RE = /#/g;
 var AMPERSAND_RE = /&/g;
@@ -1137,7 +1093,7 @@ function encodePath(text) {
   return commonEncode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F");
 }
 function encodeParam(text) {
-  return encodePath(text).replace(SLASH_RE, "%2F");
+  return text == null ? "" : encodePath(text).replace(SLASH_RE, "%2F");
 }
 function decode(text) {
   try {
@@ -1155,9 +1111,9 @@ function parseQuery(search) {
   const searchParams = (hasLeadingIM ? search.slice(1) : search).split("&");
   for (let i = 0; i < searchParams.length; ++i) {
     const searchParam = searchParams[i].replace(PLUS_RE, " ");
-    let eqPos = searchParam.indexOf("=");
-    let key = decode(eqPos < 0 ? searchParam : searchParam.slice(0, eqPos));
-    let value = eqPos < 0 ? null : decode(searchParam.slice(eqPos + 1));
+    const eqPos = searchParam.indexOf("=");
+    const key = decode(eqPos < 0 ? searchParam : searchParam.slice(0, eqPos));
+    const value = eqPos < 0 ? null : decode(searchParam.slice(eqPos + 1));
     if (key in query) {
       let currentValue = query[key];
       if (!Array.isArray(currentValue)) {
@@ -1181,7 +1137,7 @@ function stringifyQuery(query) {
       }
       continue;
     }
-    let values = Array.isArray(value) ? value.map((v) => v && encodeQueryValue(v)) : [value && encodeQueryValue(value)];
+    const values = Array.isArray(value) ? value.map((v) => v && encodeQueryValue(v)) : [value && encodeQueryValue(value)];
     values.forEach((value2) => {
       if (value2 !== void 0) {
         search += (search.length ? "&" : "") + key;
@@ -1194,8 +1150,8 @@ function stringifyQuery(query) {
 }
 function normalizeQuery(query) {
   const normalizedQuery = {};
-  for (let key in query) {
-    let value = query[key];
+  for (const key in query) {
+    const value = query[key];
     if (value !== void 0) {
       normalizedQuery[key] = Array.isArray(value) ? value.map((v) => v == null ? null : "" + v) : value == null ? value : "" + value;
     }
@@ -1239,7 +1195,7 @@ function onBeforeRouteLeave(leaveGuard) {
   }
   const activeRecord = inject(matchedRouteKey, {}).value;
   if (!activeRecord) {
-    warn("No active route record was found. Are you missing a <router-view> component?");
+    warn("No active route record was found when calling `onBeforeRouteLeave()`. Make sure you call this function inside of a component child of <router-view>. Maybe you called it inside of App.vue?");
     return;
   }
   registerGuard(activeRecord, "leaveGuards", leaveGuard);
@@ -1251,7 +1207,7 @@ function onBeforeRouteUpdate(updateGuard) {
   }
   const activeRecord = inject(matchedRouteKey, {}).value;
   if (!activeRecord) {
-    warn("No active route record was found. Are you missing a <router-view> component?");
+    warn("No active route record was found when calling `onBeforeRouteUpdate()`. Make sure you call this function inside of a component child of <router-view>. Maybe you called it inside of App.vue?");
     return;
   }
   registerGuard(activeRecord, "updateGuards", updateGuard);
@@ -1326,7 +1282,7 @@ function extractComponentsGuards(matched, guardType, to, from) {
           throw new Error("Invalid route component");
         } else if ("then" in rawComponent) {
           warn(`Component "${name}" in record with path "${record.path}" is a Promise instead of a function that returns a Promise. Did you write "import('./MyPage.vue')" instead of "() => import('./MyPage.vue')" ? This will break in production if not fixed.`);
-          let promise = rawComponent;
+          const promise = rawComponent;
           rawComponent = () => promise;
         } else if (rawComponent.__asyncLoader && !rawComponent.__warnedDefineAsync) {
           rawComponent.__warnedDefineAsync = true;
@@ -1336,7 +1292,7 @@ function extractComponentsGuards(matched, guardType, to, from) {
       if (guardType !== "beforeRouteEnter" && !record.instances[name])
         continue;
       if (isRouteComponent(rawComponent)) {
-        let options = rawComponent.__vccOpts || rawComponent;
+        const options = rawComponent.__vccOpts || rawComponent;
         const guard = options[guardType];
         guard && guards.push(guardToPromiseFn(guard, to, from, record, name));
       } else {
@@ -1350,7 +1306,7 @@ function extractComponentsGuards(matched, guardType, to, from) {
             return Promise.reject(new Error(`Couldn't resolve component "${name}" at "${record.path}"`));
           const resolvedComponent = isESModule(resolved) ? resolved.default : resolved;
           record.components[name] = resolvedComponent;
-          let options = resolvedComponent.__vccOpts || resolvedComponent;
+          const options = resolvedComponent.__vccOpts || resolvedComponent;
           const guard = options[guardType];
           return guard && guardToPromiseFn(guard, to, from, record, name)();
         }));
@@ -1367,16 +1323,16 @@ function useLink(props) {
   const currentRoute = inject(routeLocationKey);
   const route = computed(() => router.resolve(unref(props.to)));
   const activeRecordIndex = computed(() => {
-    let { matched } = route.value;
-    let { length } = matched;
+    const { matched } = route.value;
+    const { length } = matched;
     const routeMatched = matched[length - 1];
-    let currentMatched = currentRoute.matched;
+    const currentMatched = currentRoute.matched;
     if (!routeMatched || !currentMatched.length)
       return -1;
-    let index = currentMatched.findIndex(isSameRouteRecord.bind(null, routeMatched));
+    const index = currentMatched.findIndex(isSameRouteRecord.bind(null, routeMatched));
     if (index > -1)
       return index;
-    let parentRecordPath = getOriginalPath(matched[length - 2]);
+    const parentRecordPath = getOriginalPath(matched[length - 2]);
     return length > 1 && getOriginalPath(routeMatched) === parentRecordPath && currentMatched[currentMatched.length - 1].path !== parentRecordPath ? currentMatched.findIndex(isSameRouteRecord.bind(null, matched[length - 2])) : index;
   });
   const isActive = computed(() => activeRecordIndex.value > -1 && includesParams(currentRoute.params, route.value.params));
@@ -1465,9 +1421,9 @@ function guardEvent(e) {
   return true;
 }
 function includesParams(outer, inner) {
-  for (let key in inner) {
-    let innerValue = inner[key];
-    let outerValue = outer[key];
+  for (const key in inner) {
+    const innerValue = inner[key];
+    const outerValue = outer[key];
     if (typeof innerValue === "string") {
       if (innerValue !== outerValue)
         return false;
@@ -1537,6 +1493,18 @@ var RouterViewImpl = defineComponent({
         onVnodeUnmounted,
         ref: viewRef
       }));
+      if (isBrowser && component.ref) {
+        const info = {
+          depth,
+          name: matchedRoute.name,
+          path: matchedRoute.path,
+          meta: matchedRoute.meta
+        };
+        const internalInstances = Array.isArray(component.ref) ? component.ref.map((r) => r.i) : [component.ref.i];
+        internalInstances.forEach((instance) => {
+          instance.__vrv_devtools = info;
+        });
+      }
       return normalizeSlot(slots.default, { Component: component, route }) || component;
     };
   }
@@ -1594,8 +1562,8 @@ function addDevtools(app, router, matcher) {
     id: "org.vuejs.router" + (id ? "." + id : ""),
     label: "Vue Router",
     packageName: "vue-router",
-    homepage: "https://next.router.vuejs.org/",
-    logo: "https://vuejs.org/images/icons/favicon-96x96.png",
+    homepage: "https://router.vuejs.org",
+    logo: "https://router.vuejs.org/logo.png",
     componentStateTypes: ["Routing"],
     app
   }, (api) => {
@@ -1610,6 +1578,15 @@ function addDevtools(app, router, matcher) {
       }
     });
     api.on.visitComponentTree(({ treeNode: node, componentInstance }) => {
+      if (componentInstance.__vrv_devtools) {
+        const info = componentInstance.__vrv_devtools;
+        node.tags.push({
+          label: (info.name ? `${info.name.toString()}: ` : "") + info.path,
+          textColor: 0,
+          tooltip: "This component is rendered by &lt;router-view&gt;",
+          backgroundColor: PINK_500
+        });
+      }
       if (Array.isArray(componentInstance.__vrl_devtools)) {
         componentInstance.__devtoolsApi = api;
         componentInstance.__vrl_devtools.forEach((devtoolsData) => {
@@ -1918,7 +1895,7 @@ function isRouteMatching(route, filter) {
 }
 function omit(obj, keys) {
   const ret = {};
-  for (let key in obj) {
+  for (const key in obj) {
     if (!keys.includes(key)) {
       ret[key] = obj[key];
     }
@@ -1927,9 +1904,9 @@ function omit(obj, keys) {
 }
 function createRouter(options) {
   const matcher = createRouterMatcher(options.routes, options);
-  let parseQuery$1 = options.parseQuery || parseQuery;
-  let stringifyQuery$1 = options.stringifyQuery || stringifyQuery;
-  let routerHistory = options.history;
+  const parseQuery$1 = options.parseQuery || parseQuery;
+  const stringifyQuery$1 = options.stringifyQuery || stringifyQuery;
+  const routerHistory = options.history;
   if (!routerHistory)
     throw new Error('Provide the "history" option when calling "createRouter()": https://next.router.vuejs.org/api/#history.');
   const beforeGuards = useCallbacks();
@@ -1955,7 +1932,7 @@ function createRouter(options) {
     return matcher.addRoute(record, parent);
   }
   function removeRoute(name) {
-    let recordMatcher = matcher.getRecordMatcher(name);
+    const recordMatcher = matcher.getRecordMatcher(name);
     if (recordMatcher) {
       matcher.removeRoute(recordMatcher);
     } else if (true) {
@@ -1971,9 +1948,9 @@ function createRouter(options) {
   function resolve(rawLocation, currentLocation) {
     currentLocation = assign({}, currentLocation || currentRoute.value);
     if (typeof rawLocation === "string") {
-      let locationNormalized = parseURL(parseQuery$1, rawLocation, currentLocation.path);
-      let matchedRoute2 = matcher.resolve({ path: locationNormalized.path }, currentLocation);
-      let href2 = routerHistory.createHref(locationNormalized.fullPath);
+      const locationNormalized = parseURL(parseQuery$1, rawLocation, currentLocation.path);
+      const matchedRoute2 = matcher.resolve({ path: locationNormalized.path }, currentLocation);
+      const href2 = routerHistory.createHref(locationNormalized.fullPath);
       if (true) {
         if (href2.startsWith("//"))
           warn(`Location "${rawLocation}" resolved to "${href2}". A resolved location cannot start with multiple slashes.`);
@@ -1997,12 +1974,18 @@ function createRouter(options) {
         path: parseURL(parseQuery$1, rawLocation.path, currentLocation.path).path
       });
     } else {
+      const targetParams = assign({}, rawLocation.params);
+      for (const key in targetParams) {
+        if (targetParams[key] == null) {
+          delete targetParams[key];
+        }
+      }
       matcherLocation = assign({}, rawLocation, {
         params: encodeParams(rawLocation.params)
       });
       currentLocation.params = encodeParams(currentLocation.params);
     }
-    let matchedRoute = matcher.resolve(matcherLocation, currentLocation);
+    const matchedRoute = matcher.resolve(matcherLocation, currentLocation);
     const hash = rawLocation.hash || "";
     if (hash && !hash.startsWith("#")) {
       warn(`A \`hash\` should always start with the character "#". Replace "${hash}" with "#${hash}".`);
@@ -2012,7 +1995,7 @@ function createRouter(options) {
       hash: encodeHash(hash),
       path: matchedRoute.path
     }));
-    let href = routerHistory.createHref(fullPath);
+    const href = routerHistory.createHref(fullPath);
     if (true) {
       if (href.startsWith("//")) {
         warn(`Location "${rawLocation}" resolved to "${href}". A resolved location cannot start with multiple slashes.`);
@@ -2023,7 +2006,7 @@ function createRouter(options) {
     return assign({
       fullPath,
       hash,
-      query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query
+      query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query || {}
     }, matchedRoute, {
       redirectedFrom: void 0,
       href
@@ -2088,7 +2071,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
       failure = createRouterError(16, { to: toLocation, from });
       handleScroll(from, from, true, false);
     }
-    return (failure ? Promise.resolve(failure) : navigate(toLocation, from)).catch((error) => isNavigationFailure(error) ? error : triggerError(error, toLocation, from)).then((failure2) => {
+    return (failure ? Promise.resolve(failure) : navigate(toLocation, from)).catch((error) => isNavigationFailure(error) ? isNavigationFailure(error, 2) ? error : markAsReady(error) : triggerError(error, toLocation, from)).then((failure2) => {
       if (failure2) {
         if (isNavigationFailure(failure2, 2)) {
           if (isSameRouteLocation(stringifyQuery$1, resolve(failure2.to), toLocation) && redirectedFrom && (redirectedFrom._count = redirectedFrom._count ? redirectedFrom._count + 1 : 1) > 10) {
@@ -2192,7 +2175,7 @@ ${JSON.stringify(newTargetLocation, null, 2)}
   let removeHistoryListener;
   function setupListeners() {
     removeHistoryListener = routerHistory.listen((to, _from, info) => {
-      let toLocation = resolve(to);
+      const toLocation = resolve(to);
       const shouldRedirect = handleRedirectRecord(toLocation);
       if (shouldRedirect) {
         pushWithRedirect(assign(shouldRedirect, { replace: true }), toLocation).catch(noop);
@@ -2255,23 +2238,24 @@ ${JSON.stringify(newTargetLocation, null, 2)}
     });
   }
   function markAsReady(err) {
-    if (ready)
-      return;
-    ready = true;
-    setupListeners();
-    readyHandlers.list().forEach(([resolve2, reject]) => err ? reject(err) : resolve2());
-    readyHandlers.reset();
+    if (!ready) {
+      ready = !err;
+      setupListeners();
+      readyHandlers.list().forEach(([resolve2, reject]) => err ? reject(err) : resolve2());
+      readyHandlers.reset();
+    }
+    return err;
   }
   function handleScroll(to, from, isPush, isFirstNavigation) {
     const { scrollBehavior } = options;
     if (!isBrowser || !scrollBehavior)
       return Promise.resolve();
-    let scrollPosition = !isPush && getSavedScrollPosition(getScrollKey(to.fullPath, 0)) || (isFirstNavigation || !isPush) && history.state && history.state.scroll || null;
+    const scrollPosition = !isPush && getSavedScrollPosition(getScrollKey(to.fullPath, 0)) || (isFirstNavigation || !isPush) && history.state && history.state.scroll || null;
     return nextTick().then(() => scrollBehavior(to, from, scrollPosition)).then((position) => position && scrollToPosition(position)).catch((err) => triggerError(err, to, from));
   }
   const go = (delta) => routerHistory.go(delta);
   let started;
-  const installedApps = new Set();
+  const installedApps = /* @__PURE__ */ new Set();
   const router = {
     currentRoute,
     addRoute,
@@ -2307,18 +2291,19 @@ ${JSON.stringify(newTargetLocation, null, 2)}
         });
       }
       const reactiveRoute = {};
-      for (let key in START_LOCATION_NORMALIZED) {
+      for (const key in START_LOCATION_NORMALIZED) {
         reactiveRoute[key] = computed(() => currentRoute.value[key]);
       }
       app.provide(routerKey, router2);
       app.provide(routeLocationKey, reactive(reactiveRoute));
       app.provide(routerViewLocationKey, currentRoute);
-      let unmountApp = app.unmount;
+      const unmountApp = app.unmount;
       installedApps.add(app);
       app.unmount = function() {
         installedApps.delete(app);
         if (installedApps.size < 1) {
-          removeHistoryListener();
+          pendingLocation = START_LOCATION_NORMALIZED;
+          removeHistoryListener && removeHistoryListener();
           currentRoute.value = START_LOCATION_NORMALIZED;
           started = false;
           ready = false;
@@ -2388,8 +2373,8 @@ export {
   viewDepthKey
 };
 /*!
-  * vue-router v4.0.10
-  * (c) 2021 Eduardo San Martin Morote
+  * vue-router v4.0.13
+  * (c) 2022 Eduardo San Martin Morote
   * @license MIT
   */
 //# sourceMappingURL=vue-router.js.map

@@ -14,7 +14,7 @@
                 <v-card :flag="card.flag" :height="card.height" light>
                   <v-img
                     :height="card.height"
-                    :lazy-src="cards[0].lazysrc"
+                    :lazy-src="card.lazysrc"
                     :src="s"
                     class="white--text align-end"
                   >
@@ -47,6 +47,7 @@
                       <v-img
                         class="white--text align-end"
                         height="300px"
+                        lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782Flazy.jpg"
                         src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F.jpg"
                       >
                         <v-card-title>橙果电脑服务日</v-card-title>
@@ -170,7 +171,7 @@ export default {
     cards: [
       {
         title: "Pre-fab homes",
-        lazysrc: "",
+        lazysrc: [""],
         src: [""],
         flex: 6,
         flexx: 12,
@@ -179,6 +180,7 @@ export default {
       },
       {
         title: "Pre-fab homes",
+        lazysrc: [""],
         src: [""],
         flex: 3,
         flexx: 6,
@@ -188,6 +190,9 @@ export default {
       },
       {
         title: "Favorite road trips",
+        lazysrc: [
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881%20(1)lazy.png",
+        ],
         src: [
           "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",
         ],
@@ -241,10 +246,16 @@ export default {
       that.cards[0].src = [
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/3.2.2.png",
       ];
+      that.cards[0].lazysrc = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/3.2.2lazy.png",
+      ];
       that.cards[0].height = "";
 
       that.cards[2].src = [
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88.jpg",
+      ];
+      that.cards[2].lazysrc = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88lazy.jpg",
       ];
 
       that.cards[4].src = [
@@ -256,15 +267,19 @@ export default {
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1",
       ];
       that.cards[0].lazysrc = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7lazy.png?x-oss-process=image/format,jpg/interlace,1  ",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7lazy.png?x-oss-process=image/format,jpg/interlace,1",
       ];
       that.cards[2].src = [
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881.png",
+      ];
+      that.cards[2].lazysrc = [
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881%20(1)lazy.png",
       ];
       that.cards[4].src = [
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.7.png",
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.5.png",
       ];
+
       that.cards[0].height = 500;
     }
   },

@@ -1,11 +1,13 @@
 import {
   __commonJS,
+  init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-INZN3KXG.js";
+} from "./chunk-WCBWMRKB.js";
 
 // node_modules/nprogress/nprogress.js
 var require_nprogress = __commonJS({
   "node_modules/nprogress/nprogress.js"(exports, module) {
+    init_define_EXTERNAL_LINK_ICON_LOCALES();
     init_define_MZ_ZOOM_OPTIONS();
     (function(root, factory) {
       if (typeof define === "function" && define.amd) {
@@ -282,6 +284,7 @@ var require_nprogress = __commonJS({
 });
 
 // dep:nprogress
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var nprogress_default = require_nprogress();
 export {

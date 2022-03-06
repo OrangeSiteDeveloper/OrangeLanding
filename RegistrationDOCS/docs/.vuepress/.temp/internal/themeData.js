@@ -41,7 +41,9 @@ export const themeData = {
     "Looks like we've got some broken links."
   ],
   "backToHome": "Take me home",
-  "openInNewWindow": "open in new window"
+  "openInNewWindow": "open in new window",
+  "toggleDarkMode": "toggle dark mode",
+  "toggleSidebar": "toggle sidebar"
 }
 
 if (import.meta.webpackHot) {

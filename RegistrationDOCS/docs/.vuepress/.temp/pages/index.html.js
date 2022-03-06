@@ -31,17 +31,17 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "filePathRelative": "README.md",
   "git": {
-    "updatedTime": 1629627417000,
+    "updatedTime": 1629543295000,
     "contributors": [
       {
         "name": "zhangzhibang0309",
         "email": "295854713@qq.com",
-        "commits": 1
+        "commits": 3
       }
     ]
-  }
+  },
+  "filePathRelative": "README.md"
 }
 
 if (import.meta.webpackHot) {
