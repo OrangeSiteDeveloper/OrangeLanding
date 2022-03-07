@@ -58,7 +58,7 @@
           <v-card :height="sidePic.height" class="mx-auto">
             <v-card-text>
               <v-img
-                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11lazy.jpg"
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11lazy_1_.webp?x-oss-process=image/interlace,1"
                 :src="sidePic.src"
                 v-show="summerShowPc"
               >
@@ -92,7 +92,7 @@
               </v-img>
 
               <v-img
-                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872lazy.png"
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872lazy_1_.webp?x-oss-process=image/interlace,1"
                 :src="sidePic.srcMobile"
                 v-show="summerShowMo"
               ></v-img>
@@ -135,8 +135,8 @@
             <v-card-text>
               <v-img
                 class="img-box"
-                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/e11b3c01b0e28dc1178eb89c05a5ece7_401728828.jpg"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy.jpg?x-oss-process=image/format,jpg/interlace,1"
+                lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/e11b3c01b0e28dc1178eb89c05a5ece7_401728828-_1__1_.webp?x-oss-process=image/interlace,1"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1"
               ></v-img>
 
               <v-card-text>
@@ -215,8 +215,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1)"
-                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2lazy.jpg"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2.jpg?x-oss-process=image/format,jpg/interlace,1"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2lazy_1_.webp?x-oss-process=image/interlace,1"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2-_1__1_.webp?x-oss-process=image/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px;}"
@@ -230,8 +230,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1lazy.jpg"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1.jpg?x-oss-process=image/format,jpg/interlace,1"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1lazy-_1__1_.webp?x-oss-process=image/interlace,1"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1-_1__1_%20(1).webp?x-oss-process=image/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px; font-size: 1rem;}"
@@ -245,8 +245,8 @@
                         <v-img
                           height="200"
                           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3lazy.jpg"
-                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3.jpg?x-oss-process=image/format,jpg/interlace,1"
+                          lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3lazy(1).webp?x-oss-process=image/interlace,1"
+                          src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3-_1__1_.webp?x-oss-process=image/interlace,1"
                         ></v-img>
                         <v-card-title
                           style="position: absolute; color: white;font-weight: 500;top: 138px;}"
@@ -295,8 +295,8 @@
               <div>
                 <v-img
                   style="background-size: 90%"
-                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534.png?x-oss-process=image/format,jpg/interlace,1"
-                  lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534lazy.png"
+                  lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534lazy(1).webp?x-oss-process=image/interlace,1"
+                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534(1).webp?x-oss-process=image/interlace,1"
                 ></v-img>
               </div>
             </v-card-text>
@@ -441,7 +441,7 @@ export default {
       src:
         "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1",
       srcMobile:
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872-_1__1_.webp?x-oss-process=image/interlace,1",
     },
     items: [
       {
@@ -467,23 +467,25 @@ export default {
       {
         title: "我的橙果，分你一半",
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AF.png?x-oss-process=image/format,jpg/interlace,1",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AF(1).webp?x-oss-process=image/interlace,1",
         lazysrc:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AFlazy.png",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%83%8C%E6%99%AFlazy(1).webp?x-oss-process=image/interlace,1",
         flex: 12,
       },
       {
         title: "Orange Studio",
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6.png?x-oss-process=image/format,jpg/interlace,1",
-        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6lazy.png",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6(1).webp?x-oss-process=image/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/6.6lazy(1).webp?x-oss-process=image/interlace,1",
         flex: 6,
       },
       {
         title: "Eat code sleep loop",
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9.png?x-oss-process=image/format,jpg/interlace,1",
-        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9lazy.png",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9%20(1)(1).webp?x-oss-process=image/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/9.9lazy(1).webp?x-oss-process=image/interlace,1",
         flex: 6,
       },
     ],
@@ -518,25 +520,27 @@ export default {
     slides: [
       {
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1).jpg?x-oss-process=image/format,jpg/interlace,1",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1)%20(1)(1).webp?x-oss-process=image/interlace,1",
         lazysrc:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1)lazy.jpg",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153521(1)lazy(1).webp?x-oss-process=image/interlace,1",
       },
       {
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011.jpg?x-oss-process=image/format,jpg/interlace,1",
-        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011lazy.jpg",
-      },
-      {
-        src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1).jpg?x-oss-process=image/format,jpg/interlace,1",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011%20(1)(1).webp?x-oss-process=image/interlace,1",
         lazysrc:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1)lazy.jpg",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_011lazy(1).webp?x-oss-process=image/interlace,1",
       },
       {
         src:
-          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_013.jpg?x-oss-process=image/format,jpg/interlace,1",
-        lazysrc: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_01lazy.jpg",
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1)%20(1)(1).webp?x-oss-process=image/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_20210905_153855(1)lazy(1).webp?x-oss-process=image/interlace,1",
+      },
+      {
+        src:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_013%20(1)(1).webp?x-oss-process=image/interlace,1",
+        lazysrc:
+          "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_01lazy(1).webp?x-oss-process=image/interlace,1",
       },
     ],
     carouselHeight: 555.9,
@@ -552,7 +556,7 @@ export default {
       this.carousel.height = 200;
       this.sidePic.height = 300;
       this.sidePic.src =
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png?x-oss-process=image/format,jpg/interlace,1";
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
       this.rightHeight = 300;
       this.summerShowPc = false;
       this.summerShowMo = true;
@@ -593,7 +597,7 @@ export default {
             that.carousel.height = 200;
             that.sidePic.height = 300;
             that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/12.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
             that.rightHeight = 300;
             that.carouselHeight = carouselWidth * 1.5047;
           } else {

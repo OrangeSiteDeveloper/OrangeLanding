@@ -240,20 +240,20 @@ export default {
       step3: 3,
       step4: 4,
       img1: [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9Flazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9Flazy(1).webp?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F%20(1)(1).webp?x-oss-process=image/interlace,1",
       ],
       img2: [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9Flazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9Flazy(1).webp?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F%20(1)(1).webp?x-oss-process=image/interlace,1",
       ],
       img3: [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9Flazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9F.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9Flazy%20(1)(1).webp?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9F%20(1)(1)%20(1).webp?x-oss-process=image/interlace,1",
       ],
       img4: [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5lazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5.png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5lazy(1)%20(1).webp?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5%20(1)(1).webp?x-oss-process=image/interlace,1",
       ],
     },
     student_id: "",
@@ -275,20 +275,20 @@ export default {
 
     if (result <= 1200) {
       this.step.img1 = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2)%20(1)lazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2)%20(1)lazy.png?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png?x-oss-process=image/interlace,1",
       ];
       this.step.img2 = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1)lazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1)lazy.png?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png?x-oss-process=image/interlace,1",
       ];
       this.step.img3 = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1)lazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1)lazy.png?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png?x-oss-process=image/interlace,1",
       ];
       this.step.img4 = [
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1)lazy.png?x-oss-process=image/format,jpg/interlace,1",
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png?x-oss-process=image/format,jpg/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1)lazy.png?x-oss-process=image/interlace,1",
+        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png?x-oss-process=image/interlace,1",
       ];
     }
   },
@@ -305,22 +305,23 @@ export default {
           // 打印screenWidth变化的值
           if (that.screenWidth <= 1200) {
             that.step.img1[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F1(2).png?x-oss-process=image/interlace,1";
             that.step.img2[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B2%89%E5%AB%A9(1).png?x-oss-process=image/interlace,1";
             that.step.img3[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%BB%BF%E8%89%B2(1).png?x-oss-process=image/interlace,1";
             that.step.img4[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E7%B4%AB(1).png?x-oss-process=image/interlace,1";
           } else {
+            // 与data相同
             that.step.img1[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%81%AD%E5%96%9C%E6%8A%A5%E5%90%8D%E6%88%90%E5%8A%9F%20(1)(1).webp?x-oss-process=image/interlace,1";
             that.step.img2[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%88%9D%E8%AF%95%E7%BB%93%E6%9D%9F%20(1)(1).webp?x-oss-process=image/interlace,1";
             that.step.img3[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9F.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%A4%8D%E8%AF%95%E7%BB%93%E6%9D%9F%20(1)(1)%20(1).webp?x-oss-process=image/interlace,1";
             that.step.img4[1] =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5.png?x-oss-process=image/format,jpg/interlace,1";
+              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%98%AF%E5%90%A6%E7%A1%AE%E5%AE%9A%E5%8A%A0%E5%85%A5%20(1)(1).webp?x-oss-process=image/interlace,1";
           }
 
           that.timer = false;
