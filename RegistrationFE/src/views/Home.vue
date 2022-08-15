@@ -59,18 +59,17 @@
         >
       </div>
 
-      <v-img
+      <!-- pc -->
+      <img
         lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/11lazy_1_.webp?x-oss-process=image/interlace,1"
         :src="sidePic.src"
-        v-show="summerShowPc"
-      >
-      </v-img>
+      />
 
-      <v-img
+      <!-- mo -->
+      <img
         lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%A9%99%E6%9E%9C%E5%90%8D%E7%89%872lazy_1_.webp?x-oss-process=image/interlace,1"
         :src="sidePic.srcMobile"
-        v-show="summerShowMo"
-      ></v-img>
+      />
     </div>
 
     <!-- center -->
@@ -90,11 +89,11 @@
         </div>
 
         <div>
-          <v-img
+          <img
             class="img-box"
             lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/e11b3c01b0e28dc1178eb89c05a5ece7_401728828-_1__1_.webp?x-oss-process=image/interlace,1"
             src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1"
-          ></v-img>
+          />
           <p class="text-h4 text--primary">部门简介</p>
           <p>Department introduction</p>
           <div class="text--primary">
@@ -130,26 +129,20 @@
           src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.2-_1__1_.webp?x-oss-process=image/interlace,1"
         />
         电脑义诊
-        <v-img
+        <img
           height="200"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1lazy-_1__1_.webp?x-oss-process=image/interlace,1"
           src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.1-_1__1_%20(1).webp?x-oss-process=image/interlace,1"
-        ></v-img>
-        <v-card-title
-          style="position: absolute; color: white;font-weight: 500;top: 138px; font-size: 1rem;}"
-          >Eat(); Sleep(); Code(); Repeat();</v-card-title
-        >
-        <v-img
+        />
+        >Eat(); Sleep(); Code(); Repeat();
+        <img
           height="200"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3lazy(1).webp?x-oss-process=image/interlace,1"
           src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/1.3-_1__1_.webp?x-oss-process=image/interlace,1"
-        ></v-img>
-        <v-card-title
-          style="position: absolute; color: white;font-weight: 500;top: 138px;}"
-          >清灰换硅脂</v-card-title
-        >
+        />
+        清灰换硅脂
       </div>
 
       <div>
@@ -167,11 +160,11 @@
         </div>
       </div>
 
-      <v-img
+      <img
         style="background-size: 90%"
         lazy-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534lazy(1).webp?x-oss-process=image/interlace,1"
         src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/20210920215534(1).webp?x-oss-process=image/interlace,1"
-      ></v-img>
+      />
     </span>
 
     <!-- down -->
@@ -346,76 +339,10 @@ export default {
           "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/IMG_01lazy(1).webp?x-oss-process=image/interlace,1",
       },
     ],
-    carouselHeight: 555.9,
-    screenWidth: document.body.clientWidth,
-    summerShowPc: true,
-    summerShowMo: false,
   }),
   created() {
-    var de = document.documentElement;
-    const result = de.offsetWidth;
-
-    if (result <= 600) {
-      this.carousel.height = 200;
-      this.sidePic.height = 300;
-      this.sidePic.src =
-        "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
-      this.rightHeight = 300;
-      this.summerShowPc = false;
-      this.summerShowMo = true;
-    } else {
-      this.summerShowPc = true;
-      this.summerShowMo = false;
-    }
-    if (localStorage.getItem("flag") == "true") {
-      this.dialog = false;
-    }
-  },
-  mounted() {
-    let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
-    this.carouselHeight = carouselWidth * 1.5047;
-
-    const that = this;
-    window.onresize = () => {
-      return (() => {
-        window.screenWidth = document.body.clientWidth;
-        that.screenWidth = window.screenWidth;
-      })();
-    };
-  },
-  watch: {
-    screenWidth(val) {
-      // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
-      if (!this.timer) {
-        // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
-        this.screenWidth = val;
-        this.timer = true;
-        let that = this;
-
-        let carouselWidth = document.getElementsByClassName("col-6")[0].offsetWidth - 32;
-        setInterval(function () {
-          // 打印screenWidth变化的值
-          if (that.screenWidth <= 600) {
-            that.carouselHeight = 238.18;
-            that.carousel.height = 200;
-            that.sidePic.height = 300;
-            that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
-            that.rightHeight = 300;
-            that.carouselHeight = carouselWidth * 1.5047;
-          } else {
-            that.carouselHeight = 555.9;
-            that.carousel.height = 700;
-            that.sidePic.height = "";
-            that.sidePic.src =
-              "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
-            that.rightHeight = 599;
-            that.carouselHeight = carouselWidth * 1.5047;
-          }
-          that.timer = false;
-        }, 400);
-      }
-    },
+    let imgg =
+      "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1";
   },
 };
 </script>
