@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <router-link v-for="item in items" :to="item.link">{{ item.title }}--</router-link>
   </div>
 </template>
@@ -22,5 +22,9 @@ export default {
 a {
   text-decoration: none;
   color: #333;
+}
+
+.box {
+  border: 1px solid black;
 }
 </style>

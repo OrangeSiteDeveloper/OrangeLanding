@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <svg
       t="1660584807558"
       class="icon"
@@ -78,4 +78,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.box {
+  border: 1px solid black;
+}
+</style>
