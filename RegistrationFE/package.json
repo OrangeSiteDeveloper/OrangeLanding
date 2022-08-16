@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --modern",
+    "s": "vue-cli-service serve",
+    "b": "vue-cli-service build --modern",
     "analyzer": "vue-cli-service build --modern --report"
   },
   "dependencies": {
