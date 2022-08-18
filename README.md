@@ -1,4 +1,19 @@
-# RegistrationSystem
-an orange studio registration system
-## 正在写需求中
-等这个项目写完 这个文档会有很多内容
+# registrationfe
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
