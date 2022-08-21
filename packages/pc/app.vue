@@ -2,6 +2,8 @@
   <div>
     <navigation-bar></navigation-bar>
     <NuxtPage />
+    {{ resDataSuccess }}
+    {{ resData }}
     <Footer></Footer>
   </div>
 </template>
@@ -12,7 +14,7 @@ const { data: resDataSuccess } = await useFetch("/api/test", {
   body: {
     name: "zzb",
     age: "19",
-    text: "大家好",
+    text: new Date(),
   },
 });
 const { data: resData } = await useFetch("/api/test", {

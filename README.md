@@ -1,19 +1,7 @@
-# registrationfe
+Nuxt3 Vite3 Ts Pnpm Monorepo
 
-## Project setup
-```
-yarn install
-```
+# 安装全局依赖
+pnpm add xxxx -w
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 安装局部依赖
+pnpm -F @OraangeLanding/xxx 命令

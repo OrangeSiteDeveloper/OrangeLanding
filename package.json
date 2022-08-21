@@ -1,16 +1,13 @@
 {
-  "name": "registrationfe",
+  "name": "OrangeLanding",
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "serve": "nuxt preview"
+    "start:pc": "pnpm -F @OrangeLanding/pc run dev",
+    "build:pc": "pnpm -F @OrangeLanding/pc run build"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8",
-    "naive-ui": "^2.32.1",
-    "@vicons/ionicons5": "^0.12.0"
+    "nuxt": "3.0.0-rc.8"
   },
   "browserslist": [
     "> 1%",

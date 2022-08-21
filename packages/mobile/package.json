@@ -1,0 +1,12 @@
+{
+  "name": "@OrangeLanding/mobile",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

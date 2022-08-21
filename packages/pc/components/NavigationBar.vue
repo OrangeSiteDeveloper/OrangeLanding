@@ -14,11 +14,6 @@ let items: any[] = [
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: #333;
-}
-
 .box {
   border: 1px solid black;
 }
