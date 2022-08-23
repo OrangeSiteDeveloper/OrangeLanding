@@ -2,6 +2,8 @@
   <div>
     <navigation-bar></navigation-bar>
     <NuxtPage />
+    <n-button tertiary type="info"> Info </n-button>
+    <br />
     {{ resDataSuccess }}
     {{ resData }}
     <Footer></Footer>
@@ -9,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import { NButton } from "naive-ui";
 const { data: resDataSuccess } = await useFetch("/api/test", {
   method: "post",
   body: {

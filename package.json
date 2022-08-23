@@ -9,7 +9,9 @@
     "build:mobile": "pnpm -F @OrangeLanding/mobile run build"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8"
+    "nuxt": "3.0.0-rc.8",
+    "naive-ui": "^2.32.2",
+    "@css-render/vue3-ssr": "^0.15.4"
   },
   "browserslist": [
     "> 1%",
