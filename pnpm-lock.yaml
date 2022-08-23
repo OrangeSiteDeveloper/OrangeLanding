@@ -4,10 +4,7 @@ importers:
 
   .:
     specifiers:
-      dayjs: ^1.11.5
       nuxt: 3.0.0-rc.8
-    dependencies:
-      dayjs: 1.11.5
     devDependencies:
       nuxt: 3.0.0-rc.8_rollup@2.78.1+vite@3.0.9
 
@@ -1562,10 +1559,6 @@ packages:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
     dev: true
-
-  /dayjs/1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
-    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

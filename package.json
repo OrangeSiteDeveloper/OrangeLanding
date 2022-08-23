@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start:pc": "pnpm -F @OrangeLanding/pc run dev",
-    "build:pc": "pnpm -F @OrangeLanding/pc run build"
+    "start:mobile": "pnpm -F @OrangeLanding/mobile run dev",
+    "build:pc": "pnpm -F @OrangeLanding/pc run build",
+    "build:mobile": "pnpm -F @OrangeLanding/mobile run build"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.8"
