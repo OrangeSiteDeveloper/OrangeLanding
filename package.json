@@ -3,19 +3,30 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start:pc": "pnpm -F @OrangeLanding/pc run dev",
-    "start:mobile": "pnpm -F @OrangeLanding/mobile run dev",
+    "dev:pc": "pnpm -F @OrangeLanding/pc run dev",
+    "dev:mobile": "pnpm -F @OrangeLanding/mobile run dev",
     "build:pc": "pnpm -F @OrangeLanding/pc run build",
-    "build:mobile": "pnpm -F @OrangeLanding/mobile run build"
+    "build:mobile": "pnpm -F @OrangeLanding/mobile run build",
+    "serve:pc": "pnpm -F @OrangeLanding/pc run serve",
+    "serve:mobile": "pnpm -F @OrangeLanding/mobile run serve"
+
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "@vue/server-renderer": "^3.2.31",
+    "koa": "^2.13.4",
+    "koa-connect": "^2.1.0",
+    "koa-send": "^5.0.1",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.8",
+    "@types/koa": "^2.13.4",
+    "@vitejs/plugin-vue": "^2.3.0",
     "naive-ui": "^2.32.2",
-    "@css-render/vue3-ssr": "^0.15.4"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vue-tsc": "^0.29.8"
+  }
 }
