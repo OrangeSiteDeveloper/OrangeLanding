@@ -1,0 +1,186 @@
+.img-navbar {
+	max-width: 13rem;
+}
+
+.navbar {
+	background-color: #1f2d41 !important;
+}
+
+.navbar-marketing .navbar-brand img {
+	height: unset;
+}
+
+.sub-header {
+	font-size: 2rem;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+	border-bottom: 2px solid black;
+	display: inline-block;
+}
+
+.mb-wrap {
+	display: none;
+}
+
+.slide-fade-enter-active {
+	transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active for below version 2.1.8 */
+	{
+	transform: translateX(10px);
+	opacity: 0;
+}
+
+
+.page-header-content {
+	margin-top: 4rem;
+	margin-bottom: 3rem;
+}
+
+.ft-pop:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.bg-hardware {
+	background-image: url(https://s1.ax1x.com/2020/09/13/w0FYqg.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-y: -100px;
+	/* background-position-x: -10px; */
+	background-color: #aaff00;
+}
+
+
+.bg-website {
+	background-image: url(https://s1.ax1x.com/2020/09/13/wwzSfO.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #00baf2;
+}
+
+.bg-bigdata {
+	background-image: url(https://s1.ax1x.com/2020/09/13/w0E7LT.png);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-y: -300px;
+	background-color: #003ac3;
+}
+
+.bg-embed {
+	background-image: url(https://s1.ax1x.com/2020/09/13/w0ETyV.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #116a18;
+}
+
+.bg-programming {
+	background-image: url(https://s1.ax1x.com/2020/09/13/w0e9aD.png);
+	background-size: 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-y: 90px;
+	background-color: #3d00b5;
+}
+
+.img-signicon {
+	width: 20%;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.page-header .page-header-content .page-header-title {
+		font-size: 3rem;
+	}
+	.img-signicon {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 495px) {
+	.img-signicon {
+		width: 80%;
+	}
+	
+	.page-header .page-header-content .page-header-title {
+		font-size: 2rem;
+	}
+
+	.mb-wrap {
+		display: block;
+		height: 0;
+	}
+
+	.copyright {
+		margin-bottom: 1rem;
+	}
+}
+
+@media only screen and (max-width: 416px) {
+	.page-header .page-header-content .page-header-title {
+		font-size: 1.744rem;
+	}
+}
+
+
+.row .col-12 .container .container {
+	padding: 0;
+}
+
+.datacg-con {
+	text-align: left!important;
+}
+
+.img-alibaba {
+	max-width: 100%;
+}
+
+.img-inspur {
+	max-width: 70%;
+}
+
+.img-sangfor {
+	max-width: 50%;
+}
+
+.img-unicom {
+	max-width: 40%;
+}
+
+.img-jindun {
+	max-width: 100%;
+}
+
+.img-chengqitong {
+	max-width: 70%;
+}
+
+.img-bank {
+	max-width: 100%;
+}
+
+.img-bkzy {
+	max-width: 90%;
+}
+
+.bg-geek {
+	background-color: rgb(33,173,255);
+	background-image: linear-gradient(133deg, rgb(33,173,255) 0%, rgb(50,0,117) 100%)
+}
+
+.geek-h1 {
+	font-size: 4rem;
+	font-weight: 300;
+}
