@@ -12,11 +12,11 @@
     "serve:jpc": "pnpm -F @OrangeLanding/joinPc run serve",
     "serve:jmo": "pnpm -F @OrangeLanding/joinMobile run serve",
     "serve:official": "pnpm -F @OrangeLanding/official run serve"
-
   },
   "dependencies": {
     "@koa/router": "^10.1.1",
     "@vue/server-renderer": "^3.2.31",
+    "axios": "^0.18.1",
     "koa": "^2.13.4",
     "koa-connect": "^2.1.0",
     "koa-send": "^5.0.1",
