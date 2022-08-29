@@ -17,6 +17,7 @@
     "@koa/router": "^10.1.1",
     "@vue/server-renderer": "^3.2.31",
     "axios": "^0.18.1",
+    "highlight.js": "^11.6.0",
     "koa": "^2.13.4",
     "koa-connect": "^2.1.0",
     "koa-send": "^5.0.1",
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@types/koa": "^2.13.4",
+    "@vicons/ionicons4": "^0.12.0",
+    "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^2.3.0",
     "naive-ui": "^2.32.2",
     "typescript": "^4.5.4",
