@@ -27,4 +27,8 @@ const { type, word, color } = props.value;
 .gradient-mini-word {
   font-size: 0.8vw;
 }
+.n-button {
+  font-size: 0.6vw;
+  line-height: 4em;
+}
 </style>

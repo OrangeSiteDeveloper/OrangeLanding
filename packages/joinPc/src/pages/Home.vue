@@ -1,7 +1,7 @@
 <template>
   <!-- content -->
-  <n-grid :cols="16">
-    <n-gi :offset="2" :span="12">
+  <n-grid :cols="8">
+    <n-gi :offset="1" :span="6">
       <!-- 大图 -->
       <n-card size="small" hoverable>
         <div class="view-box">

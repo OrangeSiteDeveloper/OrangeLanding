@@ -1,13 +1,13 @@
 <template>
-  <router-link to="/">home --- </router-link>
-  <router-link to="/about">about --- </router-link>
-  <router-link to="/registration">registration --- </router-link>
-  <router-link to="/status">status --- </router-link>
-
+  <HeaderVue />
   <RouterView />
+  <FooterVue />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeaderVue from "./components/Header.vue";
+import FooterVue from "./components/Footer.vue";
+</script>
 
 <style>
 * {
@@ -17,5 +17,8 @@
 
 body {
   font-family: 楷体;
+}
+.n-card {
+  border-radius: 8px;
 }
 </style>

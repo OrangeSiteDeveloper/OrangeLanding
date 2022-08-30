@@ -1,7 +1,7 @@
 <template>
   <div>
-    <n-grid :cols="16">
-      <n-gi :offset="2" :span="12">
+    <n-grid :cols="8">
+      <n-gi :offset="1" :span="6">
         <n-grid :x-gap="12" :cols="2">
           <n-gi :span="1">
             <n-card hoverable>
