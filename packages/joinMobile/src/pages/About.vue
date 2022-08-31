@@ -1,0 +1,86 @@
+<template>
+  <div style="width: 95%; margin: 0 auto">
+    <!--  -->
+    <n-card size="small">
+      <img
+        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1"
+      />
+    </n-card>
+    <!--  -->
+    <n-grid :cols="2" :x-gap="12">
+      <n-gi :span="1">
+        <n-card size="small">
+          <div class="height">
+            <h1>{{ activities.title }}</h1>
+            <p v-for="word in activities.words">
+              {{ word }}
+            </p>
+            <br />
+          </div>
+        </n-card>
+      </n-gi>
+      <n-gi :span="1">
+        <n-card size="small">
+          <div class="height">
+            <img
+              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88-_1_.webp"
+            />
+          </div>
+        </n-card>
+      </n-gi>
+    </n-grid>
+    <!--  -->
+    <n-card size="small">
+      <img
+        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F-_1_.webp"
+      />
+      <h1>{{ comDiagnosis.title }}</h1>
+      <p v-for="word in comDiagnosis.words">
+        {{ word }}
+      </p>
+    </n-card>
+    <n-card size="small">
+      <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/work(1).png" />
+    </n-card>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { NCard, NGrid, NGi } from "naive-ui";
+
+const activities = ref({
+  title: "小组活动",
+  words: [
+    "学习知识、经验分享、头脑风暴为主要组成的小组活动是橙果er日常活动的主要形式。",
+    "在这里，学长和学姐会带领大家推开信息世界遮掩许久的门户，走入广阔无垠的互联网世界，开启“程序人生”。同时这里也是沟通交流的平台，无数奇思妙想在这里生发，头脑风暴在这里酝酿。",
+    "用知识去创造，用热爱去碰撞下个“风口”，或许就将由你来创造！",
+  ],
+});
+
+const comDiagnosis = ref({
+  title: "电脑义诊",
+  words: [
+    "电脑服务日是橙果er的传统活动，由两大部分组成。最初呢，主要活动为电脑义诊，旨在帮助师生解决一些不太复杂的的软硬件问题，为广大师生做一些力所能及的事情。",
+    "在2020年伊始，我们加入了“信息化科普”活动，作为信息化科普的全新阵地。两大活动同组成了现在的“电脑服务日”活动，从而更好地普及知识，服务师生。",
+  ],
+});
+</script>
+
+<style scoped>
+.n-card {
+  box-shadow: 0px 0px 42px #d6cfcf;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.height {
+  height: 420px;
+  overflow: hidden;
+}
+</style>
