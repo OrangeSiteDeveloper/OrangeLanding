@@ -25,8 +25,15 @@ function throttle(fn: { (): void; (): void; }, delay: number | undefined) {
 
 
 onMounted(() => {
-  let img = image.value
+  let img = image.value;
 
+  (() => {
+    const imageTop = img.getBoundingClientRect().top;
+    if (imageTop < window.innerHeight) {
+      tmp.value.src = tmp.value.data_src;
+    }
+    console.log(11)
+  })()
   window.addEventListener(
     "scroll",
     throttle(() => {

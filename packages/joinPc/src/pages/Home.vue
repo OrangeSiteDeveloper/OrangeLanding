@@ -5,8 +5,7 @@
       <!-- 大图 -->
       <n-card size="small" hoverable>
         <div class="view-box">
-          <img
-            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1" />
+          <ImgLazy :value="propsBigImg" />
           <div class="view-word-container">
             <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)">
               欢迎你们——未来的“小橙子~”
@@ -100,8 +99,14 @@ import javascript from "highlight.js/lib/languages/javascript";
 
 import TextCardVue from "@/components/TextCard.vue";
 import GradientBlock from "@/components/GradientBlock.vue";
+import ImgLazy from "@/components/ImgLazt.vue"
 
 hljs.registerLanguage("javascript", javascript);
+
+const propsBigImg = {
+  src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1%20(7).heic",
+  data_src: "https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1"
+}
 
 const code = `
 // 这是一道经典算法题，翻转二叉树
