@@ -11,12 +11,9 @@
       Copyright © 2019-2020 齐鲁工业大学网络信息中心橙果工作室 鲁ICP备00000000号
     </p>
   </div>
-  <!-- <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/footer%20.webp" data-src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/G568~%1PV91L~1XP7Q~(I6B.png" alt=""> -->
 </template>
 
 <script setup lang="ts">
-
-
 </script>
 
 <style scoped>
