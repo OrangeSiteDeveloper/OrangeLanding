@@ -10,8 +10,7 @@
       <br />
       <br />
       <img
-        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1"
-      />
+        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1" />
       <br />
       <TextCardVue :value="propsTextCard.propsDepartment" />
       <br />
@@ -189,6 +188,7 @@ var invertTree = function (root) {
 img {
   width: 100%;
 }
+
 .n-config-provider {
   overflow-x: scroll;
 }

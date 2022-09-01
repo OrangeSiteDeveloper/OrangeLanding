@@ -14,10 +14,12 @@
 .bg {
   position: relative;
 }
+
 .router-container {
   position: absolute;
   bottom: 1em;
 }
+
 a {
   text-decoration: none;
   font-size: 5vw;

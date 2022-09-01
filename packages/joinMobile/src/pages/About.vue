@@ -3,8 +3,7 @@
     <!--  -->
     <n-card size="small">
       <img
-        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1"
-      />
+        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1" />
     </n-card>
     <!--  -->
     <n-grid :cols="2" :x-gap="12">
@@ -23,17 +22,14 @@
         <n-card size="small">
           <div class="height">
             <img
-              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88-_1_.webp"
-            />
+              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%89%8B%E6%9C%BA.%E6%8B%BC%E5%90%88-_1_.webp" />
           </div>
         </n-card>
       </n-gi>
     </n-grid>
     <!--  -->
     <n-card size="small">
-      <img
-        src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F-_1_.webp"
-      />
+      <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F-_1_.webp" />
       <h1>{{ comDiagnosis.title }}</h1>
       <p v-for="word in comDiagnosis.words">
         {{ word }}

@@ -20,26 +20,14 @@
         </template>
       </div>
       <div class="cur-status">
-        <n-progress
-          type="circle"
-          :percentage="50"
-          :offset-degree="120"
-          color="black"
-          rail-color="rgb(206 210 214)"
-        />
+        <n-progress type="circle" :percentage="50" :offset-degree="120" color="black" rail-color="rgb(206 210 214)" />
       </div>
     </n-card>
 
     <n-card v-for="(item, index) in stepWord">
       <p v-if="index === 0">这里可以查看面试过程！</p>
-      <n-progress
-        type="line"
-        :percentage="item.progess"
-        :indicator-placement="'inside'"
-        :color="item.color"
-        :rail-color="item.railColor"
-        processing
-      />
+      <n-progress type="line" :percentage="item.progess" :indicator-placement="'inside'" :color="item.color"
+        :rail-color="item.railColor" processing />
       <br />
       <h2>{{ item.title }}</h2>
       <p v-for="word in item.words">{{ word }}</p>
@@ -47,20 +35,11 @@
     </n-card>
   </div>
   <n-modal v-model:show="showModal">
-    <n-card
-      style="width: 600px"
-      title="面试状态查询"
-      :bordered="false"
-      size="huge"
-      role="dialog"
-      aria-modal="true"
-    >
+    <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
       <template #header-extra> 噢！ </template>
       假装是个查询input
       <template #footer>
-        <n-button strong secondary round @click="showModal = false"
-          >好了，我知道了</n-button
-        >
+        <n-button strong secondary round @click="showModal = false">好了，我知道了</n-button>
       </template>
     </n-card>
   </n-modal>
@@ -167,6 +146,7 @@ const stepWord = ref([
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
 .cur-status {
   width: 50%;
   display: inline-block;

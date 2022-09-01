@@ -14,4 +14,5 @@ const props = defineProps(["value"]);
 const { title, mini, btnText, btnColor, arr } = props.value;
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
