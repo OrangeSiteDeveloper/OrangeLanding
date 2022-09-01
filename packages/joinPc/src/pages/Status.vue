@@ -150,7 +150,7 @@ p {
 .bg {
   border: 1px solid rgb(239, 239, 245);
   border-radius: 8px;
-  background: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/B1.png");
+  background: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/B1%20(%E5%A4%8D%E5%88%B6).webp");
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 1.3vw 0 1vw 2vw;

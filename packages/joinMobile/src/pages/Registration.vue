@@ -1,7 +1,7 @@
 <template>
   <div style="width: 95%; margin: 0 auto">
-    <n-card size="small"
-      ><form>
+    <n-card size="small">
+      <form>
         <label for="sid">学号:&nbsp;</label>
         <input type="text" id="sid" name="sid" placeholder="请填写学号" />
         <br />
@@ -48,18 +48,13 @@
         <br />
         <br />
         <label for="w3review">用一段简短的文字描述你自己！</label>
-        <textarea
-          id="w3review"
-          name="w3review"
-          rows="4"
-          cols="50"
-          placeholder="正如你所看到的，我是一个非主流。"
-        ></textarea></form
-    ></n-card>
+        <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
+      </form>
+    </n-card>
   </div>
 </template>
 <script setup lang="ts">
-import { NGrid, NGi, NCard } from "naive-ui";
+import { NCard } from "naive-ui";
 </script>
 
 <style scoped>
@@ -69,6 +64,7 @@ input {
   outline: none;
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  -webkit-appearance: none;
 }
 
 select {
@@ -77,6 +73,8 @@ select {
   outline: none;
   width: 100%;
   font-family: 楷体;
+  background-color: white;
+  color: rgb(169, 169, 169);
 }
 
 textarea {

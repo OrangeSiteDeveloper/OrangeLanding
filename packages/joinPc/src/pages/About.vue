@@ -6,7 +6,7 @@
           <!-- 上半部分 -->
           <n-gi :span="2">
             <img
-              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E5%90%88%E7%85%A7.png?x-oss-process=image/format,jpg/interlace,1"
+              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/menbers.webp"
             />
           </n-gi>
           <n-gi :span="1">
@@ -42,12 +42,12 @@
                 <n-grid :y-gap="12" :cols="1">
                   <n-gi :span="1">
                     <img
-                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.7.png"
+                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/tent.webp"
                     />
                   </n-gi>
                   <n-gi :span="1">
                     <img
-                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/2.5.png"
+                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/conventionhall.webp"
                     />
                   </n-gi>
                 </n-grid>
@@ -61,7 +61,7 @@
                 <p style="font-size: 1.5vw">历届学长、学姐收获Offer</p>
               </n-gradient-text>
               <img
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/work(1).png"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/work(1)%20(%E5%A4%8D%E5%88%B6).webp"
               />
             </div>
           </n-gi>

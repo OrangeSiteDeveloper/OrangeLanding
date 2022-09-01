@@ -69,6 +69,8 @@
                   cols="50"
                   placeholder="正如你所看到的，我是一个非主流。"
                 ></textarea>
+                <n-button strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
           </n-gi>
@@ -86,7 +88,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { NGrid, NGi, NCard } from "naive-ui";
+import { NGrid, NGi, NCard, NButton } from "naive-ui";
 </script>
 
 <style scoped>
@@ -106,6 +108,7 @@ select {
   width: 100%;
   font-size: 1.1vw;
   font-family: 楷体;
+  -webkit-appearance: none;
 }
 label {
   font-size: 1.2vw;
@@ -117,5 +120,8 @@ textarea {
   width: 100%;
   font-size: 1.1vw;
   font-family: 楷体;
+}
+.n-button {
+  margin: 10px 10px 0;
 }
 </style>

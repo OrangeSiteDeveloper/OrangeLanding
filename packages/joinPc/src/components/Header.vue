@@ -29,7 +29,7 @@ a {
 }
 
 .bg {
-  background: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/t-02(1).png");
+  background: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/header.webp");
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
