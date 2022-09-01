@@ -6,12 +6,9 @@
       <n-card size="small" hoverable>
         <div class="view-box">
           <img
-            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1"
-          />
+            src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/aqccb-itej1.webp?x-oss-process=image/interlace,1" />
           <div class="view-word-container">
-            <n-gradient-text
-              gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"
-            >
+            <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)">
               欢迎你们——未来的“小橙子~”
             </n-gradient-text>
             <p class="mini-word">OrangeStudio~</p>
@@ -33,8 +30,7 @@
                 <br />
                 <br />
                 <img
-                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1"
-                />
+                  src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/ooy-_2__1_.webp?x-oss-process=image/format,jpg/interlace,1" />
                 <br />
                 <TextCardVue :value="propsTextCard.propsDepartment" />
               </n-card>
@@ -234,6 +230,7 @@ const propsColorBlock = {
 img {
   width: 100%;
 }
+
 .view-box {
   position: relative;
 }
@@ -243,6 +240,7 @@ img {
   top: 3vw;
   left: 5vw;
 }
+
 .n-gradient-text {
   font-size: 1.6vw;
 }
@@ -251,6 +249,7 @@ img {
   font-size: 1vw;
   line-height: 2em;
 }
+
 .carousel-img {
   object-fit: cover;
 }
@@ -265,6 +264,7 @@ img {
   font-size: 0.6vw;
   line-height: 4em;
 }
+
 .n-code {
   font-size: 0.81vw;
 }

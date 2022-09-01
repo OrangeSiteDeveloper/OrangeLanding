@@ -26,12 +26,7 @@
                 <br />
                 <br />
                 <label for="sphone">手机号码:&nbsp;</label>
-                <input
-                  type="text"
-                  id="sphone"
-                  name="sphone"
-                  placeholder="请填写手机号码"
-                />
+                <input type="text" id="sphone" name="sphone" placeholder="请填写手机号码" />
                 <br />
                 <br />
                 <label for="sqq">qq:&nbsp;</label>
@@ -39,12 +34,7 @@
                 <br />
                 <br />
                 <label for="semail">电子邮箱：&nbsp;</label>
-                <input
-                  type="text"
-                  id="semail"
-                  name="semail"
-                  placeholder="请填写电子邮箱"
-                />
+                <input type="text" id="semail" name="semail" placeholder="请填写电子邮箱" />
                 <br />
                 <br />
                 <label for="sgroup">意向小组:&nbsp;</label>
@@ -62,13 +52,7 @@
                 <br />
                 <br />
                 <label for="w3review">用一段简短的文字描述你自己！</label>
-                <textarea
-                  id="w3review"
-                  name="w3review"
-                  rows="4"
-                  cols="50"
-                  placeholder="正如你所看到的，我是一个非主流。"
-                ></textarea>
+                <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
                 <n-button strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
                 <n-button strong secondary round type="info"> 重新填写 </n-button>
               </form>
@@ -76,10 +60,8 @@
           </n-gi>
           <n-gi :span="1">
             <n-card hoverable>
-              <img
-                style="width: 100%"
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95%20(1)(1).webp?x-oss-process=image/interlace,1"
-              />
+              <img style="width: 100%"
+                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E8%A1%A8%E5%8D%95%20(1)(1).webp?x-oss-process=image/interlace,1" />
             </n-card>
           </n-gi>
         </n-grid>
@@ -110,9 +92,11 @@ select {
   font-family: 楷体;
   -webkit-appearance: none;
 }
+
 label {
   font-size: 1.2vw;
 }
+
 textarea {
   border: 0;
   border-bottom: 1px solid black;
@@ -121,6 +105,7 @@ textarea {
   font-size: 1.1vw;
   font-family: 楷体;
 }
+
 .n-button {
   margin: 10px 10px 0;
 }

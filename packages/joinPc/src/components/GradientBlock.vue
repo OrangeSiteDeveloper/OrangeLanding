@@ -21,12 +21,15 @@ const { type, word, color } = props.value;
   padding-bottom: 1vw;
   padding-left: 1vw;
 }
+
 .gradient-word {
   font-size: 1vw;
 }
+
 .gradient-mini-word {
   font-size: 0.8vw;
 }
+
 .n-button {
   font-size: 0.6vw;
   line-height: 4em;

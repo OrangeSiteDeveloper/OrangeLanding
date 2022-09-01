@@ -39,20 +39,11 @@
   </n-grid>
   <!-- 查询进度模态框 -->
   <n-modal v-model:show="showModal">
-    <n-card
-      style="width: 600px"
-      title="面试状态查询"
-      :bordered="false"
-      size="huge"
-      role="dialog"
-      aria-modal="true"
-    >
+    <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
       <template #header-extra> 噢！ </template>
       假装是个查询input
       <template #footer>
-        <n-button strong secondary round @click="showModal = false"
-          >好了，我知道了</n-button
-        >
+        <n-button strong secondary round @click="showModal = false">好了，我知道了</n-button>
       </template>
     </n-card>
   </n-modal>
@@ -144,9 +135,11 @@ const stepWord = ref([
 h1 {
   font-size: 1.4vw;
 }
+
 p {
   font-size: 1vw;
 }
+
 .bg {
   border: 1px solid rgb(239, 239, 245);
   border-radius: 8px;
@@ -155,6 +148,7 @@ p {
   background-repeat: no-repeat;
   padding: 1.3vw 0 1vw 2vw;
 }
+
 .bg:hover {
   box-shadow: 0px 0px 12px #b0afaf87;
 }

@@ -18,15 +18,18 @@ const { title, mini, btnText, btnColor, arr } = props.value;
 .title-word {
   font-size: 2vw;
 }
+
 .card-word {
   font-size: 1vw;
   line-height: 2em;
 }
+
 .mini-word {
   font-size: 0.8vw;
   line-height: 3em;
   color: grey;
 }
+
 .n-button {
   font-size: 0.6vw;
   line-height: 4em;

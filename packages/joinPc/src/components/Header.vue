@@ -1,15 +1,17 @@
 <template>
   <div class="bg">
     <div class="router-container">
-      <router-link to="/"> <n-button quaternary round> 主页 </n-button> </router-link>
-      <router-link to="/about"
-        ><n-button quaternary round>关于我们</n-button>
+      <router-link to="/">
+        <n-button quaternary round> 主页 </n-button>
       </router-link>
-      <router-link to="/registration"
-        ><n-button quaternary round>报名页面</n-button>
+      <router-link to="/about">
+        <n-button quaternary round>关于我们</n-button>
       </router-link>
-      <router-link to="/status"
-        ><n-button quaternary round>状态查询</n-button>
+      <router-link to="/registration">
+        <n-button quaternary round>报名页面</n-button>
+      </router-link>
+      <router-link to="/status">
+        <n-button quaternary round>状态查询</n-button>
       </router-link>
     </div>
   </div>
@@ -39,9 +41,11 @@ a {
 p {
   font-size: 1.3vw;
 }
+
 .n-button {
   font-size: 1.3vw;
 }
+
 .router-container {
   position: absolute;
   bottom: 1vw;

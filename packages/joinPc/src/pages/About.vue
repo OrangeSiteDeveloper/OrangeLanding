@@ -5,9 +5,7 @@
         <n-grid :x-gap="12" :y-gap="12" :cols="4">
           <!-- 上半部分 -->
           <n-gi :span="2">
-            <img
-              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/menbers.webp"
-            />
+            <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/menbers.webp" />
           </n-gi>
           <n-gi :span="1">
             <div class="text-box">
@@ -19,9 +17,7 @@
             </div>
           </n-gi>
           <n-gi :span="1">
-            <img
-              src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881-_3_.webp"
-            />
+            <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/%E6%8B%BC%E5%90%881-_3_.webp" />
           </n-gi>
           <!-- 下半部分 -->
           <n-gi :span="2">
@@ -30,8 +26,7 @@
                 <div class="text-box">
                   <img
                     src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F-_1_.webp"
-                    alt=""
-                  />
+                    alt="" />
                   <h1>{{ comDiagnosis.title }}</h1>
                   <p v-for="word in comDiagnosis.words">
                     {{ word }}
@@ -41,28 +36,21 @@
               <n-gi :span="1">
                 <n-grid :y-gap="12" :cols="1">
                   <n-gi :span="1">
-                    <img
-                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/tent.webp"
-                    />
+                    <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/tent.webp" />
                   </n-gi>
                   <n-gi :span="1">
-                    <img
-                      src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/conventionhall.webp"
-                    />
+                    <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/conventionhall.webp" />
                   </n-gi>
                 </n-grid>
-              </n-gi> </n-grid
-          ></n-gi>
+              </n-gi>
+            </n-grid>
+          </n-gi>
           <n-gi :span="2">
             <div class="text-box">
-              <n-gradient-text
-                gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"
-              >
+              <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)">
                 <p style="font-size: 1.5vw">历届学长、学姐收获Offer</p>
               </n-gradient-text>
-              <img
-                src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/work(1)%20(%E5%A4%8D%E5%88%B6).webp"
-              />
+              <img src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/work(1)%20(%E5%A4%8D%E5%88%B6).webp" />
             </div>
           </n-gi>
         </n-grid>
@@ -96,9 +84,11 @@ const comDiagnosis = ref({
 img {
   width: 100%;
 }
+
 p {
   font-size: 1vw;
 }
+
 .text-box {
   height: 31.1vw;
   overflow-y: auto;

@@ -28,12 +28,14 @@
   text-align: center;
   position: relative;
 }
+
 p {
   font-size: 1vw;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .mini-word {
   font-size: 0.6vw;
   margin-top: 3vw;
