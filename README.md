@@ -1,4 +1,4 @@
-Nuxt3 Vite3 Ts Pnpm Monorepo
+Vue3 SSR Ts Pnpm Monorepo
 
 # 安装全局依赖
 pnpm add xxxx -w
