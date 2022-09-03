@@ -53,8 +53,8 @@
                 <br />
                 <label for="w3review">用一段简短的文字描述你自己！</label>
                 <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
-                <n-button strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
-                <n-button strong secondary round type="info"> 重新填写 </n-button>
+                <n-button disabled strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button disabled strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
           </n-gi>
