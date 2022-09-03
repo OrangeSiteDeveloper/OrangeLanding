@@ -8,7 +8,7 @@
     </p>
     <p>2022 — 本网站由橙果工作室网站组强力驱动。</p>
     <p class="mini-word">
-      Copyright © 2019-2020 齐鲁工业大学网络信息中心橙果工作室 鲁ICP备00000000号
+      Copyright © 2019-2020 齐鲁工业大学网络信息中心橙果工作室 <a href="https://beian.miit.gov.cn/">鲁ICP备2021036451号</a>
     </p>
   </div>
 </template>
@@ -36,5 +36,8 @@ p {
 .mini-word {
   font-size: 0.6vw;
   margin-top: 3vw;
+}
+a {
+  text-decoration:none;color:#000;
 }
 </style>

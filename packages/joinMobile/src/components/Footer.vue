@@ -6,7 +6,7 @@
       我们的社风：自由，平等，开放，温馨，团结，活泼、充满活力，充满创造力。
     </p>
 
-    <p class="right">鲁ICP备00000000号</p>
+    <p class="right"><a href="https://beian.miit.gov.cn/">鲁ICP备2021036451号</a></p>
   </div>
 </template>
 
@@ -30,5 +30,9 @@ p {
 
 img {
   width: 100%;
+}
+
+a {
+  text-decoration:none;color:#000;
 }
 </style>
