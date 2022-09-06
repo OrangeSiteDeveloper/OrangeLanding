@@ -6,6 +6,7 @@
     "dev:jpc": "pnpm -F @OrangeLanding/joinPc run dev",
     "dev:jmo": "pnpm -F @OrangeLanding/joinMobile run dev",
     "dev:official": "pnpm -F @OrangeLanding/official run dev",
+    "build": "pnpm -F @OrangeLanding/joinPc run build && pnpm -F @OrangeLanding/joinMobile run build",
     "build:jpc": "pnpm -F @OrangeLanding/joinPc run build",
     "build:jmo": "pnpm -F @OrangeLanding/joinMobile run build",
     "build:official": "pnpm -F @OrangeLanding/official run build",
