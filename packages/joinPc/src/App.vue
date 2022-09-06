@@ -4,9 +4,12 @@
   <FooterVue />
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import HeaderVue from "./components/Header.vue";
-import FooterVue from "./components/Footer.vue";
+import FooterVue from "./components/Footer.vue"; 
+export default {
+  components: { HeaderVue, FooterVue }
+};
 </script>
 
 <style>
@@ -18,6 +21,7 @@ import FooterVue from "./components/Footer.vue";
 body {
   font-family: 楷体;
 }
+
 .n-card {
   border-radius: 8px;
 }
