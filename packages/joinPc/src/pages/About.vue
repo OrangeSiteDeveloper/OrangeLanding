@@ -10,7 +10,7 @@
           <n-gi :span="1">
             <div class="text-box">
               <h1>{{ activities.title }}</h1>
-              <p v-for="word in activities.words">
+              <p v-for="(word, index) in activities.words" :key="index">
                 {{ word }}
               </p>
               <br />
@@ -28,7 +28,7 @@
                     src="https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/A3DB8F73D9F0BC8748CB2BEBB859782F-_1_.webp"
                     alt="" />
                   <h1>{{ comDiagnosis.title }}</h1>
-                  <p v-for="word in comDiagnosis.words">
+                  <p v-for="(word, index) in comDiagnosis.words" :key="index">
                     {{ word }}
                   </p>
                 </div>
