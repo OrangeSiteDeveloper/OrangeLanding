@@ -5,13 +5,13 @@
         <n-button strong secondary round @click="showModal = true">
           点击这里查询状态
         </n-button>
-        <template v-for="item in step">
+        <template v-for="(item, index) in step" :key="index">
           <template v-if="item.status === 1">
             <p>{{ item.curDescribe }}</p>
             <p>{{ item.count }}</p>
             <h1>{{ item.title }}</h1>
             <template v-if="item.btn">
-              <n-button v-for="btn in item.btn" :disabled="btn.disable" dashed>
+              <n-button v-for="(btn, index) in item.btn" :key="index" :disabled="btn.disable" dashed>
                 {{ btn.describe }}
               </n-button>
             </template>
@@ -24,13 +24,13 @@
       </div>
     </n-card>
 
-    <n-card v-for="(item, index) in stepWord">
+    <n-card v-for="(item, index) in stepWord" :key="index">
       <p v-if="index === 0">这里可以查看面试过程！</p>
       <n-progress type="line" :percentage="item.progess" :indicator-placement="'inside'" :color="item.color"
         :rail-color="item.railColor" processing />
       <br />
       <h2>{{ item.title }}</h2>
-      <p v-for="word in item.words">{{ word }}</p>
+      <p v-for="(word, index) in item.words" :key="index">{{ word }}</p>
       <br />
     </n-card>
   </div>
@@ -39,7 +39,7 @@
       <template #header-extra> 噢！ </template>
       假装是个查询input
       <template #footer>
-        <n-button strong secondary round @click="showModal = false">好了，我知道了</n-button>
+        <n-button strong secondary round @click="showModal = false">好了, 我知道了</n-button>
       </template>
     </n-card>
   </n-modal>
@@ -100,7 +100,7 @@ const stepWord = ref([
     title: "报名成功/未报名",
     words: [
       "一只满怀好奇的小橙子在“橙果工作室”的门口看了看。报名呢？还是不报名呢？",
-      "emmm。。。报名的话会找到一群志同道合的人，一起完成心中的梦想，会收获温馨、热爱、友谊……好多好多~冲鸭!",
+      "emmm。。。报名的话会找到一群志同道合的人, 一起完成心中的梦想, 会收获温馨、热爱、友谊……好多好多~冲鸭!",
     ],
     progess: 25,
     color: "rgb(32,128,240)",
@@ -109,8 +109,8 @@ const stepWord = ref([
   {
     title: "初试通过/未通过",
     words: [
-      "来了来了了，“无情的“的第一次面试~",
-      "初试考察的是“第一印象”，大家通过自我介绍来向面试官展示自己个性和优势。可以说专业知识，也可以说人格修养、兴趣爱好等等。内容不限。面试时长为3min/人。",
+      "来了来了了, “无情的“的第一次面试~",
+      "初试考察的是“第一印象”, 大家通过自我介绍来向面试官展示自己个性和优势。可以说专业知识, 也可以说人格修养、兴趣爱好等等。内容不限。面试时长为3min/人。",
     ],
     progess: 50,
     color: "rgb(24,160,88)",
@@ -120,7 +120,7 @@ const stepWord = ref([
     title: "复试通过/未通过",
     words: [
       "经过”无情的“第一次面试同学将迎来一次长跑——第二次面试。",
-      "面试为期一周左右，大家会收到由小组发出的学习任务，经行为期一周的自学之后会对大家学习内容进行一次考核以检验大家的学习能力。",
+      "面试为期一周左右, 大家会收到由小组发出的学习任务, 经行为期一周的自学之后会对大家学习内容进行一次考核以检验大家的学习能力。",
     ],
     progess: 75,
     color: "rgb(208,48,80)",
@@ -129,8 +129,8 @@ const stepWord = ref([
   {
     title: "确认加入",
     words: [
-      "到此，大家已经通过了全部面试，你的学识和能力已经得到了我们的认可，满足加入橙果工作室的全部要求。",
-      "在剩余时间内随时可以选择加入，当然也可以选择拒绝。It's up to you.敬候佳音~",
+      "到此, 大家已经通过了全部面试, 你的学识和能力已经得到了我们的认可, 满足加入橙果工作室的全部要求。",
+      "在剩余时间内随时可以选择加入, 当然也可以选择拒绝。It's up to you.敬候佳音~",
     ],
     progess: 100,
     color: "rgb(240,160,32)",
