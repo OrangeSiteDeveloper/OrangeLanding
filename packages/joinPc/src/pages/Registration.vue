@@ -53,7 +53,7 @@
                 <br />
                 <label for="w3review">用一段简短的文字描述你自己！</label>
                 <textarea v-model="data.w3review" rows="8" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
-                <n-button disabled @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button  @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
                 <n-button disabled @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
@@ -133,7 +133,7 @@ function clear() {
   showMsgSty.value = "green";
   showModal.value = true;
   setTimeout(() => {
-    let showModal = ref(false);
+    showModal.value = false;
   }, 1000)
 }
 
