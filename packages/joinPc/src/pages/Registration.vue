@@ -53,8 +53,8 @@
                 <br />
                 <label for="w3review">用一段简短的文字描述你自己！</label>
                 <textarea v-model="data.w3review" rows="8" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
-                <n-button @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
-                <n-button disabled strong secondary round type="info"> 重新填写 </n-button>
+                <n-button disabled @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button disabled @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
           </n-gi>
@@ -67,11 +67,18 @@
         </n-grid>
       </n-gi>
     </n-grid>
+    <!-- 提交结果反馈窗 -->
+    <n-modal v-model:show="showModal">
+      <n-card style="width: 600px; text-align: center;" :bordered="false" size="huge" role="dialog" aria-modal="true">
+        <h2 :style="'color:' + showMsgSty">{{ showMsg }}</h2>
+      </n-card>
+    </n-modal>
   </div>
+
 </template>
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
-import { NGrid, NGi, NCard, NButton } from "naive-ui";
+import { onMounted, ref } from "vue";
+import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
 const baseUrl = "http://localhost:3000"
 const data = ref({
@@ -86,12 +93,48 @@ const data = ref({
   sDepartment: "",
   w3review: "",
 });
-function submit(){
+let showModal = ref(false);
+let showMsg = ref("提交失败");
+let showMsgSty = ref("red");
+function submit() {
 
-  axios.post(baseUrl + '/api/join/submitMsg', {data}).then((res) => {
-    if(res.data === "success") console.log("success");
-  })
-  
+  axios.post(baseUrl + '/api/join/submitMsg', { data }).then(
+    (res) => {
+      if (res.data === "success") {
+        showMsg.value = "提交成功";
+        showMsgSty.value = "green";
+      }
+      showModal.value = true;
+    },
+    (err) => {
+      showModal.value = true;
+      console.log(err);
+    }
+  )
+  setTimeout(() => {
+    showModal.value = false;
+  }, 1500);
+
+}
+function clear() {
+  data.value = {
+    sId: "",
+    sName: "",
+    sex: "",
+    sMajor: "",
+    sPhone: "",
+    sQQ: "",
+    sEmail: "",
+    sGroup: "",
+    sDepartment: "",
+    w3review: "",
+  }
+  showMsg.value = "清除成功";
+  showMsgSty.value = "green";
+  showModal.value = true;
+  setTimeout(() => {
+    let showModal = ref(false);
+  }, 1000)
 }
 
 </script>
