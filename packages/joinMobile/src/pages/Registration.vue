@@ -54,7 +54,7 @@
       </form>
     </n-card>
     <n-modal v-model:show="showModal">
-      <n-card style="width: 600px; text-align: center;" :bordered="false" size="huge" role="dialog" aria-modal="true">
+      <n-card style="width: 300px; text-align: center;" :bordered="false" size="huge" role="dialog" aria-modal="true">
         <h2 :style="'color:' + showMsgSty">{{ showMsg }}</h2>
       </n-card>
     </n-modal>
@@ -64,7 +64,7 @@
 import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
-const baseUrl = "http://localhost:3000"
+const baseUrl = "http://139.9.118.85:3000"
 const data = ref({
   sId: "",
   sName: "",
