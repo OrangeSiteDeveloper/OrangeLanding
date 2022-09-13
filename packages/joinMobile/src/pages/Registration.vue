@@ -53,6 +53,15 @@
         <br />
         <label for="w3review">用一段简短的文字描述你自己！</label>
         <textarea v-model="data.w3review" rows="8" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
+        <br />
+        <br />
+        <div class="identify">
+          <!-- <label for="sEmail">&nbsp;</label> -->
+          <input type="text" v-model="idCode" placeholder="请输入验证码" />
+          <div @click="refreshCode">
+            <SIdentify :identifyCode="identifyCode" />
+          </div>
+        </div>
         <n-button @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
         <n-button disabled @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
       </form>
@@ -64,10 +73,11 @@
     </n-modal>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
+import SIdentify from '../components/identify.vue';
 const baseUrl = "http://139.9.118.85:3000"
 const data = ref({
   sId: "",
@@ -81,24 +91,32 @@ const data = ref({
   sDepartment: "",
   w3review: "",
 });
+let idCode = ref("")
 let showModal = ref(false);
 let showMsg = ref("提交失败");
 let showMsgSty = ref("red");
 function submit() {
 
-  axios.post(baseUrl + '/api/join/submitMsg', { data }).then(
-    (res) => {
-      if (res.data === "success") {
-        showMsg.value = "提交成功";
-        showMsgSty.value = "green";
+  if (idCode.value === identifyCode.value) {
+    axios.post(baseUrl + '/api/join/submitMsg', { data }).then(
+      (res) => {
+        if (res.data === "success") {
+          showMsg.value = "提交成功";
+          showMsgSty.value = "green";
+        }
+        showModal.value = true;
+      },
+      (err) => {
+        showModal.value = true;
+        console.log(err);
       }
-      showModal.value = true;
-    },
-    (err) => {
-      showModal.value = true;
-      console.log(err);
-    }
-  )
+    )
+  } else {
+    showMsg.value = "验证码错误";
+    showMsgSty.value = "red";
+    showModal.value = true;
+  }
+
   setTimeout(() => {
     showModal.value = false;
   }, 1500);
@@ -125,8 +143,34 @@ function clear() {
   }, 1000)
 }
 
+// 图形验证码
+let identifyCodes = "1234567890"
+let identifyCode = ref('3212')
+
+const randomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+const makeCode = (o, l) => {
+  for (let i = 0; i < l; i++) {
+    identifyCode.value += o[
+      randomNum(0, o.length)
+    ];
+  }
+}
+
+const refreshCode = () => {
+  identifyCode.value = "";
+  makeCode(identifyCodes, 4);
+}
+
+onMounted(() => {
+  identifyCode.value = "";
+  makeCode(identifyCodes, 4);
+})
+
 </script>
-  
+     
 <style scoped>
 input {
   border: 0;
@@ -160,5 +204,12 @@ textarea {
   border-radius: 4px;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+.identify {
+  display: flex;
+}
+
+.identify input {
+  width: 50%;
 }
 </style>
