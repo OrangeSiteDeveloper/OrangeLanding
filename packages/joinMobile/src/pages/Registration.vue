@@ -36,12 +36,16 @@
         <label for="sGroup">意向小组:&nbsp;</label>
         <select v-model="data.sGroup">
           <option value="web">网站组</option>
-          <option value="be">程序设计组</option>
+          <option value="programming">程序设计组</option>
+          <option value="bigData">大数据组</option>
+          <option value="embedded">嵌入式组</option>
+          <option value="hardware">硬件组</option>
         </select>
         <br />
         <br />
         <label for="sDepartment">意向部门（可选）:&nbsp;</label>
         <select v-model="data.sDepartment">
+          <option value="ms">秘书部</option>
           <option value="xc">宣传部</option>
           <option value="wl">外联部</option>
         </select>

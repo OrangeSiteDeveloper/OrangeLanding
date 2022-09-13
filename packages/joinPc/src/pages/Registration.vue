@@ -40,12 +40,16 @@
                 <label for="sGroup">意向小组:&nbsp;</label>
                 <select v-model="data.sGroup">
                   <option value="web">网站组</option>
-                  <option value="be">程序设计组</option>
+                  <option value="programming">程序设计组</option>
+                  <option value="bigData">大数据组</option>
+                  <option value="embedded">嵌入式组</option>
+                  <option value="hardware">硬件组</option>
                 </select>
                 <br />
                 <br />
                 <label for="sDepartment">意向部门（可选）:&nbsp;</label>
                 <select v-model="data.sDepartment">
+                  <option value="ms">秘书部</option>
                   <option value="xc">宣传部</option>
                   <option value="wl">外联部</option>
                 </select>
@@ -53,7 +57,7 @@
                 <br />
                 <label for="w3review">用一段简短的文字描述你自己！</label>
                 <textarea v-model="data.w3review" rows="8" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
-                <n-button  @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
                 <n-button disabled @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
@@ -80,7 +84,7 @@
 import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
-const baseUrl = "http://localhost:3000"
+const baseUrl = "http://139.9.118.85:3000"
 const data = ref({
   sId: "",
   sName: "",
