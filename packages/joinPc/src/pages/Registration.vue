@@ -49,6 +49,7 @@
                 <br />
                 <label for="sDepartment">意向部门（可选）:&nbsp;</label>
                 <select v-model="data.sDepartment">
+                  <option selected value="">无</option>
                   <option value="ms">秘书部</option>
                   <option value="xc">宣传部</option>
                   <option value="wl">外联部</option>
@@ -60,14 +61,13 @@
                 <br />
                 <br />
                 <div class="identify">
-                  <!-- <label for="sEmail">&nbsp;</label> -->
                   <input type="text" v-model="idCode" placeholder="请输入验证码" />
                   <div @click="refreshCode">
                     <SIdentify :identifyCode="identifyCode" />
                   </div>
                 </div>
                 <n-button @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
-                <n-button disabled @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
+                <n-button @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
           </n-gi>
