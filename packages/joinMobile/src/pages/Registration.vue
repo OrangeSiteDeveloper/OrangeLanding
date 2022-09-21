@@ -79,7 +79,7 @@ import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
 import SIdentify from '../components/identify.vue';
-const baseUrl = "http://120.46.212.64:3000"
+const baseUrl = "https://api.orangestudio.cn"
 const data = ref({
   sId: "",
   sName: "",
