@@ -66,7 +66,7 @@
                     <SIdentify :identifyCode="identifyCode" />
                   </div>
                 </div>
-                <n-button @click="submit()" strong secondary round type="primary"> 期待2022纳新季再次开启 </n-button>
+                <n-button @click="submit()" strong secondary round type="primary"> 提交 </n-button>
                 <n-button @click="clear()" strong secondary round type="info"> 重新填写 </n-button>
               </form>
             </n-card>
@@ -94,7 +94,7 @@ import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
 import SIdentify from '../components/identify.vue';
-const baseUrl = "http://139.9.118.85:3000"
+const baseUrl = "http://120.46.212.64:3000/api/join"
 const data = ref({
   sId: "",
   sName: "",
