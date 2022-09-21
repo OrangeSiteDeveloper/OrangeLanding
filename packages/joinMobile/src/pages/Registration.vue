@@ -109,6 +109,7 @@ function submit() {
       },
       (err) => {
         showModal.value = true;
+        showMsg.value = err;
         console.log(err);
       }
     )
