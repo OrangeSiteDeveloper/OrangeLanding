@@ -11,3 +11,8 @@ pnpm -F @OraangeLanding/xxx 命令
 
 # 代码检查
 目前未添加，后续开启eslint
+
+// ToDo
+- [] 完善ssr方案，日后nuxt3发布正式版可以迁移。
+- [] ci/cd。
+- [] 完善monorepo方案，抽离公共逻辑到libs。
