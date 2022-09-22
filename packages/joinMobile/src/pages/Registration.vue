@@ -2,14 +2,17 @@
   <div style="width: 95%; margin: 0 auto">
     <n-card size="small">
       <form>
+        <span class="text-red">*</span>
         <label for="sId">学号:&nbsp;</label>
         <input type="text" v-model="data.sId" placeholder="请填写学号" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sName">姓名:&nbsp;</label>
         <input type="text" v-model="data.sName" placeholder="请填写姓名" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sex">性别:&nbsp;</label>
         <select v-model="data.sex">
           <option value="male">男</option>
@@ -17,22 +20,27 @@
         </select>
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sMajor">专业:&nbsp;</label>
         <input type="text" v-model="data.sMajor" placeholder="请填写专业" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sPhone">手机号码:&nbsp;</label>
         <input type="text" v-model="data.sPhone" placeholder="请填写手机号码" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sQQ">qq:&nbsp;</label>
         <input type="text" v-model="data.sQQ" placeholder="请填写qq" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sEmail">电子邮箱：&nbsp;</label>
         <input type="text" v-model="data.sEmail" placeholder="请填写电子邮箱" />
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="sGroup">意向小组:&nbsp;</label>
         <select v-model="data.sGroup">
           <option value="web">网站组</option>
@@ -52,12 +60,14 @@
         </select>
         <br />
         <br />
+        <span class="text-red">*</span>
         <label for="w3review">用一段简短的文字描述你自己！</label>
         <textarea v-model="data.w3review" rows="8" cols="50" placeholder="正如你所看到的，我是一个非主流。"></textarea>
         <br />
         <br />
+        <span class="text-red">*</span>
+        <label for="w3review">验证码:</label>
         <div class="identify">
-          <!-- <label for="sEmail">&nbsp;</label> -->
           <input type="text" v-model="idCode" placeholder="请输入验证码" />
           <div @click="refreshCode">
             <SIdentify :identifyCode="identifyCode" />
@@ -79,7 +89,7 @@ import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
 import SIdentify from '../components/identify.vue';
-const baseUrl = "https://api.orangestudio.cn"
+const baseUrl = "https://api.orangestudio.cn/api/join"
 const data = ref({
   sId: "",
   sName: "",
@@ -97,27 +107,39 @@ let showModal = ref(false);
 let showMsg = ref("提交失败");
 let showMsgSty = ref("red");
 function submit() {
+  const formVal = data.value
+  console.log(formVal.sId);
+  if (formVal.sId && formVal.sName && formVal.sex && formVal.sMajor &&
+    formVal.sPhone && formVal.sQQ && formVal.sEmail && formVal.sGroup &&
+    formVal.w3review) {
 
-  if (idCode.value === identifyCode.value) {
-    axios.post(baseUrl + '/api/join/submitMsg', { data }).then(
-      (res) => {
-        if (res.data === "success") {
-          showMsg.value = "提交成功";
-          showMsgSty.value = "green";
+    if (idCode.value === identifyCode.value) {
+      axios.post(baseUrl + '/submitMsg', { data }).then(
+        (res) => {
+          if (res.data === "success") {
+            showMsg.value = "提交成功";
+            showMsgSty.value = "green";
+          }
+          showModal.value = true;
+        },
+        (err) => {
+          showModal.value = true;
+          console.log(err);
         }
-        showModal.value = true;
-      },
-      (err) => {
-        showModal.value = true;
-        showMsg.value = err;
-        console.log(err);
-      }
-    )
+      )
+    } else {
+      showMsg.value = "验证码错误";
+      showMsgSty.value = "red";
+      showModal.value = true;
+    }
+
   } else {
-    showMsg.value = "验证码错误";
-    showMsgSty.value = "red";
+
+    showMsg.value = "请输入必填项";
     showModal.value = true;
+
   }
+
 
   setTimeout(() => {
     showModal.value = false;
@@ -207,11 +229,15 @@ textarea {
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
 .identify {
   display: flex;
 }
 
 .identify input {
   width: 50%;
+}
+.text-red {
+  color: red;
 }
 </style>
