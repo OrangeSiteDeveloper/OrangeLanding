@@ -62,6 +62,7 @@
                 <br />
                 <div class="identify">
                   <input type="text" v-model="idCode" placeholder="请输入验证码" />
+                  <checkInput :label="'你好'" required></checkInput>
                   <div @click="refreshCode">
                     <SIdentify :identifyCode="identifyCode" />
                   </div>
@@ -94,7 +95,8 @@ import { onMounted, ref } from "vue";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 import axios from "axios";
 import SIdentify from '../components/identify.vue';
-const baseUrl = "https://api.orangestudio.cn"
+import checkInput from '../components/checkInput.vue'
+const baseUrl = "https://api.orangestudio.cn/api/join"
 const data = ref({
   sId: "",
   sName: "",
@@ -114,7 +116,7 @@ let showMsgSty = ref("red");
 function submit() {
 
   if (idCode.value === identifyCode.value) {
-    axios.post(baseUrl + '/api/join/submitMsg', { data }).then(
+    axios.post(baseUrl + '/submitMsg', { data }).then(
       (res) => {
         if (res.data === "success") {
           showMsg.value = "提交成功";
