@@ -2,6 +2,7 @@
   <n-grid :cols="8" :y-gap="12">
     <!-- 进度查询 -->
     <n-gi :offset="1" :span="6">
+      <!-- 状态卡片 -->
       <n-card size="huge" hoverable>
         <n-button strong secondary round @click="showModal = true">
           <p>点击查询面试进展</p>
@@ -12,20 +13,29 @@
               <p>{{ item.curDescribe }}</p>
               <p>{{ item.count }}</p>
               <h1>{{ item.title }}</h1>
-              <v-template v-if="item.btn">
+              <template v-if="item.btn">
                 <n-button v-for="(btn, index) in item.btn" :key="index" :disabled="btn.disable" dashed>
                   {{ btn.describe }}
                 </n-button>
-              </v-template>
+              </template>
               <p>{{ item.statusDescribe }}</p>
             </div>
           </n-gi>
         </n-grid>
       </n-card>
+      <!-- 查询进度模态框 -->
+      <n-modal v-model:show="showModal">
+        <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
+          <input type="text" v-model="sId" placeholder="请输入学号">
+          <template #footer>
+            <n-button strong secondary round @click="submitSId">提交</n-button>
+          </template>
+        </n-card>
+      </n-modal>
     </n-gi>
     <!-- 纳新流程介绍 -->
     <n-gi :offset="1" :span="6">
-      <div class="bg" style="position: relative">
+      <div class="bg">
         <p>这里让大家熟悉纳新流程</p>
         <div v-for="(item, index) in stepWord" :key="index">
           <br />
@@ -36,50 +46,58 @@
       </div>
     </n-gi>
   </n-grid>
-  <!-- 查询进度模态框 -->
-  <n-modal v-model:show="showModal">
-    <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
-      <template #header-extra> 噢！ </template>
-      假装是个查询input
-      <template #footer>
-        <n-button strong secondary round @click="showModal = false">好了, 我知道了</n-button>
-      </template>
-    </n-card>
-  </n-modal>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, Ref } from "vue";
+// TODO: 对接后端
+import axios from "axios";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 
-let showModal = ref(false);
+// TODO: 对接后端
+const baseUrl: string = "https://api.orangestudio.cn/api/join"
+const testUrl: string = "http://127.0.0.1:3000/api/join"
 
-const step = ref([
+// TODO: 这一大段逻辑其实都应该放到后端，减少客户端计算压力
+// 纳新状态查询
+interface Step {
+  status: string;
+  curDescribe: string;
+  count: string;
+  title: string;
+  statusDescribe: string;
+  disable: boolean;
+  btn?: {
+    disable: boolean;
+    describe: string;
+  }[];
+}
+const step: Ref<Step[]> = ref([
   {
-    status: 0, // 0指已结束
-    curDescribe: "已结束",
+    status: '1', // 0指已结束
+    curDescribe: "未开始",
     count: "第一步",
     title: "hello,小橙子 ,恭喜你报名成功",
     statusDescribe: "请关注录取进程",
-    disable: true,
-  },
-  {
-    status: 1, // 1指正在进行
-    curDescribe: "你到了这一步",
-    count: "第二步",
-    title: "初试进行",
-    statusDescribe: "这里写状态 通过/淘汰",
     disable: false,
   },
   {
-    status: 2, // 2指未开始
+    status: '2', // 1指正在进行
     curDescribe: "未开始",
-    count: "第三步",
-    title: "复试进行",
-    statusDescribe: "这里写状态 通过/淘汰",
+    count: "第二步",
+    title: "初试进行",
+    statusDescribe: "通过/淘汰",
     disable: true,
   },
   {
-    status: 2,
+    status: '2', // 2指未开始
+    curDescribe: "未开始",
+    count: "第三步",
+    title: "复试进行",
+    statusDescribe: "通过/淘汰",
+    disable: true,
+  },
+  {
+    status: '2',
     curDescribe: "未开始",
     count: "第四步",
     title: "确认是否加入",
@@ -97,8 +115,99 @@ const step = ref([
     disable: true,
   },
 ]);
+const showModal: Ref<boolean> = ref(false);
+const sId: Ref<string> = ref("")
+// 提交学号查询状态
+const submitSId = function (): void {
+  // 重置Describe
+  statusDescribeRewind();
 
-const stepWord = ref([
+  const id: string = sId.value
+  const isUpdate: Ref<boolean> = ref(false);
+  for (let i = 0; i < step.value.length; i++) {
+    if (isUpdate.value === false) {
+      if (i + 1 === parseInt(id)) {
+        switch (id) {
+          case '2.1':
+          case '3.1':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '通过');
+            break;
+          case '2.2':
+          case '3.2':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '淘汰');
+            break;
+          case '4':
+            statusUpdate(step.value[i], '1', "到这儿了", false, false);
+            break;
+          case '4.1':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '恭喜加入橙果工作室！');
+            break;
+          case '4.2':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '感谢您的参与！');
+            break;
+          default:
+            statusUpdate(step.value[i], '1', "到这儿了", false, true,);
+            break;
+        }
+
+        isUpdate.value = true;
+      } else {
+        statusUpdate(step.value[i], '0', '已结束', true, true)
+      }
+    } else {
+      statusUpdate(step.value[i], '2', '未开始', true, true,)
+    }
+    showModal.value = false;
+    sId.value = "";
+  }
+  // TODO: 对接后端
+  axios.post(baseUrl + "/queryStatus", { sId }).then(
+    (res) => {
+      const status = res.data
+      console.log(status);
+    }
+  )
+}
+// step赋值逻辑抽离
+const statusUpdate = function (
+  item: Step,
+  status: string,
+  curDescribe: string,
+  disable: boolean,
+  isBtn: boolean,
+  statusDescribe?: string,
+): void {
+  item.status = status;
+  item.curDescribe = curDescribe;
+  item.disable = disable;
+  item.btn?.forEach(item => {
+    item.disable = isBtn;
+  })
+  if (statusDescribe) {
+    item.statusDescribe = statusDescribe;
+  }
+}
+// 每次查询重置Describe
+const statusDescribeRewind = function () {
+  step.value.forEach((item, index) => {
+    switch (index + 1) {
+      case 2:
+      case 3:
+        item.statusDescribe = "通过/淘汰"
+        break;
+      case 4:
+        item.statusDescribe = "欢迎你的到来"
+        break;
+    }
+  })
+}
+
+// 纳新流程介绍
+interface StepWord {
+  title: string;
+  words: string[];
+}
+const stepWord: Ref<StepWord[]> = ref([
   {
     title: "报名成功/未报名",
     words: [
@@ -140,6 +249,7 @@ p {
 }
 
 .bg {
+  position: relative;
   border: 1px solid rgb(239, 239, 245);
   border-radius: 8px;
   background: url("https://catalinazzz.oss-cn-beijing.aliyuncs.com/image/B1%20(%E5%A4%8D%E5%88%B6).webp");
@@ -154,5 +264,25 @@ p {
 
 .disable {
   color: rgb(199 199 199);
+}
+
+input {
+  border: 0px;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: 30px;
+  width: 100%;
+  font-size: 1vw;
+  padding-left: 10px;
+}
+
+input:focus {
+  border-radius: 9px;
+  border: 1px solid green;
+}
+
+.n-button__content {
+  font-size: 1.5vw;
 }
 </style>
