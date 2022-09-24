@@ -49,11 +49,9 @@
 </template>
 <script setup lang="ts">
 import { ref, Ref } from "vue";
-// TODO: 对接后端
 import axios from "axios";
 import { NGrid, NGi, NCard, NButton, NModal } from "naive-ui";
 
-// TODO: 对接后端
 const baseUrl: string = "https://api.orangestudio.cn/api/join"
 const testUrl: string = "http://127.0.0.1:3000/api/join"
 
@@ -119,10 +117,18 @@ const showModal: Ref<boolean> = ref(false);
 const sId: Ref<string> = ref("")
 // 提交学号查询状态
 const submitSId = function (): void {
+  axios.post(baseUrl + "/queryStatus", { sId }).then(
+    (res) => {
+      const status = res.data
+      setStep(status);
+    }
+  )
+}
+const setStep = function (status: string) {
   // 重置Describe
   statusDescribeRewind();
 
-  const id: string = sId.value
+  const id: string = status
   const isUpdate: Ref<boolean> = ref(false);
   for (let i = 0; i < step.value.length; i++) {
     if (isUpdate.value === false) {
@@ -160,13 +166,6 @@ const submitSId = function (): void {
     showModal.value = false;
     sId.value = "";
   }
-  // TODO: 对接后端
-  axios.post(baseUrl + "/queryStatus", { sId }).then(
-    (res) => {
-      const status = res.data
-      console.log(status);
-    }
-  )
 }
 // step赋值逻辑抽离
 const statusUpdate = function (

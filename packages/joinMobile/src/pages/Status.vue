@@ -47,7 +47,11 @@
 </template>
 <script setup lang="ts">
 import { ref, Ref } from "vue";
-import { NCard, NProgress, useThemeVars, NButton, NModal } from "naive-ui";
+import axios from 'axios';
+import { NCard, NProgress, NButton, NModal } from "naive-ui";
+
+const baseUrl: string = "https://api.orangestudio.cn/api/join"
+const testUrl: string = "http://127.0.0.1:3000/api/join"
 
 // TODO: 这一大段逻辑其实都应该放到后端，减少客户端计算压力
 // 纳新状态查询
@@ -111,6 +115,15 @@ const showModal: Ref<boolean> = ref(false);
 const sId: Ref<string> = ref("")
 // 提交学号查询状态
 const submitSId = function (): void {
+  axios.post(baseUrl + "/queryStatus", { sId }).then(
+    (res) => {
+      const status = res.data
+      setStep(status);
+    }
+  )
+}
+//
+const setStep = function (status: string) {
   const id: string = "1"
   const isUpdate: Ref<boolean> = ref(false);
   for (let i = 0; i < step.value.length; i++) {
@@ -169,7 +182,7 @@ const statusUpdate = function (
     item.statusDescribe = statusDescribe;
   }
 }
-
+// submitSId();
 
 // 纳新流程介绍
 interface StepWord {
