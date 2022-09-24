@@ -1,12 +1,13 @@
 <template>
-  <div style="width: 95%; margin: 0 auto">
+  <div class="continer">
+    <!-- 纳新状态查询 -->
     <n-card>
       <div class="cur-status">
         <n-button strong secondary round @click="showModal = true">
           点击这里查询状态
         </n-button>
         <template v-for="(item, index) in step" :key="index">
-          <template v-if="item.status === 1">
+          <template v-if="item.status === '1'">
             <p>{{ item.curDescribe }}</p>
             <p>{{ item.count }}</p>
             <h1>{{ item.title }}</h1>
@@ -22,8 +23,17 @@
       <div class="cur-status">
         <n-progress type="circle" :percentage="50" :offset-degree="120" color="black" rail-color="rgb(206 210 214)" />
       </div>
+      <n-modal v-model:show="showModal">
+        <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
+          <template #header-extra> 噢！ </template>
+          假装是个查询input
+          <template #footer>
+            <n-button strong secondary round @click="showModal = false">好了, 我知道了</n-button>
+          </template>
+        </n-card>
+      </n-modal>
     </n-card>
-
+    <!-- 纳新步骤介绍 -->
     <n-card v-for="(item, index) in stepWord" :key="index">
       <p v-if="index === 0">这里可以查看面试过程！</p>
       <n-progress type="line" :percentage="item.progess" :indicator-placement="'inside'" :color="item.color"
@@ -34,49 +44,52 @@
       <br />
     </n-card>
   </div>
-  <n-modal v-model:show="showModal">
-    <n-card style="width: 600px" title="面试状态查询" :bordered="false" size="huge" role="dialog" aria-modal="true">
-      <template #header-extra> 噢！ </template>
-      假装是个查询input
-      <template #footer>
-        <n-button strong secondary round @click="showModal = false">好了, 我知道了</n-button>
-      </template>
-    </n-card>
-  </n-modal>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, Ref } from "vue";
 import { NCard, NProgress, useThemeVars, NButton, NModal } from "naive-ui";
 
-let showModal = ref(false);
-
-const step = ref([
+// TODO: 这一大段逻辑其实都应该放到后端，减少客户端计算压力
+// 纳新状态查询
+interface Step {
+  status: string;
+  curDescribe: string;
+  count: string;
+  title: string;
+  statusDescribe: string;
+  disable: boolean;
+  btn?: {
+    disable: boolean;
+    describe: string;
+  }[];
+}
+const step: Ref<Step[]> = ref([
   {
-    status: 0, // 0指已结束
-    curDescribe: "已结束",
+    status: '1', // 0指已结束
+    curDescribe: "未开始",
     count: "第一步",
     title: "hello,小橙子 ,恭喜你报名成功",
     statusDescribe: "请关注录取进程",
-    disable: true,
-  },
-  {
-    status: 1, // 1指正在进行
-    curDescribe: "你到了这一步",
-    count: "第二步",
-    title: "初试进行",
-    statusDescribe: "这里写状态 通过/淘汰",
     disable: false,
   },
   {
-    status: 2, // 2指未开始
+    status: '2', // 1指正在进行
     curDescribe: "未开始",
-    count: "第三步",
-    title: "复试进行",
-    statusDescribe: "这里写状态 通过/淘汰",
+    count: "第二步",
+    title: "初试进行",
+    statusDescribe: "通过/淘汰",
     disable: true,
   },
   {
-    status: 2,
+    status: '2', // 2指未开始
+    curDescribe: "未开始",
+    count: "第三步",
+    title: "复试进行",
+    statusDescribe: "通过/淘汰",
+    disable: true,
+  },
+  {
+    status: '2',
     curDescribe: "未开始",
     count: "第四步",
     title: "确认是否加入",
@@ -94,8 +107,79 @@ const step = ref([
     disable: true,
   },
 ]);
+const showModal: Ref<boolean> = ref(false);
+const sId: Ref<string> = ref("")
+// 提交学号查询状态
+const submitSId = function (): void {
+  const id: string = "1"
+  const isUpdate: Ref<boolean> = ref(false);
+  for (let i = 0; i < step.value.length; i++) {
+    if (isUpdate.value === false) {
+      if (i + 1 === parseInt(id)) {
+        switch (id) {
+          case '2.1':
+          case '3.1':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '通过');
+            break;
+          case '2.2':
+          case '3.2':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '淘汰');
+            break;
+          case '4':
+            statusUpdate(step.value[i], '1', "到这儿了", false, false);
+            break;
+          case '4.1':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '恭喜加入橙果工作室！');
+            break;
+          case '4.2':
+            statusUpdate(step.value[i], '1', "到这儿了", false, true, '感谢您的参与！');
+            break;
+          default:
+            statusUpdate(step.value[i], '1', "到这儿了", false, true,);
+            break;
+        }
 
-const stepWord = ref([
+        isUpdate.value = true;
+      } else {
+        statusUpdate(step.value[i], '0', '已结束', true, true)
+      }
+    } else {
+      statusUpdate(step.value[i], '2', '未开始', true, true,)
+    }
+    showModal.value = false;
+    sId.value = "";
+  }
+}
+// step赋值逻辑抽离
+const statusUpdate = function (
+  item: Step,
+  status: string,
+  curDescribe: string,
+  disable: boolean,
+  isBtn: boolean,
+  statusDescribe?: string,
+): void {
+  item.status = status;
+  item.curDescribe = curDescribe;
+  item.disable = disable;
+  item.btn?.forEach(item => {
+    item.disable = isBtn;
+  })
+  if (statusDescribe) {
+    item.statusDescribe = statusDescribe;
+  }
+}
+
+
+// 纳新流程介绍
+interface StepWord {
+  title: string;
+  words: string[];
+  progess: number;
+  color: string;
+  railColor: string;
+}
+const stepWord: Ref<StepWord[]> = ref([
   {
     title: "报名成功/未报名",
     words: [
@@ -140,6 +224,11 @@ const stepWord = ref([
 </script>
 
 <style scoped>
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .n-card {
   box-shadow: 0px 0px 42px #d6cfcf;
   border-radius: 4px;
